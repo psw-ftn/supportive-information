@@ -16,6 +16,8 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
   <li>Kako da napišemo automatski test koji proverava da sve radi.</li>
 </ol>
 
+Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 5 raditi svaki put kad razvijaš novu funkcionalnost. Redosled koraka 1 do 5 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
+
 ## 0. Organizacija i pokretanje projekta
 Prvi put kad sedneš da radiš na projektu ćeš morati da kloniraš repozitorijum svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
 
@@ -58,6 +60,8 @@ Da bi aplikacija mogla da se koristi, potrebno je podesiti bazu podataka tako š
 2. Definisati potrebne šeme.
 3. Pokrenuti migracije koje automatski kreiraju tabele.
 
+Navedeni koraci su sabrani u **video materijalu** radi lakšeg snalaženja. TODO
+
 #### 1. Osposobljavanje konekcije ka bazi
 U okviru `Explorer.BuildingBlocks.Infrastructure` projekta se nalazi klasa `DbConnectionStringBuilder`. Ovde je definisan kod putem kog se aplikacija kači na bazu. Izdvajamo delove koda na koje treba obratiti pažnju:
 ```
@@ -93,9 +97,33 @@ Add-Migration -Name Init -Context BlogContext -Project Explorer.Blog.Infrastruct
 Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -StartupProject Explorer.API
 
 ```
-Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke i da napravi potrebne tabele u bazi.
+Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke za migraciju (Add-Migration komanda) i da napravi potrebne tabele u bazi (Update-Database komanda).
 
 ## 1. Kreiranje domenske klase
+Kad god pristupimo rešavanju nove korisničke priče, potrebno je da otvorimo novu granu koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
+
+Većina zadataka u prvoj nedelji podrazumevaju izradu novog entiteta u domenskom sloju. Za ovaj zadatak je potrebno:
+<ol type="a">
+  <li>Odabrati dobar modul u koji smeštaš novu klasu.</li>
+  <li>Kreirati entiteta u odgovarajućem `Core` projektu.</li>
+  <li>Srediti nasleđivanje i polja klase.</li>
+</ol>
+
+### a. Izbor modula
+U startu počinjemo sa tri modula:
+
+1. Stakeholders - Modul koji se bavi funkcionalnostima vezanim za registraciju korisničkih profila i komunikacijom između njih.
+2. Tours - Modul koji se bavi funkcionalnostima vezanim za prodaju i izvršavanje tura.
+3. Blog - Modul koji se bavi funkcionalnostima vezanim za blog.
+
+Izazov je odrediti kom modulu pripada novi entitet, spram opisa odgovornosti modula. U takvim situacijama potrebno je da postavimo sledeća dva pitanja kada se pitamo da li entitet **E** treba smestiti u modul **M**:
+
+1. Ako biznis za koji pravim softver odluči da im ne treba modul M, da li brisanje modula M smisleno povlači i uklanjanje podataka vezanih za E (alternativa je da E ipak treba da ostane u sistemu)?
+2. Da li operacije koje rade sa E većinski koriste podatke iz M (alternativa je da većinski koriste podatke iz drugog modula)?
+
+Ako je odgovor DA na oba pitanja, E pripada M. Ako je odgovor NE na oba pitanja, E ne pripada M. Problem nastaje kada je odgovor na prvo pitanje DA, a na drugo NE. U tom slučaju treba da vagamo u kojoj meri operacije nad E koriste podatke iz drugih modula i da presečemo gde ima smisla da smestimo date funkcionalnosti.
+
+### b. Kreiranje entieta.
 TODO
 
 ## 2. Kreiranje servisa modula
