@@ -80,8 +80,20 @@ CREATE SCHEMA "blog";
 ```
 
 #### 3. Pokretanje migracija
+Biblioteka koju koristimo da radimo sa bazom, `Entity Framework` nudi mehanizam za automatsko kreiranje tabela u bazi podataka. Da bismo aktivirali ovu funkcionalnost, potrebno je da pokrenemo sledeću komandu u `package manager console` prozoru (u okviru Visual Studia).
 
+```
+Add-Migration -Name Init -Context StakeholdersContext -Project Explorer.Stakeholders.Infrastructure -StartupProject Explorer.API
+Update-Database -Context StakeholdersContext -Project Explorer.Stakeholders.Infrastructure -StartupProject Explorer.API
 
+Add-Migration -Name Init -Context ToursContext -Project Explorer.Tours.Infrastructure -StartupProject Explorer.API
+Update-Database -Context ToursContext -Project Explorer.Tours.Infrastructure -StartupProject Explorer.API
+
+Add-Migration -Name Init -Context BlogContext -Project Explorer.Blog.Infrastructure -StartupProject Explorer.API
+Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -StartupProject Explorer.API
+
+```
+Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke i da napravi potrebne tabele u bazi.
 
 ## 1. Kreiranje domenske klase
 TODO
