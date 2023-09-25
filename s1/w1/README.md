@@ -44,19 +44,41 @@ Potrebno je da:
 - U detaljima kartice su zabeležene dodatni podaci (*acceptance criteria*) za zadatak. U prvoj nedelji će se tekst svesti na pobrajanje polja koje entitet koji implementiramo treba da ima.
 
 ## 2. Izrada koda za serversku (backend) aplikaciju.
-Materijali za podršku ovog koraka su definisani u **zasebnoj stranici**.
+Materijali za podršku ovog koraka su definisani u **<a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w1/back-end.md" target="_blank">zasebnoj stranici</a>**.
 
 ## 3. Izrada koda za klijentsku (frontend) aplikaciju.
-Materijali za podršku ovog koraka su definisani u **zasebnoj stranici**.
+Materijali za podršku ovog koraka su definisani u **<a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w1/front-end.md" target="_blank">zasebnoj stranici</a>**.
 
-## 4. Otvori i dokumentu PR-ove.
-TODO
-Otvori PRove sa opisima, screenshots i reviewers	PR links	PR instrukcije.
+## 4. Otvori i dokumentuj PR-ove.
+U momentu kada je razvoj spreman za reviziju (rešenje se builda, testovi prolaze, funkcionalnost je implementirana) potrebno je da otvoriš PR na repozitorijumu za back-end i za front-end. Kako se otvara PR možeš proučiti **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request" target="_blank">ovde</a>**. Bitno je istaći da otvaramo PR gde hoćemo tvoju *feature granu* da spustimo na *development*.
+
+Uz otvaranje PRa je neophodno navesti prateću dokumentaciju u opis PRa:
+
+- Za back-end PR treba istaći (možeš kopirati teze ispod i popuniti ih u PR opisu):
+  - **Change goal**: Tekst korisničke priče ili link na karticu.
+  - **Database change**: Spisak izmena koje će zahtevati izmenu baze (npr. dodavanje nove tabele, uklanjanje ili dodavanje polja u entitetima koja se mapiraj na kolone tabele).
+- Za front-end PR treba istaći:
+  - **Change goal**: Tekst korisničke priče ili link na karticu.
+  - **UI changes**: Skup screenshotova koji ističu najbitnije izmene na korisničkom interfejsu (za prvu nedelju screenshot tabele i screenshot forme je dovoljan).
+
+Dokumentovanje navedenih informacija će kolegi olakšati reviziju koda, a tebi će pomoći da razviješ korisnu naviku.
 
 ## 5. Zatraži reviziju koda i odgovori na komentare.
-TODO
-Code review	CR comments	Code review smernice - PR doc, menjane datoteke (da li su to očekivane klase), nazivi, funkcije, konvencije
+Kada je PR napravljen, moguće je zatražiti reviziju putem *Reviewers* sekcije. Dogovori se sa timom ko će čije PRove da revidira. Kada budeš sam radio reviziju kolegi, potrudi se da to uradiš u dogovoreno vreme i da ostaviš komentare koji će pokazati da si se udubio u proces. Smernice za izradu revizije se nalaze **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank">ovde</a>.
+
+Tokom revizije koda obrati pažnju na:
+
+- Narušavanje timske konvencije.
+- Formatiranje i indentaciju koda.
+- Nazive koji su korišteni u svim identifikatorima.
+- Veličinu i složenost funkcija.
+- Veličinu i složenost klasa.
+
+Kada primetiš da su postojeće timske konvencije nedovoljno razrađene, zadatak ti je da javiš na deljenom četu (npr. putem Discorda) ostatku tima da postoji ova rupa u spisku konvencija vašeg tima.
+
+Nakon što kolega ostavi komentare, potrebno je da odgovoriš na njih dodatnim ispravkama ili kroz diskusiju. Bitno je da ostane pisani trag vaše interakcije i ovo ćemo pratiti kako bismo se uverili da ste izgurali proces do kraja.
 
 ## 6. Zatvori PR.
-TODO
-Resolved comments	Merged PR	Google sheet za pobrajanje deliverabli
+Kolega treba da potvrdi da su ispravke adekvatne putem još jedne revizije. U tom momentu je PR prihvaćen i može se zatvoriti uz prebacivanje koda sa tvoje feature grane na development.
+
+Ovom prilikom može nastati konflikt kod deljenih datoteka (npr. rutiranje u Angular aplikaciji, DbContext u .NET aplikaciji). Tom prilikom je neophodno rešiti konflikte, gde je preporuka da sigurniji studenti poslednji spajaju svoje grane sa developmentom kako bi rešili izazovnije konfliktne situacije.
