@@ -1,7 +1,7 @@
 Serverski deo aplikacije je izgrađen koristeći:
 
 - `ASP.NET` radni okvir za izgradnju Web aplikacije,
-- Entity Framework` biblioteku za objektno-relaciono mapiranje (pretvaranje objekata u redove SQL tabela i obratno),
+- `Entity Framework` biblioteku za objektno-relaciono mapiranje (pretvaranje objekata u redove SQL tabela i obratno),
 - `AutoMapper` biblioteke za pretvaranje DTO instanci u domenske objekte i obratno,
 - `xUnit` radni okvir za pisanje automatskih testova.
 - `PostgreSQL` bazu podataka sa `pgAdmin` aplikacijom za upravljanje bazom podataka.
