@@ -1,0 +1,1 @@
+Repozitorijum za materijale koji podržavaju izradu projekta iz predmeta "Projektovanje softvera".
