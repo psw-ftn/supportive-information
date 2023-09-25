@@ -19,25 +19,44 @@ Rešavanje zadatka kreće na Trello tabli, gde je potrebno da uradiš sledeće:
   <li>Kartica treba da bude dodljena tebi (Klik na karticu, Members -> Izaberi svoje ime).</li>
   <li>Rok za rešavanje kartice je postavljen do sledećih vežbi (Klik na karticu, Dates -> Odaberi datum).</li>
   <li>Kartica je postavljena u "In Progress" listu kartica.</li>
-  <li>U tvom kalendaru je definisano vreme za rešavanje kartice (preporuka: 2 slota od 2.5 sata, u šta će ući i pauza).</li>
-  <li>Naziv kartice je definisan prateći connextra šablon (As a... I want... So that...). U detaljima su zabeležene dodatni podaci (*acceptance criteria*) za zadatak.</li>
+  <li>U tvom kalendaru je definisano vreme za rešavanje kartice (više detalja ispod).</li>
+  <li>Tekst kartice je ispravno definisan (više detalja ispod).</li>
 </ol>
 
-Od navedenih koraka, treba posebnu pažnju obratiti na korak d. i e.
-
 ### d. Planiranje rada na kartici
-Obrati pažnju da je karticu potrebno kompletno rešiti do sledećih vežbi. Ovo uključuje i 5. korak - reviziju koda od strane kolege i rešavanje problema.
+Teško nam je da kažemo koliko vremena će ti biti potrebno da rešiš karticu jer zavisi od veštine sa kojom ulaziš u ovu priču. Ipak, verujemo da će većina uspeti da reši kompletan zadatak za 5 sati, a deo i brže. Obrati pažnju da je karticu potrebno kompletno rešiti do sledećih vežbi. Ovo uključuje i 5. korak - reviziju koda od strane kolege i rešavanje problema.
 
-Preporuka je da isplaniraš prvobitnu implementaciju (rešavanje koraka 2, 3 i 4) u prva 4 dana. Ovako ćeš ostaviti kolegi i sebi 2 dana da se uradi revizija i ispravi sve (korak 5), da biste mogli da zatvorite *pull request* (korak 6) dan pred vežbe.
+Prilikom planiranja treba da uzmemo u obzir potrebno vreme (do 5 sati) i zavisnosti koje postoje sa ostalim članovima tima (u ovom slučaju revizija koda i rešavanje revizije). Spram ovih zadataka je naša preporuka da:
+
+- Rezervišeš slot u kalendaru od 4 sata nekad u naredna 4 dana. Tokom ovog slota ti je cilj da rešiš korake 2, 3 i 4. Ako si nesiguran u svoje veštine, bolje je da ova 4 sata rezervišeš ranije u tom opsegu kako bi tražio pomoć ako ti bude potrebna.
+- Ostaviš kolegi i sebi bar 2 dana da se uradi revizija i da stigneš u okviru od 1 sat da odgovoriš na komentare, dobiješ potvrdu da je sve ok i zatvoriš *pull request* (korak 6) dan pred vežbe.
+- Bitno je da ostane taj 1 dan da se reše bilo kakvi konflikti koji će se pojaviti kod deljenih datoteka.
 
 ### e. Sređivanje teksta korisničke priče
-Svaka kartica predstavlja korisničku priču. 
+Svaka kartica predstavlja korisničku priču koja definiše želju koju korisnik ima za softver. Predstavlja značajno prostiji oblik slučaja korišćenja, gde **<a src="https://www.youtube.com/watch?v=RV6gnFKJY9U" target="_blank">[sledeći video]</a>** ističe njenu tipičnu strukturu (slobodno gledaj na x2).
 
+Potrebno je da:
 
+- Definišeš naslov korisničke priče prateći connextra šablon (As a... I want... So that...) istaknut u prethodnom videu.
+   - Najveći problem će ti predstavljati "So that" deo priče, gde je potrebno da istakneš korist koju korisnik dobija od funkcionalnosti.
+   - Izbegavaj da ponoviš "I want" deo teksta u "So that" sekciji, odnosno nemoj samo da preformulišeš drugi deo u trećem delu.
+   - Pored guglanja, sledeći upit na GPTu će ti pomoći da bolje razumeš ovaj deo "_I am having trouble with understanding what to write in the "So that <benefit>" part of a user story_". Napiši GPTu šta ti je "As a" i "I want" deo i istakni šta misliš da je "So that" deo i zašto to misliš. Kroz tu interakciju ćeš utvrditi svoje razumevanje ove celine.
+- U detaljima kartice su zabeležene dodatni podaci (*acceptance criteria*) za zadatak. U prvoj nedelji će se tekst svesti na pobrajanje polja koje entitet koji implementiramo treba da ima.
 
-Napravi granu za front i back, referenciraj ih u kartici.	Branch links	Git instrukcije.
-Napravi sve na backendu (endpoint + test).	Commit link	Videi .NET arhitekture početnog projekta (5 min), kako se pravi feature (10 min) i test (PSWB02 - struktura 10 min.).
-Napravi sve na frontu	Commit link	Videi Angular arhitekture početnog projekta (5 min) i kako se pravi feature (10 min).
+## 2. Izrada koda za serversku (backend) aplikaciju.
+Materijali za podršku ovog koraka su definisani u **zasebnoj stranici**.
+
+## 3. Izrada koda za klijentsku (frontend) aplikaciju.
+Materijali za podršku ovog koraka su definisani u **zasebnoj stranici**.
+
+## 4. Otvori i dokumentu PR-ove.
+TODO
 Otvori PRove sa opisima, screenshots i reviewers	PR links	PR instrukcije.
+
+## 5. Zatraži reviziju koda i odgovori na komentare.
+TODO
 Code review	CR comments	Code review smernice - PR doc, menjane datoteke (da li su to očekivane klase), nazivi, funkcije, konvencije
+
+## 6. Zatvori PR.
+TODO
 Resolved comments	Merged PR	Google sheet za pobrajanje deliverabli
