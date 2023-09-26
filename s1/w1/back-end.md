@@ -16,10 +16,10 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
   <li>Kako da napišemo automatski test koji proverava da sve radi.</li>
 </ol>
 
-Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 5 raditi svaki put kad razvijaš novu funkcionalnost. Redosled koraka 1 do 5 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
+Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 5 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 5 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
 
 ## 0. Organizacija i pokretanje projekta
-Prvi put kad sedneš da radiš na projektu ćeš morati da kloniraš repozitorijum svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
+Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
 
 Preporuka je da otvoriš Solution u svom razvojnom okruženju (naša preporuka je Visual Studio) i da ga istražiš pre nego što nastaviš da čitaš.
 
@@ -100,13 +100,12 @@ Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -Star
 Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke za migraciju (Add-Migration komanda) i da napravi potrebne tabele u bazi (Update-Database komanda).
 
 ## 1. Kreiranje domenske klase
-Kad god pristupimo rešavanju nove korisničke priče, potrebno je da otvorimo novu granu koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
+Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 
 Većina zadataka u prvoj nedelji podrazumevaju izradu novog entiteta u domenskom sloju. Za ovaj zadatak je potrebno:
 <ol type="a">
-  <li>Odabrati dobar modul u koji smeštaš novu klasu.</li>
+  <li>Odabrati dobar modul u koji smeštamo novu klasu.</li>
   <li>Kreirati entiteta u odgovarajućem `Core` projektu.</li>
-  <li>Srediti nasleđivanje i polja klase.</li>
 </ol>
 
 ### a. Izbor modula
@@ -123,11 +122,20 @@ Izazov je odrediti kom modulu pripada novi entitet, spram opisa odgovornosti mod
 
 Ako je odgovor DA na oba pitanja, E pripada M. Ako je odgovor NE na oba pitanja, E ne pripada M. Problem nastaje kada je odgovor na prvo pitanje DA, a na drugo NE. U tom slučaju treba da vagamo u kojoj meri operacije nad E koriste podatke iz drugih modula i da presečemo gde ima smisla da smestimo date funkcionalnosti.
 
-### b. Kreiranje entieta.
-TODO
+### b. Kreiranje entiteta.
+Da bismo kreirali novi entitet, potrebno je da:
+
+1. U okviru `Core` projekta odgovarajućeg modula otvorimo `Domain` direktorijum i u okviru njega napravimo klasu sa značajnim nazivom.
+2. Nova klasa nasleđuje `Entity` klasu iz `BuildingBlocks.Core` projekta.
+3. Nova klasa definiše polja koja odgovaraju zahtevu, gde stavljamo sve `set` metode na privatne ili ih zamenjujemo sa `init` (vrednost polja može da se postavi samo pri konstrukciji).
+4. Nova klasa ima konstruktor sa parametrima koji odgovaraju svim poljima. Konstruktor treba da validira prosleđene parametre.
+
+Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
 
 ## 2. Kreiranje servisa modula
-TODO
+Da bismo osposobili kompletan servis koji će pružati funkcionalnosti, potrebno je da:
+
+1. Definišemo interfejs servisa u okviru `API` projekta odgovarajućeg modula.
 
 ## 3. Kreiranje kontrolera
 TODO
