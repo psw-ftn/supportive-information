@@ -130,6 +130,8 @@ Da bismo kreirali novi entitet, potrebno je da:
 3. Nova klasa definiše polja koja odgovaraju zahtevu, gde stavljamo sve `set` metode na privatne ili ih zamenjujemo sa `init` (vrednost polja može da se postavi samo pri konstrukciji).
 4. Nova klasa ima konstruktor sa parametrima koji odgovaraju svim poljima. Konstruktor treba da validira prosleđene parametre.
 
+Možeš pogledati **<a href="https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs" target="_blank">Equipment klasu</a>** u početnom projektu da vidiš kako ispunjava prethodne korake.
+
 Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
 
 ## 2. Kreiranje servisa modula
@@ -159,7 +161,18 @@ Domain   - Definiše klase iz domenskog sloja.
 Mappers  - Konfiguriše "AutoMapper" biblioteku da automatski mapira DTO klase na domenske i obratno.
 UseCases - Definiše koordinatorske klase iz servisnog sloja.
 ```
-Potrebno je da definišeš servisnu klasu koja implementira povezani interfejs iz `API` projekta.
+Potrebno je da:
+
+1. U okviru konstruktora `Mappers/_MODULE_Profile` klase konfigurišeš mapiranje DTO klase na domenski objekat. U prostom slučaju ćeš za ovo iskoristiti sledeći kod: `CreateMap<_ENTITY_Dto, _ENTITY_>().ReverseMap();`. Za naprednija mapiranja istraži **<a href="https://docs.automapper.org/en/stable/Projection.html" target="_blank">dokumentaciju</a>**.
+2. Definišeš servisnu klasu koja implementira povezani interfejs iz `API` projekta. Klasu smeštaš u `UseCases`.
+3. Implementiraš servisnu klasu. Ovaj korak zahteva nešto dublju analizu zahteva korisničke priče.
+
+#### 3. Implementacija servisne klase
+U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase koje tvoje servisne klase mogu da naslede. Bitno je da razumeš pod kojim okolnostima ćeš koristiti koju klasu:
+
+1. `CrudService` implementira `Create`, `Read` (one i many), `Update` i `Delete` funkcije i koristan je da brzo osposobimo prostu CRUD funkcionalnost. Pošto nam je ovo zadatak za prvu nedelju, sve što treba da uradimo jeste da nasledimo ovu klasu i definišemo konstruktor koji će kroz *Dependency Injection* dobiti potrebne klase i proslediće ih roditelju. Za primer analiziraj 
+2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis radi dominantno sa jednim entitetom
+
 
 ## 3. Kreiranje kontrolera
 TODO
