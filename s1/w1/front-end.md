@@ -96,7 +96,7 @@ Dodatno pogledaj <a href="https://github.com/psw-ftn/tourism-fe/blob/main/Explor
 ## 3. Kreiranje novog entiteta i slanje na server.
 
 Funkcionalnost kreiranja novog entiteta zahteva slične korake kao i funkcionalnost prikaza entiteta.  
-Dakle potrebno je da:  
+Dakle potrebno je:  
 <ol type="a">
   <li>Odabrati dobar modul u koji smeštaš novu komponentu.</li>
   <li>Napraviti novu komponentu.</li>
@@ -116,4 +116,10 @@ Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zaht
 
 ## Bonus sadržaj
 Na sledećem <a href="https://youtu.be/aQEz9dlsUNk">videu</a> možeš pogledati sumarizaciju početnog projekta, dodatno su objašnjeni auth i material paketi.  
-Dodatan savet je da pogledaš material dokumentaciju i da proučiš postojeće elemente i probaš da ih integrišeš u svoj projekat. Ne zaboravi da za to koristiš MaterialModule gde treba da importuješ i eksportuješ elemente po dokumentaciji (npr. import MatButtonModule i export MatButton) a potom i importuješ MaterialModule u željeni modul.
+Dodatan savet je da pogledaš <a href="https://material.angular.io/components/categories">material dokumentaciju</a> i da proučiš postojeće elemente i probaš da ih integrišeš u svoj projekat. Korišćenje Angular Material-a se obično svodi na sledeće korake (uzećemo za primer Material Button).  
+1. Otvori API deo dokumentacije.
+2. Importuj potrebne stvari (import {MatButtonModule} from '@angular/material/button';).
+3. Smesti MatButtonModule u import deo MaterialModule-a.
+4. Smesti potrebne elemente u exports deo (MatButton).
+5. Importuj MaterialModule u modul gde ćeš koristiti MatButton (npr. AdministrationModule).
+6. Iskoristi mat-button u okviru equipment.component.html.
