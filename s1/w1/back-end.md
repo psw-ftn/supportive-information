@@ -105,7 +105,7 @@ Kada je baza podataka konfigurisana i migracije izvršene, trebalo bi da možeš
 
 Sledeći **[video](https://www.youtube.com/watch?v=CPkOQ0w_k3k&list=PLWTyGVhcibjYjL2hOQG2iuBXXIKVsjdwn)** prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 1. Kreiranje domenske klase
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 
@@ -140,7 +140,7 @@ Da bismo kreirali novi entitet, potrebno je da:
 **Primer**: Domenska klasa [Equipment.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs) iz početnog projekta.
 
 Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 2. Kreiranje servisa modula
 Da bismo osposobili kompletan servis koji će pružati funkcionalnosti, potrebno je da:
 
@@ -181,7 +181,7 @@ U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase 
 2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis: 1) radi većinski sa jednim entitetom i 2) ima metode koje se većinski ne preklapaju sa `CrudService` (npr. potrebne su samo 2 CRUD operacije i/ili ima više svojih metoda).
 
 **Primer**: Servisna CRUD klasa [EquipmentService.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/UseCases/Administration/EquipmentService.cs) iz početnog projekta.
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 3. Kreiranje kontrolera
 Kontrolerske klase koriste `ASP.NET` anotacije kako bi radni okvir pozvao njihove metode kada se odgovarajući HTTP zahtev izvrši. Sve kontrolerske klase su definisane u okviru `Explorer.API` projekta, koji je ujedno i jedini projekat koji zavisi od `ASP.NET` tehnologije.
 
@@ -201,7 +201,7 @@ Nakon definisanja kontrolerske klase, potrebno je da implementiraš sledeće:
 
 **Primer**: Kontrolerska klasa [EquipmentController.cs](https://github.com/psw-ftn/tourism-be/blob/32a7e23909158c6970047f308fbaad62804b6103/src/Explorer.API/Controllers/Administrator/Administration/EquipmentController.cs) iz početnog projekta.
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 4. Konfigurisanje skladištenja podataka
 Skladištenje podataka je odgovornost koja se rešava u `Infrastructure` projektu povezanog modula. Potrebno je da:
 
@@ -224,7 +224,7 @@ U situacijama kada nam nije dovoljan CRUD repozitorijum (što neće biti slučaj
 2. Definišeš implementaciju interfejsa repozitorijuma u okviru `Infrastructure` projekta, direktorijum `Database/Repositories`.
 3. Navedeš u servisu koji će koristiti dati repozitorijum interfejs repozitorijuma kao parametar konstruktora.
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 5. Ažuriranje mehanizma za ubrizgavanje zavisnosti
 Svaki modul rešava *dependency injection* u okviru svog `Infrastructure` projekta. Tamo se nalazi `Startup` klasa (npr. `ToursStartup`) koja sadrži dve bitne metode `SetupCore` i `SetupInfrastructure`.
 
@@ -241,7 +241,7 @@ Kada svi testovi prolaze, možeš da formiraš commit koji će sabrati sve izmen
 
 Sama commit poruka treba da ima prefiks `feat: ` kako bi se istaklo da je novi feature ubačen u sistem. Ovako se prati [često korištena konvencija](https://www.conventionalcommits.org/en/v1.0.0/) za commit poruke.
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 ## 6. Kreiranje automatskog testa
 Automatski testovi predstavljaju "kod koji testira naš kod". U objektno-orijentisanim jezicima poput C#a, automatski testovi se definišu unutar klasa, gde 1 test predstavlja 1 metodu klase. Klasa koja sadrži testove treba da predstavlja smislenu grupaciju datih testova.
 
@@ -249,9 +249,7 @@ Automatski testovi predstavljaju "kod koji testira naš kod". U objektno-orijent
 
 U C# svetu se često koristi `xUnit` biblioteka za pisanje automatskih testova. Ovo podrazumeva izdvajanje posebnog projekta koji koristi ovaj nuget paket. U našem početnom projektu su svi projekti sa sufiksom `Tests` testni projekti.
 
-**[Sledeći video](https://youtu.be/IB1gR01Ppo0)** analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
-
-Za ovaj korak je potrebno da:
+**[Sledeći video](https://youtu.be/IB1gR01Ppo0)** analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Po uzoru na date testove je potrebno da definišeš testove za svoju funkcionalnost, tako što ćeš:
 
 <ol type="a">
   <li>Proširiš testne skripte u "TestData" direktorijumu, tako da "delete" skripta uključi tvoju tabelu i da dodaš skriptu koja će ubaciti testne podatke za tvoj entitet.</li>
@@ -259,6 +257,6 @@ Za ovaj korak je potrebno da:
   <li>Ako si od poslednjeg pokretanja testova menjao domenski sloj tako da utiče na bazu podataka, potrebno je obrisati kompletnu testnu bazu pre nego što pokreneš testove.</li>
 </ol>
 
-**Primer**: Pored prethodnog videa, možeš da ispitaš sam **[kod testova](https://github.com/psw-ftn/tourism-be/tree/main/src/Modules/Tours/Explorer.Tours.Tests/Integration/Administration)** u detalje.
+**Primer**: Uz prethodni video, možeš da ispitaš sam **[kod testova](https://github.com/psw-ftn/tourism-be/tree/main/src/Modules/Tours/Explorer.Tours.Tests/Integration/Administration)** u detalje.
 
 Kada se uveriš da novi testovi prolaze, potrebno je da pokreneš sve testove u projektu kako bi bio siguran da stari kod radi. Tek onda možeš da formiraš commit sa kojim ćeš zaključiti razvoj. Ako je primarna izmena u ovom commitu vezana za dodavanje testova, prefiks commit poruke treba da bude `test:`.
