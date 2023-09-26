@@ -1,6 +1,6 @@
 # Analiza sajtova za uzor i definisanje zahteva
 U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti kao uzor za dizajniranje vašeg projekta. Analiza treba da obuhvati vizuelni i funkcionalni aspekt web aplikacija. Cilj ovog zadatka je da steknete uvid u efikasan dizajn i HCI principe koje možete primeniti prilikom izrade vašeg projekta.<br>
-Preuzmite tabelu i popunite je tokom analize. U nastavku teksta će biti istaknuto šta je tačno potrebno istražiti, a u zagradama će biti naznačeno u kojoj koloni tabele treba popuniti odgovarajuće informacije.
+Preuzmite <a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/Design_HCI_analysis.xlsx" target="_blank">tabelu</a> i popunite je tokom analize. U nastavku teksta će biti istaknuto šta je tačno potrebno istražiti, a u zagradama će biti naznačeno u kojoj koloni tabele treba popuniti odgovarajuće informacije.
 
 
 ## 1. Odabir relevantnih web aplikacija
@@ -64,7 +64,7 @@ Na kraju sprinta, kada su sve završene funkcionalnosti sa feature grana spojene
 <br><br><br><br>
 # Retrospektiva sprinta
 Retrospektiva je vreme da tim razmisli o prošlom sprintu, identifikuje šta je prošlo dobro ili loše, i isplanira šta bi se moglo poboljšati u narednom sprintu. Kroz retrospektivu tim postaje kohezivniji, efikasniji i svaki njegov član unapređuje svoju ekspertizu.<br>
-Potrebno je popuniti izveštaj za retrospektivu, koji možete preuzeti ovde. U nastavku teksta će biti opisano kako ga popuniti.
+Potrebno je popuniti izveštaj za retrospektivu, koji možete preuzeti <a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/Sprint review template.pptx" target="_blank">ovde</a>. U nastavku teksta će biti opisano kako ga popuniti.
 
 <ol type="a">
   <li>Priprema za retrospektivu: Pre retrospektive svaki član tima treba da pregleda sve korisničke priče i zadatke na kojima je radio tokom sprinta. Podsetite se šta je postignuto i sa kojim izazovima ste se susreli. Ova priprema je neophodna kako bi se popunio izveštaj koji zahteva da se za svakog člana navedu korisničke priče na kojima je radio, procenjeni i stvarni poeni koje priča nosi, i interesantni aspekti vezani za korisničku priču. Svi članovi tima treba da pošalju Scrum masteru ove informacije kako bi se mogao popuniti prvi deo izveštaja koji se odnosi na svakog člana i korisničke priče na kojima je radio.</li>
