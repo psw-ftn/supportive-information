@@ -68,6 +68,8 @@ Većina zadataka u prvoj nedelji podrazumevaju izradu stranica za prikaz entitet
   <li>Rutirati komponentu.</li>
 </ol>
 
+### a. Izbor modula
+
 U startu počinjemo sa 6 feature-modula:
 
 <b>Administration</b> - slučajevi korišćenja vezani za admina (upravljanje opremom, korisnicima i generalno administriranjem sistema)  
@@ -78,3 +80,8 @@ U startu počinjemo sa 6 feature-modula:
 <b>TourExecution</b> - slučajevi korišćenja vezani za izvršavanje ture (prikaz napretka u ovkiru jedne ture, otkrivanje tajne, pomeranje pozicije na mapi itd.)  
 
 Izazov je odrediti kom modulu pripada nova komponenta. Odluka se donosi na osnovu toga kom modulu najviše ima smisla da pripada nova komponenta na osnovu opisa modula.
+
+### b. Kreiranje nove komponente
+
+Nova komponenta se kreira tako što se pozicioniraš u folder željenog modula i pokreneš komandu ng g c naziv-komponente.
+
