@@ -231,6 +231,25 @@ Svaki modul rešava *dependency injection* u okviru svog `Infrastructure` projek
 `SetupCore` definiše koje klase iz `Core` projekta treba ubrizgati na mestu kojih interfejsa. `SetupInfrastructure` isto radi, samo za klase koje su implementirane u okviru `Infrastructure` projekta.
 
 **Primer**: [ToursStartup.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Infrastructure/ToursStartup.cs#L24-L31) sadrži primer kako se definiše *dependency injection* za servise i kako za CRUD repozitorijum.
+
+### Testiranje nove funkcionalnosti
+U ovom momentu je aplikacija spremna za testiranje putem 'Swagger'a ili klijentske aplikacije. Preporuka je da 
+
 <br/><br/><br/><br/><br/><br/>
 ## 6. Kreiranje automatskog testa
-TODO
+Automatski testovi predstavljaju "kod koji testira naš kod". U objektno-orijentisanim jezicima poput C#a, automatski testovi se definišu unutar klasa, gde 1 test predstavlja 1 metodu klase. Klasa koja sadrži testove treba da predstavlja smislenu grupaciju datih testova.
+
+**[Sledeći video](https://youtu.be/fFnWiwdwP9w)** prikazuje kako izgleda struktura jednog testa i svojstva koje možemo pronaći u testnim klasama.
+
+U C# svetu se često koristi `xUnit` biblioteka za pisanje automatskih testova. Ovo podrazumeva izdvajanje posebnog projekta koji koristi ovaj nuget paket. U našem početnom projektu su svi projekti sa sufiksom `Tests` testni projekti.
+
+**[Sledeći video]()** TODO analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
+
+Za ovaj korak je potrebno da:
+
+<ol type="a">
+  <li>Proširiš testne skripte u "TestData" direktorijumu, tako da "delete" skripta uključi tvoju tabelu i da dodaš skriptu koja će ubaciti testne podatke za tvoj entitet.</li>
+  <li>Definišeš Testne klase koje će pozivati metode kontrolera i proveravati da li je odgovor ispravan i da li je baza izmenjena na očekivan način.</li>
+</ol>
+
+**Primer**: Pored prethodnog videa, možeš da ispitaš sam **[kod testova](https://github.com/psw-ftn/tourism-be/tree/main/src/Modules/Tours/Explorer.Tours.Tests/Integration/Administration)** u detalje.
