@@ -13,7 +13,7 @@ Postepeno ćemo se upoznavati sa radnim okvirom i kroz kurs ćemo sve pametnije 
   <li>Kako da obrišemo postojeći entitet.</li>
 </ol>
 
-Nulti i prvi korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 2 do 6 raditi svaki put kad razvijaš novu funkcionalnost. Redosled koraka 2 do 6 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
+Nulti i prvi korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 2 do 6 raditi svaki put kad razvijaš novu funkcionalnost.
 
 ## 0. Organizacija i pokretanje projekta
 
@@ -32,7 +32,7 @@ Kako bi pokretali/kreirali angular projekte na svom računaru potrebno je instal
 2. <a href="https://www.npmjs.com/">npm</a> - (provera verzije: npm --version)
 3. angular cli - (npm install -g @angular/cli) (provera verzije: ng --version)
 
-Obratiti pažnju na to da Angular framework često zna da prijavljuje grešku bez razloga, najčešće u dodavanju novih modula ili menjanja putanje fajla te je potrebno prekinuti izvršavanje programa i opet pokrenuti komandu ng serve.
+Obratiti pažnju na to da Angular radni okvir često zna da prijavljuje grešku bez razloga, najčešće u dodavanju novih modula ili menjanja putanje fajla te je potrebno prekinuti izvršavanje programa i opet pokrenuti komandu ng serve.
 
 Pregled fajlova van src foldera projekta:
 1. <b>.editorconfig</b> je fajl koji nam omogućava konfiugraciju našeg editora koda (VSC, WebStorm). Potrebno je da svi u okviru tima imaju identičan .editorconfig kako git ne bi prijavljivao razlike u formatiranju koda (space-ing, indentacija, prelamanje koda itd.).
@@ -49,16 +49,16 @@ Pregled fajlova van src foldera projekta:
 ## 1. Od čega se sastoje komponente i moduli?
 
 <b>Definicija komponente:</b>
-Komponenta predstavlja osnovnu gradivnu jedinicu svake stranice u Angular aplikaciji. Jednu komponentu čine TypeSrcript, HTML i CSS deo. TypeScript deo vodi računa o podacima koje komponenta renderuje i životnom ciklusu komponente (https://angular.io/guide/lifecycle-hooks), HTML deo daje strukturu pogleda, dok CSS daje stilove pogledu. U daljem tekstu stranicom će se smatrati pogled na UI koji je sastavljen od jedne ili više komponenti.
+Komponenta predstavlja osnovnu gradivnu jedinicu svake stranice u Angular aplikaciji. Jednu komponentu čine TypeSrcript, HTML i CSS deo. TypeScript deo vodi računa o podacima koje komponenta renderuje i <a href="https://angular.io/guide/lifecycle-hooks">životnom ciklusu komponente</a>, HTML deo daje strukturu pogleda, dok CSS daje stilove pogledu. U daljem tekstu stranicom će se smatrati pogled na UI koji je sastavljen od jedne ili više komponenti.
 Komponente se mogu ugrađivati jedne u drugu i rutirati. Na sledećem <a href="https://www.youtube.com/watch?v=nF411IGhZjs">videu</a> pogledaj više o komponentama a možeš baciti pogled i <a href="https://angular.io/guide/component-overview">ovde</a>.  
 
 <b>Definicija modula:</b>
 Angular moduli predstavljaju kohezivne celine od kojih se sastoji jedna Angular aplikacija. Moduli nam omogućavaju da grupišemo komponente, direktive i servise koji su povezani. Angular aplikaciju možeš zamisliti kao puzlu gde je svaki deo (modul) potreban kako bi video celu aplikaciju kako funkcioniše. Više o modulima možeš pogledati <a href="https://angular.io/guide/ngmodules">ovde</a>.
 
-## 2. Kako da dodam novu komponentu i uvežem podatke?
+## 2. Kako da dodam novu komponentu i prikažem podatke?
 
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da otvorimo novu granu koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
-Većina zadataka u prvoj nedelji podrazumevaju izradu stranica za prikaz entiteta (a potom i za izmenu i brisanje). Za ovaj zadatak je potrebno:
+Većina zadataka u prvoj nedelji podrazumevaju izradu stranice koja ima komponentu za prikaz/brisanje entiteta (a potom i komponentu za izmenu/dodavanje entiteta). Za ovaj zadatak je potrebno:
 
 <ol type="a">
   <li>Odabrati dobar modul u koji smeštaš novu komponentu.</li>
@@ -93,3 +93,23 @@ Za komunikaciju sa serverom će biti potreban servisni sloj u klijentskoj aplika
 Kako bi korisnik mogao da pristupi komponenti koju smo napravili trebalo bi je rutirati. U narednom <a href="https://youtu.be/66qT7-ZXXUk">videu</a> možeš pogledati kako se rutira komponenta.  
 Dodatno pogledaj <a href="https://github.com/psw-ftn/tourism-fe/blob/main/Explorer/src/app/feature-modules/layout/navbar/navbar.component.html">kod</a> da vidiš kako da preko button-a menjaš trenutnu rutu aplikacije (obrati pažnju na [routerLink]).
 
+## 3. Kreiranje novog entiteta i slanje na server.
+
+Funkcionalnost kreiranja novog entiteta zahteva slične korake kao i funkcionalnost prikaza entiteta.  
+Dakle potrebno je da:  
+<ol type="a">
+  <li>Odabrati dobar modul u koji smeštaš novu komponentu.</li>
+  <li>Napraviti novu komponentu.</li>
+  <li>Poslati podatke na server.</li>
+  <li>Rutirati komponentu.</li>
+</ol>
+
+Svi koraci a-d su prikazani u narednom <a href="https://youtu.be/GZa4YRagKt8">videu</a>.
+
+## 4. Ažuriranje postojećeg entiteta i slanje na server.
+
+Ukoliko si prehodno implementirao/la funckionalnost 2 i 3 možeš iskoristiti već postojeću komponentu (formu) za ažuriranje podataka o entietu. Pogledaj sledeći <a href="">video</a>
+
+## 5. Brisanje postojećeg entiteta.
+
+Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj kraj prethodnog videa (navesti minute). 
