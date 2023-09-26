@@ -98,6 +98,12 @@ Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -Star
 
 ```
 Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke za migraciju (Add-Migration komanda) i da napravi potrebne tabele u bazi (Update-Database komanda).
+
+### c. Testiranje pokrenute aplikacije
+Kada je baza podataka konfigurisana i migracije izvršene, trebalo bi da možeš da pokreneš serversku aplikaciju i da interaguješ sa njom putem klijentske aplikacije ili putem `Swagger` biblioteke koja će iskočiti kada se serverska aplikacija pokrene.
+
+Sledeći **video** TODO prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
+
 <br/><br/><br/><br/><br/><br/>
 ## 1. Kreiranje domenske klase
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
@@ -165,7 +171,7 @@ Potrebno je da:
 
 1. U okviru konstruktora `Mappers/_MODULE_Profile` klase konfigurišeš mapiranje DTO klase na domenski objekat. U prostom slučaju ćeš za ovo iskoristiti sledeći kod: `CreateMap<_ENTITY_Dto, _ENTITY_>().ReverseMap();`. Za naprednija mapiranja istraži **<a href="https://docs.automapper.org/en/stable/Projection.html" target="_blank">dokumentaciju</a>**.
 2. Definišeš servisnu klasu koja implementira povezani interfejs iz `API` projekta. Klasu smeštaš u `UseCases`.
-3. Implementiraš servisnu klasu. Ovaj korak zahteva nešto dublju analizu zahteva korisničke priče.
+3. Implementiraš servisnu klasu (detalji ispod).
 
 #### Implementacija servisne klase
 U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase koje tvoje servisne klase mogu da naslede. Bitno je da razumeš pod kojim okolnostima ćeš koristiti koju klasu:
@@ -176,9 +182,26 @@ U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase 
 **Primer**: Servisna CRUD klasa [EquipmentService.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/UseCases/Administration/EquipmentService.cs) iz početnog projekta.
 <br/><br/><br/><br/><br/><br/>
 ## 3. Kreiranje kontrolera
-TODO
+Kontrolerske klase koriste `ASP.NET` anotacije kako bi radni okvir pozvao njihove metode kada se odgovarajući HTTP zahtev izvrši. Sve kontrolerske klase su definisane u okviru `Explorer.API` projekta, koji je ujedno i jedini projekat koji zavisi od `ASP.NET` tehnologije.
+
+Potrebno je da:
+<ol type="a">
+  <li>Odrediš gde da postaviš kontrolersku klasu koja će pozivati novi servis. Kontrolerske klase se nalaze unutar `Controllers` direktorijuma, koji je dalje segmentiran spram korisničkih rola. Čitajući tekst korisničke priče (As a... deo) možemo da odredimo u koji direktorijum treba da smestimo novi kontroler.</li>
+  <li>Implementiraš kontrolersku klasu (detalji ispod).</li>
+</ol>
+
+### b. Implementacija kontrolerske klase
+Nakon definisanja kontrolerske klase, potrebno je da implementiraš sledeće:
+
+1. Klasa treba da nasledi `BaseApiController` i da iznad svog naziva sadrži anotacije `[Authorize(Policy = "_ROLE_Policy")]` i `[Route("api/_USE_CASE_/_ENTITY_")]`, gde ćeš _ROLE_ zameniti sa administrator, tourist ili author u zavisnosti od korisnika.
+2. Klasa ima privatno polje koje sadrži interfejs servisa, koje dobija putem konstruktora.
+3. Klasa definiše jednu ili više metoda koje pozivaju servisne metode i odgovore od servisa vraćaju putem metode `CreateResponse`.
+4. Svaka metoda ima odgovarajuću anotaciju za HTTP metodu i dodatnu URL putanju.
+
+**Primer**: Kontrolerska klasa [EquipmentController.cs](https://github.com/psw-ftn/tourism-be/blob/32a7e23909158c6970047f308fbaad62804b6103/src/Explorer.API/Controllers/Administrator/Administration/EquipmentController.cs) iz početnog projekta.
+
 <br/><br/><br/><br/><br/><br/>
-## 4. Kreiranje repozitorijuma
+## 4. Konfigurisanje skladištenja podataka
 TODO
 <br/><br/><br/><br/><br/><br/>
 ## 5. Kreiranje automatskog testa
