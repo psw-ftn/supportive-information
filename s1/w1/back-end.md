@@ -130,7 +130,7 @@ Da bismo kreirali novi entitet, potrebno je da:
 3. Nova klasa definiše polja koja odgovaraju zahtevu, gde stavljamo sve `set` metode na privatne ili ih zamenjujemo sa `init` (vrednost polja može da se postavi samo pri konstrukciji).
 4. Nova klasa ima konstruktor sa parametrima koji odgovaraju svim poljima. Konstruktor treba da validira prosleđene parametre.
 
-Možeš pogledati **<a href="https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs" target="_blank">Equipment klasu</a>** u početnom projektu da vidiš kako ispunjava prethodne korake.
+**Primer**: Domenska klasa [Equipment.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs) iz početnog projekta.
 
 Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
 
@@ -171,8 +171,9 @@ Potrebno je da:
 U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase koje tvoje servisne klase mogu da naslede. Bitno je da razumeš pod kojim okolnostima ćeš koristiti koju klasu:
 
 1. `CrudService` implementira `Create`, `Read` (one i many), `Update` i `Delete` funkcije i koristan je da brzo osposobimo prostu CRUD funkcionalnost. Pošto nam je ovo zadatak za prvu nedelju, sve što treba da uradimo jeste da nasledimo ovu klasu i definišemo konstruktor koji će kroz *Dependency Injection* dobiti potrebne klase i proslediće ih roditelju. Za primer analiziraj 
-2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis radi dominantno sa jednim entitetom
+2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis: 1) radi većinski sa jednim entitetom i 2) ima metode koje se većinski ne preklapaju sa `CrudService` (npr. potrebne su samo 2 CRUD operacije i/ili ima više svojih metoda).
 
+**Primer**: Servisna CRUD klasa [EquipmentService.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/UseCases/Administration/EquipmentService.cs) iz početnog projekta.
 
 ## 3. Kreiranje kontrolera
 TODO
