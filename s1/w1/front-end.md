@@ -55,7 +55,7 @@ Komponente se mogu ugrađivati jedne u drugu i rutirati. Na sledećem <a href="h
 <b>Definicija modula:</b>
 Angular moduli predstavljaju kohezivne celine od kojih se sastoji jedna Angular aplikacija. Moduli nam omogućavaju da grupišemo komponente, direktive i servise koji su povezani. Angular aplikaciju možeš zamisliti kao puzlu gde je svaki deo (modul) potreban kako bi video celu aplikaciju kako funkcioniše. Više o modulima možeš pogledati <a href="https://angular.io/guide/ngmodules">ovde</a>.
 
-## 2. Kako da dodam novu komponentu i prikažem podatke?
+## 2. Dodavanje nove komponente i prikaz podataka.
 
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da otvorimo novu granu koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 Većina zadataka u prvoj nedelji podrazumevaju izradu stranice koja ima komponentu za prikaz/brisanje entiteta (a potom i komponentu za izmenu/dodavanje entiteta). Za ovaj zadatak je potrebno:
