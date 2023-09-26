@@ -17,7 +17,7 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
 </ol>
 
 Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 5 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 5 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
-
+<br/><br/>
 ## 0. Organizacija i pokretanje projekta
 Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
 
@@ -98,10 +98,7 @@ Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -Star
 
 ```
 Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke za migraciju (Add-Migration komanda) i da napravi potrebne tabele u bazi (Update-Database komanda).
-
-
-
-
+<br/><br/><br/><br/>
 ## 1. Kreiranje domenske klase
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 
@@ -136,10 +133,7 @@ Da bismo kreirali novi entitet, potrebno je da:
 **Primer**: Domenska klasa [Equipment.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs) iz početnog projekta.
 
 Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
-
-
-
-
+<br/><br/><br/><br/>
 ## 2. Kreiranje servisa modula
 Da bismo osposobili kompletan servis koji će pružati funkcionalnosti, potrebno je da:
 
@@ -173,19 +167,19 @@ Potrebno je da:
 2. Definišeš servisnu klasu koja implementira povezani interfejs iz `API` projekta. Klasu smeštaš u `UseCases`.
 3. Implementiraš servisnu klasu. Ovaj korak zahteva nešto dublju analizu zahteva korisničke priče.
 
-#### 3. Implementacija servisne klase
+#### Implementacija servisne klase
 U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase koje tvoje servisne klase mogu da naslede. Bitno je da razumeš pod kojim okolnostima ćeš koristiti koju klasu:
 
 1. `CrudService` implementira `Create`, `Read` (one i many), `Update` i `Delete` funkcije i koristan je da brzo osposobimo prostu CRUD funkcionalnost. Pošto nam je ovo zadatak za prvu nedelju, sve što treba da uradimo jeste da nasledimo ovu klasu i definišemo konstruktor koji će kroz *Dependency Injection* dobiti potrebne klase i proslediće ih roditelju. Za primer analiziraj 
 2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis: 1) radi većinski sa jednim entitetom i 2) ima metode koje se većinski ne preklapaju sa `CrudService` (npr. potrebne su samo 2 CRUD operacije i/ili ima više svojih metoda).
 
 **Primer**: Servisna CRUD klasa [EquipmentService.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/UseCases/Administration/EquipmentService.cs) iz početnog projekta.
-
+<br/><br/><br/><br/>
 ## 3. Kreiranje kontrolera
 TODO
-
+<br/><br/><br/><br/>
 ## 4. Kreiranje repozitorijuma
 TODO
-
+<br/><br/><br/><br/>
 ## 5. Kreiranje automatskog testa
 TODO
