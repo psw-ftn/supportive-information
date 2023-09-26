@@ -102,10 +102,10 @@ Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke z
 ## 1. Kreiranje domenske klase
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 
-Većina zadataka u prvoj nedelji podrazumevaju izradu novog entiteta u domenskom sloju. Za ovaj zadatak je potrebno:
+Većina zadataka u prvoj nedelji podrazumevaju izradu novog entiteta u domenskom sloju. Za ovaj zadatak je potrebno da:
 <ol type="a">
-  <li>Odabrati dobar modul u koji smeštamo novu klasu.</li>
-  <li>Kreirati entiteta u odgovarajućem `Core` projektu.</li>
+  <li>Odabereš dobar modul u koji smeštamo novu klasu.</li>
+  <li>Kreiraš entitet u odgovarajućem `Core` projektu.</li>
 </ol>
 
 ### a. Izbor modula
@@ -135,7 +135,31 @@ Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktori
 ## 2. Kreiranje servisa modula
 Da bismo osposobili kompletan servis koji će pružati funkcionalnosti, potrebno je da:
 
-1. Definišemo interfejs servisa u okviru `API` projekta odgovarajućeg modula.
+<ol type="a">
+  <li>Definišeš interfejs servisa i povezane DTO.</li>
+  <li>Definišeš implementacije servisa i DTO-Domain mapiranja.</li>
+</ol>
+
+### a. Definisanje interfejsa servisa i DTO klase
+Interfejse servisa i DTO klase definišemo u okviru `API` projekta povezanog modula. Ovaj projekat sadrži tri veća direktorijuma:
+```
+Dtos      - Definiše DTO klase koje dolaze sa klijentske aplikacije.
+Internal  - Definiše interne interfejse servisa modula koje će koristiti drugi moduli (ovo nam ne treba u prvoj nedelji).
+Public    - Definiše javne interfejse servisa koje će pozivati kontroleri.
+```
+Potrebno je da:
+
+1. Definišeš odgovarajuću DTO klasu koja će se mapirati na domensku klasu iz prethodnog koraka. **DTO klasa, za razliku od domenske klase, treba da ima javne get i set metode.**
+2. Definišeš interfejs datoteku za tvoj servis koja će izlistati sve metode koje treba da podržiš za svoju korisničku priču i **ništa van toga**. Metode prihvataju i vraćaju DTO klase, a ne domenske klase.
+
+### b. Definisanje implementacije servisa i mapiranje
+Implementacije servisa se smeštaju u `Core` projekat povezanog modula. Ovaj projekat sadrži tri veća direktorijuma:
+```
+Domain   - Definiše klase iz domenskog sloja.
+Mappers  - Konfiguriše "AutoMapper" biblioteku da automatski mapira DTO klase na domenske i obratno.
+UseCases - Definiše koordinatorske klase iz servisnog sloja.
+```
+Potrebno je da definišeš servisnu klasu koja implementira povezani interfejs iz `API` projekta.
 
 ## 3. Kreiranje kontrolera
 TODO
