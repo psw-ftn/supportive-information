@@ -3,13 +3,13 @@ U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti k
 Preuzmite <a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/Design_HCI_analysis.xlsx" target="_blank">tabelu</a> i popunite je tokom analize. U nastavku teksta će biti istaknuto šta je tačno potrebno istražiti, a u zagradama će biti naznačeno u kojoj koloni tabele treba popuniti odgovarajuće informacije.
 
 
-## 1. Odabir relevantnih web aplikacija
+### 1. Odabir relevantnih web aplikacija
 Potrebno je odabrati minimum dve web aplikacije koje imaju sličan domen i ciljnu publiku kao vaš projekat. Aplikacije treba da budu dovoljno kompleksne i bogate funkcionalnostima kako biste mogli izvršiti kvalitetnu analizu. Zabeležiti sledeće podatke:
 - Naziv aplikacije (Upisati informaciju u koloni <i>Title</i>)
 - Link do aplikacije (<i>Link</i>)
 - Opis čemu aplikacija služi (<i>Description</i>)
 
-## 2. Analiza početne stranice (landing page)
+### 2. Analiza početne stranice (landing page)
 Analiza početne stranice web aplikacije uključuje:
 <ol type="a">
   <li>Analizu dizajna i rasporeda vizuelnih elemenata</li>
