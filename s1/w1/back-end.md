@@ -99,6 +99,9 @@ Update-Database -Context BlogContext -Project Explorer.Blog.Infrastructure -Star
 ```
 Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke za migraciju (Add-Migration komanda) i da napravi potrebne tabele u bazi (Update-Database komanda).
 
+
+
+
 ## 1. Kreiranje domenske klase
 Kad god pristupimo rešavanju nove korisničke priče, potrebno je da **otvorimo novu granu** koju ćemo izvući iz `development` grane. Ovo radimo putem `git branch feat/IME_FEATURA` komande. Nakon kreiranja grane, možemo da uradimo `git checkout feat/IME_FEATURA` i da krenemo sa razvojem.
 
@@ -133,6 +136,9 @@ Da bismo kreirali novi entitet, potrebno je da:
 **Primer**: Domenska klasa [Equipment.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/Domain/Equipment.cs) iz početnog projekta.
 
 Kako nam složenost projekta bude rasla videćemo da izdelimo `Domain` direktorijum na poddirektorijume.
+
+
+
 
 ## 2. Kreiranje servisa modula
 Da bismo osposobili kompletan servis koji će pružati funkcionalnosti, potrebno je da:
