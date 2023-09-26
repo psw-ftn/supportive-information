@@ -61,7 +61,7 @@ Da bi aplikacija mogla da se koristi, potrebno je podesiti bazu podataka tako š
 2. Definisati potrebne šeme.
 3. Pokrenuti migracije koje automatski kreiraju tabele.
 
-Navedeni koraci su sabrani u **[video materijalu](www.google.com)** radi lakšeg snalaženja.
+Navedeni koraci su sabrani u **[video materijalu](https://youtu.be/bkp9IVJxq7E)** radi lakšeg snalaženja.
 
 #### 1. Osposobljavanje konekcije ka bazi
 U okviru `Explorer.BuildingBlocks.Infrastructure` projekta se nalazi klasa `DbConnectionStringBuilder`. Ovde je definisan kod putem kog se aplikacija kači na bazu. Izdvajamo delove koda na koje treba obratiti pažnju:
@@ -103,7 +103,7 @@ Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke z
 ### c. Testiranje pokrenute aplikacije
 Kada je baza podataka konfigurisana i migracije izvršene, trebalo bi da možeš da pokreneš serversku aplikaciju i da interaguješ sa njom putem klijentske aplikacije ili putem `Swagger` biblioteke koja će iskočiti kada se serverska aplikacija pokrene.
 
-Sledeći **[video](www.google.com)** prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
+Sledeći **[video](https://www.youtube.com/watch?v=CPkOQ0w_k3k&list=PLWTyGVhcibjYjL2hOQG2iuBXXIKVsjdwn)** prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
 
 <br/><br/><br/><br/><br/><br/>
 ## 1. Kreiranje domenske klase
@@ -249,7 +249,7 @@ Automatski testovi predstavljaju "kod koji testira naš kod". U objektno-orijent
 
 U C# svetu se često koristi `xUnit` biblioteka za pisanje automatskih testova. Ovo podrazumeva izdvajanje posebnog projekta koji koristi ovaj nuget paket. U našem početnom projektu su svi projekti sa sufiksom `Tests` testni projekti.
 
-**[Sledeći video](www.google.com)** analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
+**[Sledeći video](https://youtu.be/IB1gR01Ppo0)** analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
 
 Za ovaj korak je potrebno da:
 
