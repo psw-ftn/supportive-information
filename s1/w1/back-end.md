@@ -61,7 +61,7 @@ Da bi aplikacija mogla da se koristi, potrebno je podesiti bazu podataka tako š
 2. Definisati potrebne šeme.
 3. Pokrenuti migracije koje automatski kreiraju tabele.
 
-Navedeni koraci su sabrani u **video materijalu** radi lakšeg snalaženja. TODO
+Navedeni koraci su sabrani u **[video materijalu](www.google.com)** radi lakšeg snalaženja.
 
 #### 1. Osposobljavanje konekcije ka bazi
 U okviru `Explorer.BuildingBlocks.Infrastructure` projekta se nalazi klasa `DbConnectionStringBuilder`. Ovde je definisan kod putem kog se aplikacija kači na bazu. Izdvajamo delove koda na koje treba obratiti pažnju:
@@ -103,7 +103,7 @@ Prethodna komanda će u svakom `Infrastructure` projektu da generiše datoteke z
 ### c. Testiranje pokrenute aplikacije
 Kada je baza podataka konfigurisana i migracije izvršene, trebalo bi da možeš da pokreneš serversku aplikaciju i da interaguješ sa njom putem klijentske aplikacije ili putem `Swagger` biblioteke koja će iskočiti kada se serverska aplikacija pokrene.
 
-Sledeći **video** TODO prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
+Sledeći **[video](www.google.com)** prikazuje kako `Swagger` može da se koristi da testira rad aplikacije. Kroz isti video prolazimo standardan tok podataka - od kontrolera, preko servisa, do baze podataka i nazad.
 
 <br/><br/><br/><br/><br/><br/>
 ## 1. Kreiranje domenske klase
@@ -233,7 +233,13 @@ Svaki modul rešava *dependency injection* u okviru svog `Infrastructure` projek
 **Primer**: [ToursStartup.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Infrastructure/ToursStartup.cs#L24-L31) sadrži primer kako se definiše *dependency injection* za servise i kako za CRUD repozitorijum.
 
 ### Testiranje nove funkcionalnosti
-U ovom momentu je aplikacija spremna za testiranje putem 'Swagger'a ili klijentske aplikacije. Preporuka je da 
+U ovom momentu je aplikacija spremna za testiranje putem 'Swagger'a ili klijentske aplikacije. Istestiraj funkcionalnost ručno da vidiš da dobijaš očekivano ponašanje.
+
+Sledeći korak podrazumeva pokretanje svih postojećih automatskih testova. U `Test Explorer` panelu `Visual Studio` alata možeš aktivirati `Run All Tests` komandu.
+
+Kada svi testovi prolaze, možeš da formiraš commit koji će sabrati sve izmene. Pre nego što uradiš `git add .` i `git commit` proveri sa `git status` da li si izmenjenje samo one datoteke koje su trebale da budu izmenjene sa ovim razvojem. Ako uočiš datoteku koja ne bi trebala da je menjana, možeš da iskoristiš komandu `git diff PATH_TO_FILE` da ispitaš šta je izmena. Ako si nešto izmenio greškom, možeš da iskoristiš `git checkout PATH_TO_FILE` da poništiš izmenu.
+
+Sama commit poruka treba da ima prefiks `feat: ` kako bi se istaklo da je novi feature ubačen u sistem. Ovako se prati [često korištena konvencija](https://www.conventionalcommits.org/en/v1.0.0/) za commit poruke.
 
 <br/><br/><br/><br/><br/><br/>
 ## 6. Kreiranje automatskog testa
@@ -243,13 +249,16 @@ Automatski testovi predstavljaju "kod koji testira naš kod". U objektno-orijent
 
 U C# svetu se često koristi `xUnit` biblioteka za pisanje automatskih testova. Ovo podrazumeva izdvajanje posebnog projekta koji koristi ovaj nuget paket. U našem početnom projektu su svi projekti sa sufiksom `Tests` testni projekti.
 
-**[Sledeći video]()** TODO analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
+**[Sledeći video](www.google.com)** analizira postojeće testove koji postoje u `Explorer.Tours.Tests` projektu. Posebna vrsta testa su arhitekturalni testovi, koji nam nisu interesantni u ovom momentu.
 
 Za ovaj korak je potrebno da:
 
 <ol type="a">
   <li>Proširiš testne skripte u "TestData" direktorijumu, tako da "delete" skripta uključi tvoju tabelu i da dodaš skriptu koja će ubaciti testne podatke za tvoj entitet.</li>
   <li>Definišeš Testne klase koje će pozivati metode kontrolera i proveravati da li je odgovor ispravan i da li je baza izmenjena na očekivan način.</li>
+  <li>Ako si od poslednjeg pokretanja testova menjao domenski sloj tako da utiče na bazu podataka, potrebno je obrisati kompletnu testnu bazu pre nego što pokreneš testove.</li>
 </ol>
 
 **Primer**: Pored prethodnog videa, možeš da ispitaš sam **[kod testova](https://github.com/psw-ftn/tourism-be/tree/main/src/Modules/Tours/Explorer.Tours.Tests/Integration/Administration)** u detalje.
+
+Kada se uveriš da novi testovi prolaze, potrebno je da pokreneš sve testove u projektu kako bi bio siguran da stari kod radi. Tek onda možeš da formiraš commit sa kojim ćeš zaključiti razvoj. Ako je primarna izmena u ovom commitu vezana za dodavanje testova, prefiks commit poruke treba da bude `test:`.
