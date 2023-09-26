@@ -108,14 +108,14 @@ Svi koraci a-d su prikazani u narednom <a href="https://youtu.be/GZa4YRagKt8">vi
 
 ## 4. Ažuriranje postojećeg entiteta i slanje na server.
 
-Ukoliko si prehodno implementirao/la funkcionalnosti 2 i 3 možeš iskoristiti već postojeću komponentu (formu) za ažuriranje podataka o entietu. Pogledaj sledeći <a href="https://youtu.be/jYdwoiglmzU">video</a>.
+Ukoliko si prehodno implementirao/la funkcionalnosti 2 i 3 možeš iskoristiti već postojeću komponentu (formu) za ažuriranje podataka o entietu. Pogledaj sledeći <a href="https://youtu.be/Zk_fOHwSggU">video</a>.
 
 ## 5. Brisanje postojećeg entiteta.
 
 Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj sledeći <a href="https://youtu.be/aQEz9dlsUNk">video</a>.
 
 ## Bonus sadržaj
-Na sledećem <a href="https://youtu.be/aQEz9dlsUNk">videu</a> možeš pogledati sumarizaciju početnog projekta, dodatno su objašnjeni auth i material paketi.  
+Na sledećem <a href="https://youtu.be/UGqVNoi-4yo">videu</a> možeš pogledati sumarizaciju početnog projekta, dodatno su objašnjeni auth i material paketi.  
 Dodatan savet je da pogledaš <a href="https://material.angular.io/components/categories">material dokumentaciju</a> i da proučiš postojeće elemente i probaš da ih integrišeš u svoj projekat. Korišćenje Angular Material-a se obično svodi na sledeće korake (uzećemo za primer Material Button).  
 1. Otvori API deo dokumentacije.
 2. Importuj potrebne stvari (import {MatButtonModule} from '@angular/material/button';).
