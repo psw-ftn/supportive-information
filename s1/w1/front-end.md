@@ -44,7 +44,7 @@ Pregled fajlova van src foldera projekta:
 7. <b>tsconfig.app.json/tsconfig.json</b> - konfiguracija typescript-a.
 8. <b>node_modules</b> - folder u okviru kog su instalirane sve biblioteke za naš projekat.
 
-<b>infrastructure</b> - folderi/moduli vezani za autentifikaciju, rutiranje, stilove(angular-materials).  
+<b>infrastructure</b> - folderi/moduli vezani za autentifikaciju, rutiranje, stilove(angular materials).  
 <b>shared</b> - deljeni modeli i komponente.
 ## 1. Od čega se sastoje komponente i moduli?
 
@@ -86,7 +86,7 @@ Nova komponenta se kreira tako što se pozicioniraš u folder željenog modula i
 
 ### c. Povlačenje podataka sa servera.
 
-Za komunikaciju sa serverom će biti potreban servisni sloj u klijentskoj aplikaciji. Njega možeš kreirati tako što se pozicioniraš u željeni modul i pokreneš komandu ng g s naziv_servisa. Pravimo jedan servis po modulu. Povlačenje podataka sa servera i njihovo renderovanje je predstavljeno u narednom <a href="https://youtu.be/ky-ZQsyyYsE">videu</a>.
+Za komunikaciju sa serverom će biti potreban servisni sloj u klijentskoj aplikaciji. Njega možeš kreirati tako što se pozicioniraš u željeni modul i pokreneš komandu ng g s naziv-servisa. Pravimo jedan servis po modulu. Povlačenje podataka sa servera i njihovo renderovanje je predstavljeno u narednom <a href="https://youtu.be/ky-ZQsyyYsE">videu</a>.
 
 ### d. Rutiranje komponente.
 
@@ -108,8 +108,12 @@ Svi koraci a-d su prikazani u narednom <a href="https://youtu.be/GZa4YRagKt8">vi
 
 ## 4. Ažuriranje postojećeg entiteta i slanje na server.
 
-Ukoliko si prehodno implementirao/la funckionalnost 2 i 3 možeš iskoristiti već postojeću komponentu (formu) za ažuriranje podataka o entietu. Pogledaj sledeći <a href="">video</a>
+Ukoliko si prehodno implementirao/la funkcionalnosti 2 i 3 možeš iskoristiti već postojeću komponentu (formu) za ažuriranje podataka o entietu. Pogledaj sledeći <a href="https://youtu.be/jYdwoiglmzU">video</a>.
 
 ## 5. Brisanje postojećeg entiteta.
 
-Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj kraj prethodnog videa (navesti minute). 
+Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj sledeći <a href='https://youtu.be/jYdwoiglmzU'>video</a>.
+
+## Bonus sadržaj
+Na sledećem <a href="https://youtu.be/aQEz9dlsUNk">videu</a> možeš pogledati sumarizaciju početnog projekta, dodatno su objašnjeni auth i material paketi.  
+Dodatan savet je da pogledaš material dokumentaciju i da proučiš postojeće elemente i probaš da ih integrišeš u svoj projekat. Ne zaboravi da za to koristiš MaterialModule gde treba da importuješ i eksportuješ elemente po dokumentaciji (npr. import MatButtonModule i export MatButton) a potom i importuješ MaterialModule u željeni modul.
