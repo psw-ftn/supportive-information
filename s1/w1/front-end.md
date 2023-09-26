@@ -50,7 +50,7 @@ Pregled fajlova van src foldera projekta:
 
 <b>Definicija komponente:</b>
 Komponenta predstavlja osnovnu gradivnu jedinicu svake stranice u Angular aplikaciji. Jednu komponentu čine TypeSrcript, HTML i CSS deo. TypeScript deo vodi računa o podacima koje komponenta renderuje i životnom ciklusu komponente (https://angular.io/guide/lifecycle-hooks), HTML deo daje strukturu pogleda, dok CSS daje stilove pogledu. U daljem tekstu stranicom će se smatrati pogled na UI koji je sastavljen od jedne ili više komponenti.
-Komponente se mogu ugrađivati jedne u drugu i rutirati. Na sledećem <a href="https://www.youtube.com/watch?v=nF411IGhZjs">videu</a> pogledaj više o komponentama a možeš baciti pogled i <a href="https://angular.io/guide/component-overview">ovde</a>.
+Komponente se mogu ugrađivati jedne u drugu i rutirati. Na sledećem <a href="https://www.youtube.com/watch?v=nF411IGhZjs">videu</a> pogledaj više o komponentama a možeš baciti pogled i <a href="https://angular.io/guide/component-overview">ovde</a>.  
 
 <b>Definicija modula:</b>
 Angular moduli predstavljaju kohezivne celine od kojih se sastoji jedna Angular aplikacija. Moduli nam omogućavaju da grupišemo komponente, direktive i servise koji su povezani. Angular aplikaciju možeš zamisliti kao puzlu gde je svaki deo (modul) potreban kako bi video celu aplikaciju kako funkcioniše. Više o modulima možeš pogledati <a href="https://angular.io/guide/ngmodules">ovde</a>.
@@ -64,7 +64,6 @@ Većina zadataka u prvoj nedelji podrazumevaju izradu stranica za prikaz entitet
   <li>Odabrati dobar modul u koji smeštaš novu komponentu.</li>
   <li>Napraviti novu komponentu.</li>
   <li>Povući podatke sa servera.</li>
-  <li>Uvezati podatke sa komponentom.</li>
   <li>Rutirati komponentu.</li>
 </ol>
 
@@ -83,5 +82,14 @@ Izazov je odrediti kom modulu pripada nova komponenta. Odluka se donosi na osnov
 
 ### b. Kreiranje nove komponente
 
-Nova komponenta se kreira tako što se pozicioniraš u folder željenog modula i pokreneš komandu ng g c naziv-komponente.
+Nova komponenta se kreira tako što se pozicioniraš u folder željenog modula i pokreneš komandu ng g c naziv-komponente. U narednom <a href="https://youtu.be/h2JFDUQnT-w">videu</a> je prikazano kreiranje komponente i uvezivanje podataka. Napomena da je u videu demonstrativno prikazano i kreiranje modula, u početnom projektu u okviru prve dve nedelje nema potrebe da kreiraš novi modul već samo da ubaciš komponentu u neki od postojećih.
+
+### c. Povlačenje podataka sa servera.
+
+Za komunikaciju sa serverom će biti potreban servisni sloj u klijentskoj aplikaciji. Njega možeš kreirati tako što se pozicioniraš u željeni modul i pokreneš komandu ng g s naziv_servisa. Pravimo jedan servis po modulu. Povlačenje podataka sa servera i njihovo renderovanje je predstavljeno u narednom <a href="https://youtu.be/ky-ZQsyyYsE">videu</a>.
+
+### d. Rutiranje komponente.
+
+Kako bi korisnik mogao da pristupi komponenti koju smo napravili trebalo bi je rutirati. U narednom <a href="https://youtu.be/66qT7-ZXXUk">videu</a> možeš pogledati kako se rutira komponenta.  
+Dodatno pogledaj <a href="https://github.com/psw-ftn/tourism-fe/blob/main/Explorer/src/app/feature-modules/layout/navbar/navbar.component.html">kod</a> da vidiš kako da preko button-a menjaš trenutnu rutu aplikacije (obrati pažnju na [routerLink]).
 
