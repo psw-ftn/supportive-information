@@ -112,7 +112,7 @@ Ukoliko si prehodno implementirao/la funkcionalnosti 2 i 3 možeš iskoristiti v
 
 ## 5. Brisanje postojećeg entiteta.
 
-Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj sledeći <a href='https://youtu.be/jYdwoiglmzU'>video</a>.
+Ukoliko si prehodno implementirao/la funcionalnost 2, 3 i 4 brisanje entita zahteva registrovanje jоš jednog button-a i funkcije. Pogledaj sledeći <a href="https://youtu.be/jYdwoiglmzU">video</a>.
 
 ## Bonus sadržaj
 Na sledećem <a href="https://youtu.be/aQEz9dlsUNk">videu</a> možeš pogledati sumarizaciju početnog projekta, dodatno su objašnjeni auth i material paketi.  
