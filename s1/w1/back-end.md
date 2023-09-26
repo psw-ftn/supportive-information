@@ -13,10 +13,11 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
   <li>Kako da definišemo servis koji radi sa tom klasom i vraća DTO.</li>
   <li>Kako da definišemo kontroler koji se aktivira putem HTTP zahteva.</li>
   <li>Kako da sačuvamo instance domenske klase u bazi podataka.</li>
+  <li>Kako da ažuriramo dependency injection.</li>
   <li>Kako da napišemo automatski test koji proverava da sve radi.</li>
 </ol>
 
-Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 5 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 5 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
+Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 6 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 6 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
 <br/><br/><br/><br/>
 ## 0. Organizacija i pokretanje projekta
 Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
@@ -202,7 +203,34 @@ Nakon definisanja kontrolerske klase, potrebno je da implementiraš sledeće:
 
 <br/><br/><br/><br/><br/><br/>
 ## 4. Konfigurisanje skladištenja podataka
-TODO
+Skladištenje podataka je odgovornost koja se rešava u `Infrastructure` projektu povezanog modula. Potrebno je da:
+
+<ol type="a">
+  <li>Definišeš DbSet za novi entitet.</li>
+  <li>Definišeš novi repozitorijum ako ne koristiš CrudService.</li>
+</ol>
+
+### a. Proširivanje DbSeta
+Svaki modul ima `DbContext` klasu u okviru `Infrastructure/Database` direktorijuma (npr. `ToursContext.cs`). Pri vrhu ove klase se nalazi linija koda poput `public DbSet<Equipment> Equipment { get; set; }`. Ova linija koda omogućava migracijama da kreiraju tabelu u bazi koja se zove `Equipment` i koja sadrži kolone spram polja `Equipment` klase. Dalje, putem ovog polja možemo da pristupimo sadržaju tabele.
+
+Kada dodajemo novi entitet, potrebno je da dodamo liniju koda u odgovarajuću Context klasu. Ta linija koda će imati oblik `public DbSet<_ENTITY_> _ENTITY_NAME_PLURAL_ { get; set; }` (npr. `public DbSet<User> Users { get; set; }`).
+
+Da bi se nova tabela registrovala, potrebno je da obrišemo stare migracije iz svakog modula (u `Infrastructure` projektu ćemo imati `Migrations` direktorijum koji ceo brišemo) i da obrišemo sve šeme baze podataka (u pgAdminu desni klik na šemu -> Drop Cascade). Zatim ćemo ponoviti korake 0.b. i 0.c. iz ovog dokumenta. Alternativa je da ručno napravimo tabelu putem pgAdmin aplikacije i da ne pokrećemo migracije, što je brže rešenje kada dodajemo jednostavnu tabelu (ili pravimo sitnu izmenu postojeće).
+
+### b. Definisanje repozitorijuma
+U situacijama kada nam nije dovoljan CRUD repozitorijum (što neće biti slučaj u prvoj nedelji), možemo da napravimo našu implementaciju repozitorijuma. U tom slučaju treba da:
+
+1. Definišeš interfejs repozitorijuma u okviru `Core` projekta povezanog modula, direktorijum `Domain/RepositoryInterfaces`.
+2. Definišeš implementaciju interfejsa repozitorijuma u okviru `Infrastructure` projekta, direktorijum `Database/Repositories`.
+3. Navedeš u servisu koji će koristiti dati repozitorijum interfejs repozitorijuma kao parametar konstruktora.
+
 <br/><br/><br/><br/><br/><br/>
-## 5. Kreiranje automatskog testa
+## 5. Ažuriranje mehanizma za ubrizgavanje zavisnosti
+Svaki modul rešava *dependency injection* u okviru svog `Infrastructure` projekta. Tamo se nalazi `Startup` klasa (npr. `ToursStartup`) koja sadrži dve bitne metode `SetupCore` i `SetupInfrastructure`.
+
+`SetupCore` definiše koje klase iz `Core` projekta treba ubrizgati na mestu kojih interfejsa. `SetupInfrastructure` isto radi, samo za klase koje su implementirane u okviru `Infrastructure` projekta.
+
+**Primer**: [ToursStartup.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Infrastructure/ToursStartup.cs#L24-L31) sadrži primer kako se definiše *dependency injection* za servise i kako za CRUD repozitorijum.
+<br/><br/><br/><br/><br/><br/>
+## 6. Kreiranje automatskog testa
 TODO
