@@ -44,7 +44,7 @@ Pregled fajlova van src foldera projekta:
 7. <b>tsconfig.app.json/tsconfig.json</b> - konfiguracija typescript-a.
 8. <b>node_modules</b> - folder u okviru kog su instalirane sve biblioteke za naš projekat.
 
-Pregled fajlova u okviru src foldera (shared-modules će biti analiziran u tački 2):
+Pregled fajlova u okviru src foldera (shared-modules će biti analiziran u tački 2):  
 <b>infrastructure</b> - folderi/moduli vezani za autentifikaciju, rutiranje, stilove(angular materials).  
 <b>shared</b> - deljeni modeli i komponente.
 ## 1. Od čega se sastoje komponente i moduli?
