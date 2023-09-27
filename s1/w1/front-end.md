@@ -35,7 +35,7 @@ Kako bi pokretali/kreirali angular projekte na svom računaru potrebno je instal
 Obratiti pažnju na to da Angular radni okvir često zna da prijavljuje grešku bez razloga, najčešće u dodavanju novih modula ili menjanja putanje fajla te je potrebno prekinuti izvršavanje programa i opet pokrenuti komandu ng serve.
 
 Pregled fajlova van src foldera projekta:
-1. <b>.editorconfig</b> je fajl koji nam omogućava konfiugraciju našeg editora koda (VSC, WebStorm). Potrebno je da svi u okviru tima imaju identičan .editorconfig kako git ne bi prijavljivao razlike u formatiranju koda (space-ing, indentacija, prelamanje koda itd.).
+1. <b>.editorconfig</b> je fajl koji nam omogućava konfiguraciju našeg editora koda (VSC, WebStorm). Potrebno je da svi u okviru tima imaju identičan .editorconfig kako git ne bi prijavljivao razlike u formatiranju koda (space-ing, indentacija, prelamanje koda itd.).
 2. <b>.gitignore</b> sadrži putanje do fajlova koje git ne treba da prati i koji se ne šalju na repozitorijum. Obratiti pažnju da je node_modules (folder koji sadrži sve biblioteke potrebne za pokretanje našeg projekta) takođe u .gitignore stoga je potrebno uvek nakon pull-a projekta pokrenuti npm install kako bi se instalirale sve potrebne biblioteke u okviru node_modules foldera.
 3. <b>angular.json</b> - fajl za konfiguraciju Angular projekta (npr. ubacivanje eksternih stilova). Sadrži informacije o arhitekturi projekta, zavisnostima, build i test konfiguracije projekta itd.
 4. <b>package-lock.json</b> - sadrži spisak svih instaliranih biblioteke u našem projektu.
@@ -44,6 +44,7 @@ Pregled fajlova van src foldera projekta:
 7. <b>tsconfig.app.json/tsconfig.json</b> - konfiguracija typescript-a.
 8. <b>node_modules</b> - folder u okviru kog su instalirane sve biblioteke za naš projekat.
 
+Pregled fajlova u okviru src foldera (shared-modules će biti analiziran u tački 2):
 <b>infrastructure</b> - folderi/moduli vezani za autentifikaciju, rutiranje, stilove(angular materials).  
 <b>shared</b> - deljeni modeli i komponente.
 ## 1. Od čega se sastoje komponente i moduli?
