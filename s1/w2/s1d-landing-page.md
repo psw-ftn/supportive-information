@@ -1,9 +1,10 @@
 # Analiza sajtova za uzor i definisanje zahteva
-U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti kao uzor za dizajniranje vašeg projekta. Analiza treba da obuhvati vizuelni i funkcionalni aspekt web aplikacija. Cilj ovog zadatka je da steknete uvid u efikasan dizajn i HCI principe koje možete primeniti prilikom izrade vašeg projekta.<br>
+U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti kao uzor za dizajniranje vašeg projekta. Analiza treba da obuhvati vizuelni i funkcionalni aspekt web aplikacija. Cilj ovog zadatka je da steknete uvid u efikasan dizajn i HCI principe koje možete primeniti prilikom izrade vašeg projekta.
+
 Preuzmite <a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/Design_HCI_analysis.xlsx" target="_blank">tabelu</a> i popunite je tokom analize. U nastavku teksta će biti istaknuto šta je tačno potrebno istražiti, a u zagradama će biti naznačeno u kojoj koloni tabele treba popuniti odgovarajuće informacije.
 
 ### 1. Odabir relevantnih web aplikacija
-Potrebno je odabrati minimum dve web aplikacije koje imaju sličan domen i ciljnu publiku kao vaš projekat. Aplikacije treba da budu dovoljno kompleksne i bogate funkcionalnostima kako biste mogli izvršiti kvalitetnu analizu. Zabeležiti sledeće podatke:
+Potrebno je odabrati minimum dve web aplikacije koje imaju sličan domen i ciljnu publiku kao vaš projekat. Aplikacije treba da budu dovoljno kompleksne i bogate funkcionalnostima kako biste mogli izvršiti kvalitetnu analizu. Pošto 4 člana tima rade zadatak, možete se dobacivati linkovima sa aplikacijama koje vredi istražiti, da biste odabrali na kraju 2 kandidata. Zatim možete u parovima zabeležiti sledeće podatke:
 - Naziv aplikacije (Upisati informaciju u koloni <i>Title</i>)
 - Link do aplikacije (<i>Link</i>)
 - Opis čemu aplikacija služi (<i>Description</i>)
@@ -33,3 +34,9 @@ Analiza početne stranice web aplikacije uključuje:
     <li>Prouči na koji način aplikacija motiviše korisnike da izvrše akcije poput registracije ili kupovine. (<i>Actions encouragement</i>)</li>
   </ul>
 </ol>
+
+### 3. Definisanje zahteva
+Preporuka je da se na kraju analize sastanete kako biste identifikovali najinteresantnije elemente koje biste voleli da vidite u vašem softveru. Potrebno je:
+
+1. Napraviti kartice na Trellu koje će zavesti vašu konačnu odluku (šta treba definisati na naslovnoj strani, koje teme, fontove, boje koristiti, itd.). Kartica može da sadrži screenshotove aplikacija na koje se ugledate kako bi ostatak tima mogao da vidi.
+2. Dizajnirate i implementirate **landing page**, odnosno naslovnu stranicu prateći date smernice.
