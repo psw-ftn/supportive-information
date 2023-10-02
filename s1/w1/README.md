@@ -33,7 +33,7 @@ Prilikom planiranja treba da uzmemo u obzir potrebno vreme (do 5 sati) i zavisno
 - Bitno je da ostane taj 1 dan da se reše bilo kakvi konflikti koji će se pojaviti kod deljenih datoteka.
 
 ### e. Sređivanje teksta korisničke priče
-Svaka kartica predstavlja korisničku priču koja definiše želju koju korisnik ima za softver. Predstavlja značajno prostiji oblik slučaja korišćenja, gde **<a src="https://www.youtube.com/watch?v=RV6gnFKJY9U" target="_blank">[sledeći video]</a>** ističe njenu tipičnu strukturu (slobodno gledaj na x2).
+Svaka kartica predstavlja korisničku priču koja definiše želju koju korisnik ima za softver. Predstavlja značajno prostiji oblik slučaja korišćenja, gde [sledeći video](https://www.youtube.com/watch?v=RV6gnFKJY9U) ističe njenu tipičnu strukturu (slobodno gledaj na x2).
 
 Potrebno je da:
 
