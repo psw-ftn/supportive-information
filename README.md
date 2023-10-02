@@ -15,8 +15,8 @@ U prvoj nedelji predmeta je potrebno da tvoj tim uradi nekoliko pripremnih zadat
 
 Trello tabla predstavlja alat za praćenje i upravljanje radom na projektu. Njena struktura treba da odgovara potrebama projekta koji se razvija. Definisanje strukture podrazumeva kreiranje, imenovanje i raspored lista kartica na tabli. Tipična sturktura table koju ćemo mi koristiti podrazumeva sledeće liste:
 
-- Backlog (Kolona koja sadrži kartice koje treba uraditi)
-- To-Do (Kolona koja sadrži kartice na kojima treba raditi u trenutnom sprintu. Ovo su kartice koje su prešle iz Backlog kolone u To-Do kolonu tokom planiranja sprinta)
+- Backlog (Kolona koja sadrži kartice koje opisuju zahteve koje bismo želeli da rešimo)
+- To-Do (Kolona koja sadrži kartice na kojima ćemo raditi u narendih par nedelja (takozvani "sprint"))
 - In Progress (U ovoj koloni se nalaze kartice na kojima se trenutno radi)
 - Review (Kartice koje su na reviziji od strane drugih članova tima treba smestiti u ovu kolonu)
 - Done (Kartice koje su potpuno završene treba smestiti u ovu kolonu)
