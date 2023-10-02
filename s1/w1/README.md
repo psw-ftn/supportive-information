@@ -64,7 +64,9 @@ Uz otvaranje PRa je neophodno navesti prateću dokumentaciju u opis PRa:
 Dokumentovanje navedenih informacija će kolegi olakšati reviziju koda, a tebi će pomoći da razviješ korisnu naviku.
 <br/><br/><br/><br/>
 ## 5. Zatraži reviziju koda i odgovori na komentare.
-Kada je PR napravljen, moguće je zatražiti reviziju putem *Reviewers* sekcije. Dogovori se sa timom ko će čije PRove da revidira. Kada budeš sam radio reviziju kolegi, potrudi se da to uradiš u dogovoreno vreme i da ostaviš komentare koji će pokazati da si se udubio u proces. Smernice za izradu revizije se nalaze **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank">ovde</a>.
+Kada je PR napravljen, moguće je zatražiti reviziju putem *Reviewers* sekcije. Dogovori se sa timom ko će čije PRove da revidira. Na Trellu, prebaci svoju karticu u _Review_ sekciju.
+
+Kada budeš sam radio reviziju kolegi, potrudi se da to uradiš u dogovoreno vreme i da ostaviš komentare koji će pokazati da si se udubio u proces. Smernice za izradu revizije se nalaze **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank">ovde</a>.
 
 Tokom revizije koda obrati pažnju na:
 
@@ -82,3 +84,5 @@ Nakon što kolega ostavi komentare, potrebno je da odgovoriš na njih dodatnim i
 Kolega treba da potvrdi da su ispravke adekvatne putem još jedne revizije. U tom momentu je PR prihvaćen i može se zatvoriti uz prebacivanje koda sa tvoje feature grane na development.
 
 Ovom prilikom može nastati konflikt kod deljenih datoteka (npr. rutiranje u Angular aplikaciji, DbContext u .NET aplikaciji). Tom prilikom je neophodno rešiti konflikte, gde je preporuka da sigurniji studenti poslednji spajaju svoje grane sa developmentom kako bi rešili izazovnije konfliktne situacije.
+
+Kada je PR zatvoren, prebaci svoju karticu u _Done_.
