@@ -10,7 +10,7 @@ Razvoj softvera u toku sprinta uključuje implementaciju feature grana i njihovu
     <li>Preuzeti kompletno sabran kod sa development grane na lokalni računar.</li>
     <li>Pokrenuti sve napisane testove.</li>
     <li>Pokrenuti softver i ručno testirati funkcionalnosti kako bi se uverili da sve funkcionalnosti rade kako je očekivano. Prilikom testiranja funkcionalnosti držati otvorenu konzolu od browsera kako bi se uočile greške.</li>
-    <li>Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Data kartica zavodi _bug_ koji tim treba odmah da reši ako blokira funkcionalnost ili će moći da reši u kasnijim sprintovima ako predstavlja sitan problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje.</li>
+    <li>Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Data kartica zavodi _bug_ (dodati labelu _bug_ na karticu) koji tim treba odmah da reši ako blokira funkcionalnost ili će moći da reši u kasnijim sprintovima ako predstavlja sitan problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje.</li>
     <li>Kada tim ustanovi potpunu ispravnost softvera, development grana se može spojiti sa main granom putem pull request mehanizma.</li>
 </ol>
 
