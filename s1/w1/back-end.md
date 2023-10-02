@@ -20,21 +20,12 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
 Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 6 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 6 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
 <br/><br/><br/><br/>
 ## 0. Organizacija i pokretanje projekta
-Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone` komanda uz URL repozitorijuma tima.
+Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone REPO_URL` komanda uz URL repozitorijuma tima.
 
 Preporuka je da otvoriš Solution u svom razvojnom okruženju (naša preporuka je Visual Studio) i da ga istražiš pre nego što nastaviš da čitaš.
 
 ### a. Organizacija Solutiona
-Solution se sastoji od više projekata i paketa. Prvа celina sadrži gradivne elemente celokupnog projekta koji ćeš ostatak koda koristiti:
-```
-BuildingBlocks                              - Sadrži common klase, odnosno klase koje su korisne svim modulima od modularnog monolita.
-  -> Explorer.BuildingBlocks.Core           - Klase koje su korisne svim API i Core projektima.
-  -> Explorer.BuildingBlocks.Infrastructure - Klase koje su korisne Infrastructure projektima.
-  -> Explorer.BuildingBlocks.Tests          - Klase koje su korisne Tests projektima.
-```
-BuildingBlocks paket će se retko menjati tokom kursa i ne treba da ga diramo u prvom sprintu.
-
-Većina izmena će se dešavati u različitim modulima našeg modularnog monolita:
+Solution se sastoji od više projekata koji su grupisani u direktorijume. Većina izmena će se dešavati u direktorijumu `Modules` koji sadrži po jedan direktorijum za svaki modul našeg modularnog monolita:
 ```
 Modules                             - Sadrži sve module (package-by-feature) od modularnog monolita.
   -> Blog                           - Modul koji se bavi funkcionalnostima vezanim za Blog.
@@ -47,12 +38,21 @@ Modules                             - Sadrži sve module (package-by-feature) od
   -> Tours                          - Modul koji se bavi funkcionalnostima vezanim za prodaju i izvršavanje tura
     -> ...
 ```
-U startu ćemo imati 3 modula, a kako projekat bude rastao ćemo dodati još. Na kraju vidimo još dva projekta:
+U startu ćemo imati 3 modula, a kako projekat bude rastao ćemo dodati još. Ispod `Modules` direktorijuma vidimo dva projekta:
 ```
 Explorer.API                        - Definiše kontrolerske klase koje se aktiviraju uz pomoć HTTP zahteva koji nam stižu sa Angular aplikacije.
 Explorer.Architecture.Tests         - Definiše automatske testove koji proveravaju da li je naša arhitektura i dalje ispravna.
 ```
 `Explorer.API` projekat ćemo proširivati kada god želimo da ponudimo novu funkciju klijentskoj aplikaciji. `Explorer.Architecture.Tests` projekat nećemo nikad dirati, već ćemo koristiti ove testove da ispratimo da li je arhitektura ispoštovana.
+
+Na kraju, na vrhu solutiona se nalazi `BuildingBlocks` direktorijum, gde su gradivni elementi celokupnog solutiona koji ostali projekti koriste:
+```
+BuildingBlocks                              - Sadrži common klase, odnosno klase koje su korisne većini modula.
+  -> Explorer.BuildingBlocks.Core           - Klase koje su korisne svim API i Core projektima.
+  -> Explorer.BuildingBlocks.Infrastructure - Klase koje su korisne Infrastructure projektima.
+  -> Explorer.BuildingBlocks.Tests          - Klase koje su korisne Tests projektima.
+```
+`BuildingBlocks` direktorijum će se retko menjati tokom kursa i ne treba da ga diramo u prvom sprintu.
 
 ### b. Podešavanje baze podataka za regularnu upotrebu
 Da bi aplikacija mogla da se koristi, potrebno je podesiti bazu podataka tako što ćeš:
@@ -74,7 +74,7 @@ var password = Environment.GetEnvironmentVariable("DATABASE_PASSWORD") ?? "super
 Navedeni kod ističe na kom portu bi trebala baza podataka da bude podignuta, kako treba da se nazove kreirana baza i šta su kredencijali korisnika koji ima pristup datoj bazi.
 Kako se podešava port baze i kredencijali korisnika možeš da saznaš uz Gugl ili GPT upit. Kreiranje nove baze sa `explorer-v1` nazivom ćeš rešiti kroz `pgAdmin` aplikaciju.
 
-**Kako biste izbegli konflikte, naša preporuka je da svaki član tima postavi istaknute podatke lokalno kod sebe umesto da menja kod u `Infrastructure` projektu.**
+**Kako biste izbegli konflikte, naša preporuka je da svaki član tima postavi istaknute podatke lokalno kod sebe umesto da menja kod u `Infrastructure` projektu. Dakle, ne treba commitovati izmene nad `DbConnectionStringBuilder`.**
 
 #### 2. Definisanje šema
 Kada si napravio bazu sa traženim podacima, potrebno je da definišeš po jednu šemu u okviru `explorer-v1` baze za svaki modul, što možeš sa sledećim komandama:
@@ -177,8 +177,10 @@ Potrebno je da:
 #### Implementacija servisne klase
 U okviru `BuildingBlocks.Core` projekta smo definisali 2 osnovne servisne klase koje tvoje servisne klase mogu da naslede. Bitno je da razumeš pod kojim okolnostima ćeš koristiti koju klasu:
 
-1. `CrudService` implementira `Create`, `Read` (one i many), `Update` i `Delete` funkcije i koristan je da brzo osposobimo prostu CRUD funkcionalnost. Pošto nam je ovo zadatak za prvu nedelju, sve što treba da uradimo jeste da nasledimo ovu klasu i definišemo konstruktor koji će kroz *Dependency Injection* dobiti potrebne klase i proslediće ih roditelju. Za primer analiziraj 
+1. `CrudService` implementira `Create`, `Read` (one i many), `Update` i `Delete` funkcije i koristan je da brzo osposobimo prostu CRUD funkcionalnost. Kada nam trebaju bar 3 od navedenih 5 funkcija, možemo da nasledimo ovu klasu. Sve što treba da uradimo jeste da nasledimo klasu i definišemo konstruktor koji će kroz *Dependency Injection* dobiti potrebne klase i proslediće ih roditelju.
 2. `BaseService` sadrži pomoćne metode za mapiranje domenskih objekata na DTO i obratno. Ovu klasu nasleđujemo kada naš servis: 1) radi većinski sa jednim entitetom i 2) ima metode koje se većinski ne preklapaju sa `CrudService` (npr. potrebne su samo 2 CRUD operacije i/ili ima više svojih metoda).
+
+Zadatak ti je da proceniš da li trebaš da naslediš `CrudService` ili `BaseService` i da popuniš odgovarajuće konstruktore i metode.
 
 **Primer**: Servisna CRUD klasa [EquipmentService.cs](https://github.com/psw-ftn/tourism-be/blob/32e92f2f6f42094ff89aae6a90aaf25cb0780f1d/src/Modules/Tours/Explorer.Tours.Core/UseCases/Administration/EquipmentService.cs) iz početnog projekta.
 <br/><br/><br/><br/>
