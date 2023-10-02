@@ -18,7 +18,7 @@ Trello tabla predstavlja alat za praćenje i upravljanje radom na projektu. Njen
 - Backlog (Kolona koja sadrži kartice koje treba uraditi)
 - To-Do (Kolona koja sadrži kartice na kojima treba raditi u trenutnom sprintu. Ovo su kartice koje su prešle iz Backlog kolone u To-Do kolonu tokom planiranja sprinta)
 - In Progress (U ovoj koloni se nalaze kartice na kojima se trenutno radi)
-- Peer review (Kartice koje su na reviziji od strane drugih članova tima treba smestiti u ovu kolonu)
+- Review (Kartice koje su na reviziji od strane drugih članova tima treba smestiti u ovu kolonu)
 - Done (Kartice koje su potpuno završene treba smestiti u ovu kolonu)
 
 Šablon Trello table na osnovu kog se može napraviti tabla tvog tima se nalazi [ovde](https://trello.com/b/AejlmzUU/example-board). Prilikom kreiranja table možeš da analiziraš koje mogućnosti nudi jedna kartica (npr. labele, dodeljivanje članova tima, definisanje roka, opisa, komentara...).
