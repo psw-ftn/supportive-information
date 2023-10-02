@@ -36,28 +36,23 @@ Analiza početne stranice web aplikacije uključuje:
 </ol>
 
 <br><br><br><br>
-# Revizija koda
+# TODO: Restructure main readme
+
+<br><br><br><br>
+# Testiranje konačnog softvera
 Za razvoj softvera na ovom projektu koristićemo model grananja "Feature branching". Ovaj način razvoja softvera potencira kreiranje nove grane za svaku funkcionalnost softvera (feature). U nastavku su nabrojane grane koje je potrebno koristiti:
-- main (master) - glavna grana na kojoj se uvek mora nalaziti stabilna verzija softvera
-- development (dev) - kreirana iz main grane i spaja se sa njom na kraju sprinta
-- feature grane - kreirane iz development grane i spajaju se sa njom kako se koja funkcionalnost završi
+- `main` (master) - glavna grana na kojoj se uvek mora nalaziti stabilna verzija softvera
+- `development` - kreirana iz `main` grane i spaja se sa njom na kraju sprinta
+- feature grane - kreirane iz `development` grane i spajaju se sa njom kako se koja funkcionalnost završi
 
 <br>
-Razvoj softvera u toku sprinta se sastoji od nekoliko koraka:
-<ol type="a">
-  <li>Implementacija funkcionalnosti: Svaki član tima kreira novu granu za svaku novu funkcionalnost koju će implementirati. Ove grane se nazivaju feature grane (npr. feature/login) i napravljene su iz development grane. Sav kod vezan za pojedinačnu funkcionalnost se nalazi na odgovarajućoj feature grani.</li>
-  <li>Spajanje feature grana sa development granom: Kada je funkcionalnost završena, feature grana se spaja sa development granom. Svaki član tima treba da vodi računa da na development granu spoji testiranu i do kraja implementiranu funkcionalnost.</li>
-  <li>Spajanje development grane sa main granom (više detalja ispod)</li>
-</ol>
-
-### c. Spajanje development grane sa main granom
-Na kraju sprinta, kada su sve završene funkcionalnosti sa feature grana spojene sa development granom, potrebno je spojiti development granu sa main granom. Pošto na main grani uvek treba da bude stabilna verzija softvera, potrebno je uraditi reviziju koda na development grani pre nego što se ona spoji sa main granom. U nastavku slede koraci koje je potrebno ispuniti:
+Razvoj softvera u toku sprinta uključuje implementaciju feature grana i njihovu reviziju pre nego što se spajaju na development. Pred kraj sprinta je potrebno spojiti `development` na `main`, no bitno je dobro istestirati sistem pre toga. Pošto na `main` grani uvek treba da bude stabilna verzija softvera, potrebno je:
 <ol>
-    <li>Potrebno je preuzeti kod sa development grane na lokalni računar.</li>
+    <li>Preuzeti kompletno sabran kod sa development grane na lokalni računar.</li>
     <li>Pokrenuti sve napisane testove.</li>
-    <li>Pokrenuti softver i ručno testirati funkcionalnosti kako bi se uverili da sve funkcionalnosti rade kako je očekivano. Prilikom testiranja funkcionalnosti potrebno je konsultovati se sa odgovarajućom korisničkom pričom tj. karticom na Trello tabli. Proveriti da li su ispunjeni svi navedeni kriterijumi (acceptance criteria) koji su navedeni.</li>
-    <li>Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje. Revizija koda se ponavlja kada se problem reši.</li>
-    <li>Kada revizori koda ustanove potpunu ispravnost softvera, development grana se može spojiti sa main granom.</li>
+    <li>Pokrenuti softver i ručno testirati funkcionalnosti kako bi se uverili da sve funkcionalnosti rade kako je očekivano. Prilikom testiranja funkcionalnosti držati otvorenu konzolu od browsera kako bi se uočile greške.</li>
+    <li>Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Data kartica zavodi _bug_ koji tim treba odmah da reši ako blokira funkcionalnost ili će moći da reši u kasnijim sprintovima ako predstavlja sitan problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje.</li>
+    <li>Kada tim ustanovi potpunu ispravnost softvera, development grana se može spojiti sa main granom putem *pull request* mehanizma.</li>
 </ol>
 
 
