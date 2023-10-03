@@ -259,6 +259,8 @@ U C# svetu se često koristi `xUnit` biblioteka za pisanje automatskih testova. 
   <li>Ako si od poslednjeg pokretanja testova menjao domenski sloj tako da utiče na bazu podataka, potrebno je obrisati kompletnu testnu bazu pre nego što pokreneš testove.</li>
 </ol>
 
+**Napomena**: Ako `TestData` skripte sadrže grešku, testovi će se pokrenuti sa testnom bazom koja nije u predviđenom stanju. Posledično će neki testovi pući. Pored log zapisa na konzolu, možeš da postaviš breakpoint u `BuildingBlocks.Tests` projektu na [sledećoj liniji koda](https://github.com/psw-ftn/tourism-be/blob/27211b3bc9e92ed280d684d1f59562eee628ac98/src/BuildingBlocks/Explorer.BuildingBlocks.Tests/BaseTestFactory.cs#L48). Zatim pokreni testove u debug režimu rada i proveri da li se ovaj problem dešava.
+
 **Primer**: Uz prethodni video, možeš da ispitaš sam **[kod testova](https://github.com/psw-ftn/tourism-be/tree/main/src/Modules/Tours/Explorer.Tours.Tests/Integration/Administration)** u detalje.
 
 Kada se uveriš da novi testovi prolaze, potrebno je da pokreneš sve testove u projektu kako bi bio siguran da stari kod radi. Tek onda možeš da formiraš commit sa kojim ćeš zaključiti razvoj. Ako je primarna izmena u ovom commitu vezana za dodavanje testova, prefiks commit poruke treba da bude `test:`.
