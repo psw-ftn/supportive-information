@@ -52,7 +52,45 @@ Iskoristili smo AfterViewInit lifecycle hook koji se pozove tek kada je čitav p
 Sve što je potrebno dalje uraditi jeste ugraditi <xp-map></xp-map> element negde u aplikaciji. Nemoj zaboraviti da u okviru SharedModule-a eksportuješ MapComponent i da importuješ SharedModule u onaj modul gde želiš da ga iskoristiš. Takođe da bi proverio da li se renderuje mapa dodaj joj visinu kroz CSS što možeš videti na sledećoj slici.  
 
 map.component.css:  
-![image](https://github.com/psw-ftn/supportive-information/assets/57589408/3a18aeba-b740-44e2-a23d-2bec9d01d350)
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/3a18aeba-b740-44e2-a23d-2bec9d01d350)  
+
+Rezultat:
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/928e917f-1ccd-4401-b600-b950de045b70)
+
+
+## 1. Postavljanje markera na mapu  
+
+Za ovaj zadatak potrebno je: 
+
+<ol type="a">
+  <li>Registrovati slike markera.</li>
+  <li>Registrovati funkciju za postavljanje markera na mapu.</li>
+</ol>
+
+### a. Registrovanje slike markera.
+Kako bi postavili markere na mapu treba da prvo registrujemo sliku markera (ovaj korak je isto potrebno uraditi u okviru AfterViewInit dela i pre inicijalizacije mape).  
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/963471e2-f954-4c47-9c57-c31a5f965dc8)
+
+### b. Registrovanje funkcije.
+
+Na slici ispod je predstavljena funkcija koja registruje reakciju na 'click' mape tj. definiše callback funkciju koja će se aktivirati kada se klikne na mapu. Na klik mape ćemo preuzeti geofrasku širinu i dužinu a potom pomoću L.Marker-a dodati pin na našu mapu.
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/1c08bb13-e35a-4c06-8874-904993019996)
+
+Rezultat:
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/60d18f0d-b769-455f-9ed0-b6fee4f86769)
+
+
+## 2. Geocoding, reverse geocoding
+
+
+
+
+
+
 
 
 
