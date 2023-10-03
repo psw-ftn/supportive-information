@@ -85,7 +85,8 @@ Rezultat:
 
 
 ## 2. Geocoding, reverse geocoding
-
+## 3. Nadmorska visina
+## 4. Rutiranje
 
 
 
