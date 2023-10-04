@@ -98,7 +98,8 @@ Kako bi dodali servis možemo se pozicionirati u okviru map foldera i pokrenuti 
 
 ### b. Dodavanje funkcije u servis.
 
-Nominatim API nam omogućuje da na osnovu naziva ulice (npr. Stražilovska 19) dobijemo geofrasku širinu i dužinu. Obrati pažnju da ako kao vrednost parametra pošalješ samo "Stražilovska 19" dobićeš kao odgovor niz vrednosti geofraskih širina i dužina sa obzirom da ova ulica postoji u mnogim gradovima u Srbiji. Na tebi je da smisliš najbolje rešenje za korisnika kako bi minimizovao ovakve greške (npr. jedno od rešenja je da se zahteva i unos grada - Stražilovska 19, Novi Sad). Takođe Nominatim API nam omogućuje i obrnutu pretragu tj. na osnovu geofraske širine i dužine možemo dobiti naziv ulice (ovo je korisno kako bi na osnovu klika na mapi dobili naziv ulice). Obe funkcije su na slici ispod.
+Nominatim API nam omogućuje da na osnovu naziva ulice (npr. Stražilovska 19) dobijemo geofrasku širinu i dužinu. Obrati pažnju da ako kao vrednost parametra pošalješ samo "Stražilovska 19" dobićeš kao odgovor niz vrednosti geofraskih širina i dužina sa obzirom da ova ulica postoji u mnogim gradovima u Srbiji. Na tebi je da smisliš najbolje rešenje za korisnika kako bi minimizovao ovakve greške (npr. jedno od rešenja je da se zahteva i unos grada - Stražilovska 19, Novi Sad). Takođe Nominatim API nam omogućuje i obrnutu pretragu tj. na osnovu geofraske širine i dužine možemo dobiti naziv ulice (ovo je korisno kako bi na osnovu klika na mapi dobili naziv ulice). Obe funkcije su na slici ispod.  
+Obrati pažnju da funkcija vraća any, ovo nije poželjna praska u TypeScript-u ali je uredu kao privremeno rešenje dok nismo sigurno koji nam podaci trebaju od eksternog API-a. Svakako napravi interfejs/klasu u svom deljenom modelu koji će prihvatiti samo one podatke koje ćeš koristiti od eksternog API-a.
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/c2f4f9ff-a5e7-492a-a50c-d9e28f56999a)  
 
