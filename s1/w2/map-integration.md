@@ -134,7 +134,11 @@ Biblioteka se instaliraju sledećim komandama:
 
 Možeš ispratiti sledeći sajt - https://www.mapbox.com/.
 
-### c. Funkcija za rutiranje
+### c. Funkcija za rutiranje  
+
+Preko L.Routing.control možemo napraviti željenu rutu, waypoints predstavlja niz geografskih širina i dužina dok router specifira koji ćemo routing engine koristiti. U ovom slučaju koristimo mapbox kome smo prosledili api key i da želimo rutu za pešačenje, takođe možemo proslediti profil za automobil ili bicikl pogledaj (pogledaj mapbox dokumentaciju).  
+
+Dodatno preko eventa 'routesfound' možemo izvući informacije o distanci i potrebnom vremenu za rutu.
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/45c704f4-1fc4-47c1-a68b-4c28184ef326)
 
