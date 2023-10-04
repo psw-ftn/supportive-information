@@ -50,7 +50,7 @@ map.component.ts:
 
 Iskoristili smo AfterViewInit lifecycle hook koji se pozove tek kada je čitav pogled inicijalizovan i u okviru njega inicijalizovali mapu. Mapa je uvezana sa HTML-om preko id (koji se zove map) i inicijalizovana je na određene koordinate (45,2; 19.8) i zoom level (13). Potom su povučeni OpenStreetMap layer-i i uvezani za našu mapu.  
 
-Sve što je potrebno dalje uraditi jeste ugraditi xp-map element negde u aplikaciji. Nemoj zaboraviti da u okviru SharedModule-a eksportuješ MapComponent i da importuješ SharedModule u onaj modul gde želiš da ga iskoristiš. Takođe da bi proverio da li se renderuje mapa dodaj joj visinu kroz CSS što možeš videti na sledećoj slici.  
+Sve što je potrebno dalje uraditi jeste ugraditi xp-map element negde u aplikaciji. Nemoj zaboraviti da u okviru SharedModule-a eksportuješ MapComponent i da importuješ SharedModule u onaj modul gde želiš da ga iskoristiš. Takođe da bi proverili da li se renderuje mapa možemo dodati visinu kroz CSS što možeš videti na sledećoj slici.  
 
 map.component.css:  
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/3a18aeba-b740-44e2-a23d-2bec9d01d350)  
@@ -76,7 +76,7 @@ Kako bi postavili markere na mapu treba da prvo registrujemo sliku markera (ovaj
 
 ### b. Registrovanje funkcije.
 
-Na slici ispod je predstavljena funkcija koja registruje reakciju na 'click' mape tj. definiše callback funkciju koja će se aktivirati kada se klikne na mapu. Na klik mape ćemo preuzeti geofrasku širinu i dužinu a potom pomoću L.Marker-a dodati pin na našu mapu.
+Na slici ispod je predstavljena funkcija koja registruje reakciju na 'click' mape tj. definiše callback funkciju koja će se aktivirati kada se klikne na mapu. Na klik mape ćemo preuzeti geografsku širinu i dužinu a potom pomoću L.Marker-a dodati pin na našu mapu.
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/1c08bb13-e35a-4c06-8874-904993019996)
 
@@ -100,6 +100,7 @@ Kako bi dodali servis možemo se pozicionirati u okviru map foldera i pokrenuti 
 ### b. Dodavanje funkcije u servis.
 
 Nominatim API nam omogućuje da na osnovu naziva ulice (npr. Stražilovska 19) dobijemo geofrasku širinu i dužinu. Obrati pažnju da ako kao vrednost parametra pošalješ samo "Stražilovska 19" dobićeš kao odgovor niz vrednosti geofraskih širina i dužina sa obzirom da ova ulica postoji u mnogim gradovima u Srbiji. Na tebi je da smisliš najbolje rešenje za korisnika kako bi minimizovao ovakve greške (npr. jedno od rešenja je da se zahteva i unos grada - Stražilovska 19, Novi Sad). Takođe Nominatim API nam omogućuje i obrnutu pretragu tj. na osnovu geofraske širine i dužine možemo dobiti naziv ulice (ovo je korisno kako bi na osnovu klika na mapi dobili naziv ulice). Obe funkcije su na slici ispod.  
+
 Obrati pažnju da funkcija vraća any, ovo nije poželjna praska u TypeScript-u ali je uredu kao privremeno rešenje dok nismo sigurno koji nam podaci trebaju od eksternog API-a. Svakako napravi interfejs/klasu u svom deljenom modelu koji će prihvatiti samo one podatke koje ćeš koristiti od eksternog API-a.
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/c2f4f9ff-a5e7-492a-a50c-d9e28f56999a)  
@@ -136,7 +137,7 @@ Možeš ispratiti sledeći sajt - https://www.mapbox.com/.
 
 ### c. Funkcija za rutiranje  
 
-Preko L.Routing.control možemo napraviti željenu rutu, waypoints predstavlja niz geografskih širina i dužina dok router specifira koji ćemo routing engine koristiti. U ovom slučaju koristimo mapbox kome smo prosledili api key i da želimo rutu za pešačenje, takođe možemo proslediti profil za automobil ili bicikl pogledaj (pogledaj mapbox dokumentaciju).  
+Preko L.Routing.control možemo napraviti željenu rutu, waypoints predstavlja niz geografskih širina i dužina dok router specifira koji ćemo routing engine koristiti. U ovom slučaju koristimo mapbox kome smo prosledili api key i da želimo rutu za pešačenje, takođe možemo proslediti profil za automobil ili bicikl (pogledaj mapbox dokumentaciju).  
 
 Dodatno preko eventa 'routesfound' možemo izvući informacije o distanci i potrebnom vremenu za rutu.
 
