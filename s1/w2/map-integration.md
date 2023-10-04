@@ -49,7 +49,7 @@ map.component.ts:
 
 Iskoristili smo AfterViewInit lifecycle hook koji se pozove tek kada je čitav pogled inicijalizovan i u okviru njega inicijalizovali mapu. Mapa je uvezana sa HTML-om preko id (koji se zove map) i inicijalizovana je na određene koordinate (45,2; 19.8) i zoom level (13). Potom su povučeni OpenStreetMap layer-i i uvezani za našu mapu.  
 
-Sve što je potrebno dalje uraditi jeste ugraditi <xp-map></xp-map> element negde u aplikaciji. Nemoj zaboraviti da u okviru SharedModule-a eksportuješ MapComponent i da importuješ SharedModule u onaj modul gde želiš da ga iskoristiš. Takođe da bi proverio da li se renderuje mapa dodaj joj visinu kroz CSS što možeš videti na sledećoj slici.  
+Sve što je potrebno dalje uraditi jeste ugraditi xp-map element negde u aplikaciji. Nemoj zaboraviti da u okviru SharedModule-a eksportuješ MapComponent i da importuješ SharedModule u onaj modul gde želiš da ga iskoristiš. Takođe da bi proverio da li se renderuje mapa dodaj joj visinu kroz CSS što možeš videti na sledećoj slici.  
 
 map.component.css:  
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/3a18aeba-b740-44e2-a23d-2bec9d01d350)  
@@ -83,9 +83,36 @@ Rezultat:
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/60d18f0d-b769-455f-9ed0-b6fee4f86769)
 
-
 ## 2. Geocoding, reverse geocoding
+
+Za ovaj zadatak potrebno je:
+
+<ol type="a">
+  <li>Kreirati servis koji će koristiti mapa.</li>
+  <li>Dodati funkcije u servis za komunikaciju sa Nominatim API-em.</li>
+</ol>
+
+### a. Dodavanje servisa.
+
+Kako bi dodali servis možemo se pozicionirati u okviru map foldera i pokrenuti komandu ng g s map.
+
+### b. Dodavanje funkcije u servis.
+
+Nominatim API nam omogućuje da na osnovu naziva ulice (npr. Stražilovska 19) dobijemo geofrasku širinu i dužinu. Obrati pažnju da ako kao vrednost parametra pošalješ samo "Stražilovska 19" dobićeš kao odgovor niz vrednosti geofraskih širina i dužina sa obzirom da ova ulica postoji u mnogim gradovima u Srbiji. Na tebi je da smisliš najbolje rešenje za korisnika kako bi minimizovao ovakve greške (npr. jedno od rešenja je da se zahteva i unos grada - Stražilovska 19, Novi Sad). Takođe Nominatim API nam omogućuje i obrnutu pretragu tj. na osnovu geofraske širine i dužine možemo dobiti naziv ulice (ovo je korisno kako bi na osnovu klika na mapi dobili naziv ulice). Obe funkcije su na slici ispod.
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/c2f4f9ff-a5e7-492a-a50c-d9e28f56999a)  
+
+Pozive funkcija možeš videti na slici ispod.  
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/ce4923ab-d451-4c68-be52-13b2a80e58c0)
+
 ## 3. Nadmorska visina
+
+Kako bi dobili nadmorsku visinu na osnovu geofraske širine i dužine možemo iskoristiti <a href="https://open-elevation.com/">Open Elevation API </a> (proučiti dodatno dokumentaciju). Primer funkcije je na slici ispod.  
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/d4b76b98-c625-4df6-8328-cb1bd5fd174e)
+
+
 ## 4. Rutiranje
 
 
