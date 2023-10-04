@@ -3,6 +3,7 @@ Za rad sa mapama koristićemo:
 - `Leaflet` biblioteku za mape.
 - `Nominatim API` api za geocoding i reverse geocoding.
 - `Open Eleveation API` api za nadmorsku visinu.
+- `Leaflet Routing Machine` biblioteku za rutiranje.
 - `MapBox` engine za rutiranje.
 
 Postepeno ćete integrisati potrebne stvari za mapu kako budete razvijali projekat. Ova stranica sadrži smernice za integraciju mape u Angular projekat gde ćemo videti:
@@ -113,9 +114,33 @@ Kako bi dobili nadmorsku visinu na osnovu geofraske širine i dužine možemo is
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/d4b76b98-c625-4df6-8328-cb1bd5fd174e)
 
-
 ## 4. Rutiranje
 
+Za ovaj zadatak potrebno je:
+
+<ol type="a">
+  <li>Instairati Leaflet Routing Machine biblioteku.</li>
+  <li>Kreirati nalog i API key na MapBox-u.</li>
+  <li>Napisati funkciju za rutiranje.</li>
+</ol>
+
+### a. Instaliranje biblioteke
+
+Biblioteka se instaliraju sledećim komandama:  
+1. <b>npm i leaflet-routing-machine</b>
+2. <b>npm i @types/leaflet-routing-machine</b>.
+
+### b. Nalog i API KEY
+
+Možeš ispratiti sledeći sajt - https://www.mapbox.com/.
+
+### c. Funkcija za rutiranje
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/45c704f4-1fc4-47c1-a68b-4c28184ef326)
+
+Rezultat:  
+
+![image](https://github.com/psw-ftn/supportive-information/assets/57589408/44ef0ef8-efaf-4d27-a114-db1ae544678b)
 
 
 
