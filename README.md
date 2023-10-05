@@ -11,7 +11,7 @@ U prvoj nedelji predmeta je potrebno da tvoj tim uradi nekoliko pripremnih zadat
 6. Definisanje `development` grane za oba repozitorijuma i njihov push na centralni repozitorijum. Kada krene razvoj, feature grane će se izvlačiti iz `development` grane prateći standardan git workflow.
 7. Kloniranje novo-kreiranih repozitorijuma kod sebe lokalno.
 
-## 2. Kreiranje Trello table
+## Kreiranje Trello table
 
 Trello tabla predstavlja alat za praćenje i upravljanje radom na projektu. Njena struktura treba da odgovara potrebama projekta koji se razvija. Definisanje strukture podrazumeva kreiranje, imenovanje i raspored lista kartica na tabli. Tipična sturktura table koju ćemo mi koristiti podrazumeva sledeće liste:
 
