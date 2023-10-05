@@ -24,7 +24,7 @@ Trello tabla predstavlja alat za praćenje i upravljanje radom na projektu. Njen
 Šablon Trello table na osnovu kog se može napraviti tabla tvog tima se nalazi [ovde](https://trello.com/b/AejlmzUU/example-board). Prilikom kreiranja table možeš da analiziraš koje mogućnosti nudi jedna kartica (npr. labele, dodeljivanje članova tima, definisanje roka, opisa, komentara...).
 
 # Snažan zalet
-Timovi koji žele sebi da olakšaju ostatak prvog segmenta projekta mogu da se upoznaju sa serverskom i klijentskom aplikacijom.
+Svaki član tima treba da se upozna sa serverskom i klijentskom aplikacijom i da početne projekte pokrene lokalno kod sebe.
 
 Za upoznavanje serverske aplikacije, potrebno je rešiti **korak 0.** u [sledećem dokumentu](https://github.com/psw-ftn/supportive-information/blob/master/s1/w1/back-end.md#0-organizacija-i-pokretanje-projekta), što će rezultovati lokalnim pokretanjem aplikacije.
 
