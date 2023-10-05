@@ -20,6 +20,8 @@ Postepeno ćemo se upoznavati sa svim tehnologijama i kroz kurs ćemo sve pametn
 Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 6 raditi svaki put kad razvijaš skroz novu funkcionalnost. Redosled koraka 1 do 6 ne mora da prati naveden, no dobro je da prvi put ispratiš dati redosled.
 <br/><br/><br/><br/>
 ## 0. Organizacija i pokretanje projekta
+Da bi mogao da radiš sa serverskom aplikacijom, neophodno je da instaliraš PostgreSQL bazu podataka i .NET 7 na svojoj mašini.
+
 Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone REPO_URL` komanda uz URL repozitorijuma tima.
 
 Preporuka je da otvoriš Solution u svom razvojnom okruženju (naša preporuka je Visual Studio) i da ga istražiš pre nego što nastaviš da čitaš.
