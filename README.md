@@ -9,7 +9,7 @@ U prvoj nedelji predmeta je potrebno da tvoj tim uradi nekoliko pripremnih zadat
 4. Dodavanje svih članova tima na organizaciju, kao i nastavnički nalog _psw-ftn_.
 5. Kreiranje 2 repozitorijuma, jedan za serversku aplikaciju (back-end) i jedan za klijentrsku aplikaciju (front-end). Repozitorijum za serversku aplikaciju treba da kreirate spram [templatea](https://github.com/psw-ftn/tourism-be). Slično treba uraditi za klijentrsku aplikaciju, koja koristi [ovaj template](https://github.com/psw-ftn/tourism-fe). Repozitorijum se pravi spram templatea putem zelenog tastera "Use this template", gde je kod kreiranja bitno da odaberete vašu organizaciju (a ne lični nalog) za kreiranje repozitorijuma.
 6. Definisanje `development` grane za oba repozitorijuma i njihov push na centralni repozitorijum. Kada krene razvoj, feature grane će se izvlačiti iz `development` grane prateći standardan git workflow.
-7. Kloniranje novo-kreiranih repozitorijuma kod sebe lokalno.
+7. Kloniranje novo-kreiranih repozitorijuma kod sebe lokalno i pokretanje projekata (detalji ispod).
 
 ## Kreiranje Trello table
 
@@ -23,7 +23,7 @@ Trello tabla predstavlja alat za praćenje i upravljanje radom na projektu. Njen
 
 Šablon Trello table na osnovu kog se može napraviti tabla tvog tima se nalazi [ovde](https://trello.com/b/AejlmzUU/example-board). Prilikom kreiranja table možeš da analiziraš koje mogućnosti nudi jedna kartica (npr. labele, dodeljivanje članova tima, definisanje roka, opisa, komentara...).
 
-# Snažan zalet
+## Pokretanje početnih projekata
 Svaki član tima treba da se upozna sa serverskom i klijentskom aplikacijom i da početne projekte pokrene lokalno kod sebe.
 
 Za upoznavanje serverske aplikacije, potrebno je rešiti **korak 0.** u [sledećem dokumentu](https://github.com/psw-ftn/supportive-information/blob/master/s1/w1/back-end.md#0-organizacija-i-pokretanje-projekta), što će rezultovati lokalnim pokretanjem aplikacije.
