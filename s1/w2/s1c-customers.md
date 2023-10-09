@@ -96,7 +96,7 @@ Da ilustrujemo kako popuniti prethodno, u nastavku navodimo teze za personu "Tur
 
 Think & Feel:
 
-- Nestrpljiv da se potpuno uroni u lokalnu kulturu i istoriju.
+- Nestrpljiv da uroni u lokalnu kulturu i istoriju.
 - Ceni autentična iskustva više od turističkih atrakcija.
 - Želi da sazna o istorijskom značaju mesta.
 - Brine se o poštovanju lokalnih običaja i etikete.
