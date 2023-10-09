@@ -66,17 +66,22 @@ Dokumentovanje navedenih informacija će kolegi olakšati reviziju koda, a tebi 
 ## 5. Zatraži reviziju koda i odgovori na komentare.
 Kada je PR napravljen, moguće je zatražiti reviziju putem *Reviewers* sekcije. Dogovori se sa timom ko će čije PRove da revidira. Na Trellu, prebaci svoju karticu u _Review_ sekciju.
 
-Kada budeš sam radio reviziju kolegi, potrudi se da to uradiš u dogovoreno vreme i da ostaviš komentare koji će pokazati da si se udubio u proces. Smernice za izradu revizije se nalaze **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank">ovde</a>.
+Kada budeš sam radio reviziju kolegi, potrudi se da to uradiš u dogovoreno vreme i da ostaviš komentare koji će pokazati da si se udubio u proces. Smernice za izradu revizije se nalaze **<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank">ovde</a>**.
 
-Tokom revizije koda obrati pažnju na:
+GitHub korisnički interfejs nudi lep prikaz menjanog koda i mogućnost ostavljanja komentara tačno tamo gde treba kod unaprediti. Tokom revizije koda obrati pažnju na:
 
-- Narušavanje timske konvencije.
-- Formatiranje i indentaciju koda.
-- Nazive koji su korišteni u svim identifikatorima.
-- Veličinu i složenost funkcija.
-- Veličinu i složenost klasa.
+- Datoteke koje su menjane - ovo se vidi sa strane u levom prikazu foldera. Ako je implementirana korisnička priča trebala da radi sa `Blog` modulom, verovatno je greška ako se neka datoteka iz ostalih foldera menjala.
+- Narušavanje timske konvencije - Kada primetiš da su postojeće timske konvencije nedovoljno razrađene, zadatak ti je da javiš na deljenom četu (npr. putem Discorda) ostatku tima da postoji rupa u spisku konvencija vašeg tima. Spisak timskih konvencija možete definisati kao *wiki* stranicu na GitHubu.
+- Nazive koji su korišteni u svim identifikatorima - koliko dobro opisuju taj element koda.
+- Veličinu i složenost funkcija i klasa - koliko je kod zahtevan za razumevanje.
 
-Kada primetiš da su postojeće timske konvencije nedovoljno razrađene, zadatak ti je da javiš na deljenom četu (npr. putem Discorda) ostatku tima da postoji ova rupa u spisku konvencija vašeg tima.
+Dobra revizija koda podrazumeva sledeće elemente:
+
+1. Identifikovan spisak nedostataka u napisanom kodu.
+2. Za svaki nedostatak smernice kako bi se mogao ispraviti (npr. ponuđeno rešenje i objašnjenje zašto smatraš da je bolje, rečenica koja dublje opisuje problem i kako bi se mogao rešiti).
+3. Pohvale kada se uoči visoka pedantnost, pažljivost ili kreativno rešenje za neki problem.
+
+Kod prostih funkcionalnosti će slabo biti prostora za 3. stavku ili ozbiljniji komentar za 2. stavku. Ipak, vredi imati na umu da je konstruktivna kritika začinjena sa po kojom pohvalom ideal ka kom težimo.
 
 Nakon što kolega ostavi komentare, potrebno je da odgovoriš na njih dodatnim ispravkama ili kroz diskusiju. Bitno je da ostane pisani trag vaše interakcije i ovo ćemo pratiti kako bismo se uverili da ste izgurali proces do kraja.
 <br/><br/><br/><br/>
