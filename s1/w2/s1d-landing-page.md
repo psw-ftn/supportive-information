@@ -38,5 +38,5 @@ Analiza početne stranice web aplikacije uključuje:
 ### 3. Definisanje zahteva
 Preporuka je da se na kraju analize sastanete kako biste identifikovali najinteresantnije elemente koje biste voleli da vidite u vašem softveru. Potrebno je:
 
-1. Napraviti kartice na Trellu koje će zavesti vašu konačnu odluku (šta treba definisati na naslovnoj strani, koje teme, fontove, boje koristiti, itd.). Kartica može da sadrži screenshotove aplikacija na koje se ugledate kako bi ostatak tima mogao da vidi.
+1. Napraviti kartice na Trellu koje će zavesti vašu konačnu odluku (šta treba definisati na naslovnoj strani, koje teme, fontove, boje koristiti, itd.). Za izbor boje možete da konsultujete **[sledeći članak](https://www.upwork.com/resources/how-to-choose-color-scheme-for-website)**. Kartica može da sadrži screenshotove aplikacija na koje se ugledate kako bi ostatak tima mogao da vidi.
 2. Dizajnirate i implementirate **landing page**, odnosno naslovnu stranicu prateći date smernice.
