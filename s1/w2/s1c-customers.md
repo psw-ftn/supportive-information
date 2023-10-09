@@ -50,7 +50,7 @@ Generalno će intervju imati sledeće segmente:
 </ol>
 
 ### c. Razrada pitanja za intervju
-Najbitniji deo ovog zadatka je priprema dobrih pitanja za intervju. Intervju koji sprovodimo je takozvani _needfinding interview_, gde želimo da razumemo potrebe naših turista i autora. Vredi iskoristiti ovu ključnu reč i videti kako nam GPT može pomoći sa sledećim upitom:
+Najbitniji deo ovog zadatka je priprema dobrih pitanja za intervju. Intervju koji sprovodimo je takozvani _needfinding interview_, gde želimo da razumemo potrebe naših turista i autora. Vredi iskoristiti ovu ključnu reč i videti kako nam GPT može pomoći sa sledećim upitom (sličan upit možemo napraviti za autora):
 ```
 I want to create a needfinding interview.
 
@@ -58,20 +58,78 @@ My customer segment includes tourists that enjoy exploring their travel destinat
 
 I want to create a solution that can help them explore in an engaging way.
 ```
-U nastavku su neka pitanja koja nam mogu pomoći da razumemo korisnike:
+U nastavku su neka pitanja koja nam mogu pomoći da razumemo korisnike (boldom su interesantnija pitanja):
 
 - Koliko često putuju, na kakav tip destinacije i kakvu vrstu putovanja generalno vole? Ovim definišemo grube crte persone (da li je avanturista, porodični turista, istoričar...).
 - Šta su bila omiljena putovanja u poslednjem periodu i zašto? Šta su bila bezveze putovanja i zašto? Konkretne priče sakrivaju puno interesantnih detalja koji nude ideje za funkcionalnosti.
 - Na osnovu čega biraju destinacije? Koliko istražuju destinaciju pre putovanja? Koliko istražuju kada su tamo?
-- Da li su nekad išli na organizovane ture? Kakvo im je bilo iskustvo?
 - Šta vole da otkrivaju kad odu negde? Šta istražuju? Hranu? Bučne ili tihe ćoškove? Divljinu ili civilizaciju?
+- **Da li su nekad išli na organizovane ture? Kakvo im je bilo iskustvo?**
 - **Šta im predstavlja najveće probleme koji ih sprečavaju da istražuju ili im čine to iskustvo nelagodnim?**
 - **Da li koriste neke alate (npr. mape, sveske) ili aplikacije da pomognu sa organizacijom putovanja i istraživanja? Šta izvlače iz njih? Šta im se ne sviđa kod njih?**
 
 Ako osoba prvi put priča o svojim putovanjima na ovaj način, verovatno će se uhvatiti konkretnih primera iz svog života (npr. "Prošle godine u Hrvatskoj je ovo baš bilo kul") umesto nekih opštijih zaključaka (npr. "Volim da obilazim staze koje su umereno fizički zahtevne, imaju raznoliki reljef i ne zahtevaju mnogo vraćanja istim putem"). Kod konkretnih priča, možemo da postavimo dodatna pitanja (npr. "Da li ste imali još neko iskustvo poput tog?", "Da li vam generalno prijaju iskustva sa ovim aspektom?") da pokušamo da uočimo širu temu.
 
 ## 3. Sprovođenje intervjua
-TODO - ištampaš korake i pitanja
+Intervju je najbolje sprovesti u ambijentu koji nije previše bučan i gde se svi prisutni osećaju komforno. Preporuka je da ištampate strukturu intervjua i glavna pitanja koja hoćete da postavite da budu pri ruci.
+
+Tokom intervjua jedan član tima može da vodi razgovor, dok će drugi biti posvećen zapisivanju interesantnih detalja. Ovo ne sprečava drugog člana tima da postavlja svoja pitanja.
+
+Rezultat intervjua treba da bude snimak, zapisi ključnih tačaka (koje će se proći u Retrospektivi) i fotografija sa osobom koja je intervjuisana koju ćete priložiti asistentu na uvid.
 
 ## 4. Kreiranje mape empatije različitih persona
-TODO
+Za svaki sproveden intervju možemo da sastavimo jednu mapu empatije koju vezujemo za personu. Primer šablona za ovu mapu je naveden ispod:
+![image](https://github.com/psw-ftn/supportive-information/assets/7092212/63f366f5-19cc-4b6d-a328-4332c530427b)
+
+Koristeći datu sliku na draw.io alatu, možemo da popunimo praznine sa zapažanjima koje smo izvukli iz intervjua, po sledećoj strukturi:
+
+- Šta misli i oseća (Think & Feel) - šta su unutrašnje misli, osećanja i stavovi osobe u vezi sa turističkog istraživanju ili turama?
+- Šta vidi (See) - šta osoba primećuje tokom turističkog istraživanja ili tura? Roditelji će prvo gledati gde im se dete može povrediti, dok će mladi ispitivati šta su dobra mesta za izlaske.
+- Šta čuje (Hear) - šta osoba čuje od bližnjih, klubova kojim pripada, sajtovima koje posećuje, turističkih agencija, itd. povodom turističkog istraživanja ili tura?
+- Šta radi (Say & Do) - kako se osoba ponaša tokom turističkog istraživanja ili tura?
+- Šta su izazovi (Pain) - šta mu smeta kod turističkog istraživanja ili tura? Šta kod alata i aplikacija koje koristi da podrži to? Šta su karakteristike negativnih iskustva koje je imao?
+- Šta su želje (Gain) - šta osoba izvlači iz turističkog istraživanja ili tura? Šta su karakteristike pozitivnih iskustva koje je imao?
+
+### Primer mape empatije za personu "Turista zaljubljen u kulturu"
+Da ilustrujemo kako popuniti prethodno, u nastavku navodimo teze za personu "Turista zaljubljen u kulturu" (u tekstulanom obliku).
+
+Think & Feel:
+
+- Nestrpljiv da se potpuno uroni u lokalnu kulturu i istoriju.
+- Ceni autentična iskustva više od turističkih atrakcija.
+- Želi da sazna o istorijskom značaju mesta.
+- Brine se o poštovanju lokalnih običaja i etikete.
+
+See:
+
+- Istorijske spomenike, muzeje i galerije.
+- Kulturne manifestacije i festivale.
+- Lokalne zanatlije kako praktikuju tradicionalne veštine.
+- Drevnu arhitekturu i spomenike.
+
+Hear:
+
+- Iskustva drugih turista na internetu (specifičan sajt X).
+- Savete od lokalaca o mestima koja treba posetiti i kulturnim iskustvima koje treba isprobati.
+- Priče i anegdote od lokalaca o njihovom kulturnom nasleđu i tradicijama.
+
+Speak & Do:
+
+- Posećuje muzeje, izložbe i istorijske lokacije.
+- Prisustvuje kulturnim događajima i festivalima.
+- Razgovara sa lokalnim stanovništvom kako bi saznao o njihovoj kulturi.
+- Probava lokalnu kuhinju i tradicionalna jela.
+
+Pain:
+
+- Razočaranje zbog prenatrpanih turističkih atrakcija.
+- Teškoće u pronalaženju autentičnih kulturnih iskustava usred komercijalizovanih turističkih područja.
+- Jezičke barijere pri traženju dubljih kulturnih uvida.
+- Nedostatak lokalnih vodiča za istraživanje skrivenih kulturnih dragulja.
+
+Gain:
+
+- Duboko razumevanje lokalnih kultura i tradicija.
+- Pronalazak retke umetnosti i istorijskih priča.
+- Značajni kontakti (zbližavanje) sa lokalnim stanovništvom.
+
