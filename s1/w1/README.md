@@ -16,7 +16,7 @@ Preporuka je da prvi korak rešiš što pre, jer uključuje planiranje rešavanj
 Rešavanje zadatka kreće na Trello tabli, gde je potrebno da uradiš sledeće:
 
 <ol type="a">
-  <li>Kartica treba da bude dodljena tebi (Klik na karticu, Members -> Izaberi svoje ime).</li>
+  <li>Kartica treba da bude dodeljena tebi (Klik na karticu, Members -> Izaberi svoje ime).</li>
   <li>Rok za rešavanje kartice je postavljen do sledećih vežbi (Klik na karticu, Dates -> Odaberi datum).</li>
   <li>Kartica je postavljena u "In Progress" listu kartica.</li>
   <li>U tvom kalendaru je definisano vreme za rešavanje kartice (više detalja ispod).</li>
@@ -56,7 +56,7 @@ Uz otvaranje PRa je neophodno navesti prateću dokumentaciju u opis PRa:
 
 - Za back-end PR treba istaći (možeš kopirati teze ispod i popuniti ih u PR opisu):
   - **Change goal**: Tekst korisničke priče ili link na karticu.
-  - **Database change**: Spisak izmena koje će zahtevati izmenu baze (npr. dodavanje nove tabele, uklanjanje ili dodavanje polja u entitetima koja se mapiraj na kolone tabele).
+  - **Database change**: Spisak izmena koje će zahtevati izmenu baze (npr. dodavanje nove tabele, uklanjanje ili dodavanje polja u entitetima koja se mapiraju na kolone tabele).
 - Za front-end PR treba istaći:
   - **Change goal**: Tekst korisničke priče ili link na karticu.
   - **UI changes**: Skup screenshotova koji ističu najbitnije izmene na korisničkom interfejsu (za prvu nedelju screenshot tabele i screenshot forme je dovoljan).
