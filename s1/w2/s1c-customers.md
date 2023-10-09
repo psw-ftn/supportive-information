@@ -79,6 +79,7 @@ Rezultat intervjua treba da bude snimak, zapisi ključnih tačaka (koje će se p
 
 ## 4. Kreiranje mape empatije različitih persona
 Za svaki sproveden intervju možemo da sastavimo jednu mapu empatije koju vezujemo za personu. Primer šablona za ovu mapu je naveden ispod:
+
 ![image](https://github.com/psw-ftn/supportive-information/assets/7092212/63f366f5-19cc-4b6d-a328-4332c530427b)
 
 Koristeći datu sliku na draw.io alatu, možemo da popunimo praznine sa zapažanjima koje smo izvukli iz intervjua, po sledećoj strukturi:
