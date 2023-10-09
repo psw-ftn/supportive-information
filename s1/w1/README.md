@@ -81,7 +81,7 @@ Dobra revizija koda podrazumeva sledeće elemente:
 2. Za svaki nedostatak smernice kako bi se mogao ispraviti (npr. ponuđeno rešenje i objašnjenje zašto smatraš da je bolje, rečenica koja dublje opisuje problem i kako bi se mogao rešiti).
 3. Pohvale kada se uoči visoka pedantnost, pažljivost ili kreativno rešenje za neki problem.
 
-Kod prostih funkcionalnosti će slabo biti prostora za 3. stavku ili ozbiljniji komentar za 2. stavku. Ipak, vredi imati na umu da je konstruktivna kritika začinjena sa po kojom pohvalom ideal ka kom težimo.
+Kod prostih funkcionalnosti će slabo biti prostora za 3. stavku ili ozbiljniji komentar za 2. stavku. Bez obzira, imaj na umu da je kratkoročni cilj revizije koda da osigura da će održiv kod završiti na `development` grani, dok je dugoročni cilj revizije koda da obrazuje sve članove tima kako bi generalno proizvodili kvalitetniji kod.
 
 Nakon što kolega ostavi komentare, potrebno je da odgovoriš na njih dodatnim ispravkama ili kroz diskusiju. Bitno je da ostane pisani trag vaše interakcije i ovo ćemo pratiti kako bismo se uverili da ste izgurali proces do kraja.
 <br/><br/><br/><br/>
