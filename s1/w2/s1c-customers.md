@@ -37,6 +37,9 @@ Preporuka je da kontaktira što više ljudi u ovom koraku kako biste identifikov
 ## 2. Definisanje strukture intervjua
 TODO
 
+TODO - Neće moći da pobroji osim ako nije o tome razmišljao, pa se zato hvatamo konkretnih priča i pokušavamo da generalizujemo
+
+
 ## 3. Sprovođenje intervjua
 TODO
 
