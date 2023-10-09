@@ -10,7 +10,7 @@ Kroz kurs ćemo razgovarati sa krajnjim korisnicima u nekoliko navrata kako bism
 
 *Persona* predstavlja sliku našeg krajnjeg korisnika koju imamo na umu kad god pričamo o njihovim potrebama. Primere persona smo videli na uvodnim predavanjima (Ana, David, Vanja), a isto i kada smo istakli različite tipove studenata pre nekog vremena (Alisa, Bob, Džon).
 
-Naše trenutne persone su izuzetno proste i svode se na ime (Ana, David, Vanja) i rolu (Autor, Turista, Administrator) koju imaju. Potrebno je da ih obogatimo detaljima koji će nam pomoći da razumemo perspektivu korisnika, njihove potrebe i probleme, spram kojih ćemo usmeriti razvoj našeg softverskog rešenja u kasnijim sprintovima. Ovo je posebno bitno za persone Autora i Turiste zbog kojih ćemo "dobijati pare", dok su Administratori "naši ljudi".
+Naše trenutne persone su izuzetno proste i svode se na ime (Ana, David, Vanja) i rolu (Autor, Turista, Administrator) koju imaju. Potrebno je da ih obogatimo detaljima koji će nam pomoći da razumemo perspektivu korisnika, njihove potrebe i probleme, spram kojih ćemo usmeriti razvoj našeg softverskog rešenja u kasnijim sprintovima. Ovo je posebno bitno za persone Autora i Turiste zbog kojih ćemo "dobijati pare", dok su Administratori "naši ljudi" (na početku smo to mi sami kao vlasnici softvera).
 
 Da bismo produbili naše persone, potrebno je da:
 
@@ -34,14 +34,44 @@ Preporuka je da kontaktira što više ljudi u ovom koraku kako biste identifikov
 - Izbor osoba sa više iskustva.
 - Izbor osoba sa kojima imamo najbliži odnos.
 
+Sa spiskom osoba možemo da organizujemo sastanke od okvirno jedan sat u toku nedelje.
+
 ## 2. Definisanje strukture intervjua
-TODO
+Pitanja koja ćemo postaviti tokom intervjua zavise od našeg cilja. U ovoj fazi ne želimo da pritiskamo osobe koje ispitujemo sa rešenjima (već napravljenim ili zamišljenim), već se fokusiramo na razumevanje njihovog pogleda, iskustva, želja i potreba vezanih za turizam i poddomen koji se tiče turističkog istraživanja.
 
-TODO - Neće moći da pobroji osim ako nije o tome razmišljao, pa se zato hvatamo konkretnih priča i pokušavamo da generalizujemo
+Generalno će intervju imati sledeće segmente:
 
+<ol type="a">
+  <li>Uvod - pozdravljamo osobu i potvrđujemo svrhu našeg intervjua (kao vežba za projektni zadatak i kao aktivnost da se razumeju potrebe). Vredi istaći osobi da ne postoje pogrešni odgovori, već da je iskren odgovor najbitniji.</li>
+  <li>Početak - proveravamo da li smemo da snimamo intervju i pripremamo svesku da hvatamo beleške za glavna pitanja u Razradi.</li>
+  <li>Razrada - postavljamo glavna pitanja (detalji ispod).</li>
+  <li>Retrospektiva - sabiramo ključne tačke koje smo prošli u toku Razrade. Pitamo osobu da li bi nešto dopunila ili posebno naglasila od pređenog. Ako ima vremena, u ovom koraku možemo da pričamo o konkretnom softveru koji bismo pravili i kakve početne ideje imamo za njegov razvoj.</li>
+  <li>Zaključak - zahvaljujemo se osobi za izdvojeno vreme i podeljena iskustva i priče. Proveravamo da li je u redu da za okvirno četiri nedelje organizujemo sledeće viđanje.</li>
+</ol>
+
+### c. Razrada pitanja za intervju
+Najbitniji deo ovog zadatka je priprema dobrih pitanja za intervju. Intervju koji sprovodimo je takozvani _needfinding interview_, gde želimo da razumemo potrebe naših turista i autora. Vredi iskoristiti ovu ključnu reč i videti kako nam GPT može pomoći sa sledećim upitom:
+```
+I want to create a needfinding interview.
+
+My customer segment includes tourists that enjoy exploring their travel destinations. These are not necessarily adventurers, just people that enjoy exploring nature, cities, history, culture, art, etc.
+
+I want to create a solution that can help them explore in an engaging way.
+```
+U nastavku su neka pitanja koja nam mogu pomoći da razumemo korisnike:
+
+- Koliko često putuju, na kakav tip destinacije i kakvu vrstu putovanja generalno vole? Ovim definišemo grube crte persone (da li je avanturista, porodični turista, istoričar...).
+- Šta su bila omiljena putovanja u poslednjem periodu i zašto? Šta su bila bezveze putovanja i zašto? Konkretne priče sakrivaju puno interesantnih detalja koji nude ideje za funkcionalnosti.
+- Na osnovu čega biraju destinacije? Koliko istražuju destinaciju pre putovanja? Koliko istražuju kada su tamo?
+- Da li su nekad išli na organizovane ture? Kakvo im je bilo iskustvo?
+- Šta vole da otkrivaju kad odu negde? Šta istražuju? Hranu? Bučne ili tihe ćoškove? Divljinu ili civilizaciju?
+- **Šta im predstavlja najveće probleme koji ih sprečavaju da istražuju ili im čine to iskustvo nelagodnim?**
+- **Da li koriste neke alate (npr. mape, sveske) ili aplikacije da pomognu sa organizacijom putovanja i istraživanja? Šta izvlače iz njih? Šta im se ne sviđa kod njih?**
+
+Ako osoba prvi put priča o svojim putovanjima na ovaj način, verovatno će se uhvatiti konkretnih primera iz svog života (npr. "Prošle godine u Hrvatskoj je ovo baš bilo kul") umesto nekih opštijih zaključaka (npr. "Volim da obilazim staze koje su umereno fizički zahtevne, imaju raznoliki reljef i ne zahtevaju mnogo vraćanja istim putem"). Kod konkretnih priča, možemo da postavimo dodatna pitanja (npr. "Da li ste imali još neko iskustvo poput tog?", "Da li vam generalno prijaju iskustva sa ovim aspektom?") da pokušamo da uočimo širu temu.
 
 ## 3. Sprovođenje intervjua
-TODO
+TODO - ištampaš korake i pitanja
 
 ## 4. Kreiranje mape empatije različitih persona
 TODO
