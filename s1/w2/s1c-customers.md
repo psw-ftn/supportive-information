@@ -14,7 +14,31 @@ Naše trenutne persone su izuzetno proste i svode se na ime (Ana, David, Vanja) 
 
 Da bismo produbili naše persone, potrebno je da:
 
-1. Napravimo inicijalne razgovore sa ljudima iz naše okoline, kako bismo identifikovali bar jednog dobrog kandidata za Autora i bar dva dobra kandidata za Turiste.
+1. Pronađemo ljude iz naše okoline koji su pogodni za intervju (bar jednog dobrog kandidata za Autora i bar dva dobra kandidata za Turiste).
 2. Definišemo strukturu intervjua koji ćemo održati sa svakim korisnikom.
 3. Sprovedemo intervju.
-4. Analiziramo zapis intervjua i kreiramo profil za svaku personu.
+4. Analiziramo zapis intervjua i kreiramo mapu empatije za svaku personu.
+
+## 1. Pronalazak pogodnih ljudi za intervju
+Za prvi susret sa korisnikom je neophodno da pronađemo 4 osobe koje će 8 člana tima intervjuisati (svaku osobu 2 člana tima intervjuišu). Bitno je da imamo bar jednu osobu koju bismo intervjuisali kao Autora i bar dve kao turista (no ukupno treba 4 osobe, tako da 2+2 ili 1+3).
+
+Svaki član tima treba da razmisli koga bi mogao od porodice i prijatelja da angažuje za ovu aktivnost. Tom prilikom treba uzeti u obzir sledeće faktore:
+
+- Dostupnost osobe tokom semestra - Idealno biramo osobu koja će moći sa članovima tima da se sastane četiri puta u toku semestra, svaki put po sat do dva.
+- Kandidati za Turiste - Osobe koje ne putuju, koje uvek idu na istu lokaciju (npr. imaju kuću na moru) ili putuju sa idejom da budu ceo dan u bazenu ili banji nisu dobri kandidati za naše Turiste. Naši Turisti su ljudi koji vole na neki način da istražuju prostor (npr. hajk po prirodi, obilazak znamenitosti grada, upoznavanje lokalnih priča i legendi). Ne treba da isključimo ljude koji putuju sa porodicom. Iako njihove ture nisu nužno uzbudljive, ima prostora da se ovaj deo tržišta cilja (npr. zabavne ili obrazovne ture za decu).
+- Kandidati za Autora - Autore ćemo teže pronaći. Idealni kandidati su ljudi koji rade u turističkim agencijama ili lokalni vodiči i njih možemo kontaktirati čak i ako ih ne poznajemo tako što ćemo posetiti agencije ili pretražiti GetYourGuide sajt za lokalne ture. Alternativa su nam ljudi koji su "sami sebi vodič", odnosno turisti koji pažljivo planiraju svoja putovanja tako da svašta obiđu. Dobar kandidat za ovakvog autora je bilo ko ko temeljno proučava Google Maps, TripAdvisor i slične sajtove kada putuje, kao i neko ko dokumentuje svoja putovanja (npr. putem članaka).
+
+Preporuka je da kontaktira što više ljudi u ovom koraku kako biste identifikovali ne samo 4 osobe za ovaj prvi krug intervjua, nego i dodatnih 4 koji će nam trebati u trećem i četvrtom sprintu. Iz navedenog spiska biramo najbolje kandidate za prvi krug, gde uzimamo u obzir sledeće prioritete:
+
+- Izbor osoba koje se dosta razlikuju (npr. turista koji voli avanturu i porodičnog turistu, autora kog interesuje priroda i autora koji se bavi istorijom).
+- Izbor osoba sa više iskustva.
+- Izbor osoba sa kojima imamo najbliži odnos.
+
+## 2. Definisanje strukture intervjua
+TODO
+
+## 3. Sprovođenje intervjua
+TODO
+
+## 4. Kreiranje mape empatije različitih persona
+TODO
