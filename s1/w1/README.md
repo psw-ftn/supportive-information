@@ -28,7 +28,7 @@ Teško nam je da kažemo koliko vremena će ti biti potrebno da rešiš karticu 
 
 Prilikom planiranja treba da uzmemo u obzir potrebno vreme (do 5 sati) i zavisnosti koje postoje sa ostalim članovima tima (u ovom slučaju revizija koda i rešavanje revizije). Spram ovih zadataka je naša preporuka da:
 
-- Rezervišeš slot u kalendaru od 4 sata nekad u naredna 4 dana. Tokom ovog slota ti je cilj da rešiš korake 2, 3 i 4. Ako si nesiguran u svoje veštine, bolje je da ova 4 sata rezervišeš ranije u tom opsegu kako bi tražio pomoć ako ti bude potrebna.
+- Rezervišeš slot u kalendaru od 4 sata nekad u naredna 4 dana. Tokom ovog slota ti je cilj da rešiš korake 2 (backend), 3 (frontend) i 4 (PR). Ako si nesiguran u svoje veštine, bolje je da ova 4 sata rezervišeš ranije u tom opsegu kako bi tražio pomoć ako ti bude potrebna.
 - Ostaviš kolegi i sebi bar 2 dana da se uradi revizija i da stigneš u okviru od 1 sat da odgovoriš na komentare, dobiješ potvrdu da je sve ok i zatvoriš *pull request* (korak 6) dan pred vežbe.
 - Bitno je da ostane taj 1 dan da se reše bilo kakvi konflikti koji će se pojaviti kod deljenih datoteka.
 
