@@ -40,7 +40,7 @@ Potrebno je da:
 - Definišeš naslov korisničke priče prateći connextra šablon (As a... I want... So that...) istaknut u prethodnom videu.
    - Najveći problem će ti predstavljati "So that" deo priče, gde je potrebno da istakneš korist koju korisnik dobija od funkcionalnosti.
    - Izbegavaj da ponoviš "I want" deo teksta u "So that" sekciji, odnosno nemoj samo da preformulišeš drugi deo u trećem delu.
-   - Pored guglanja, sledeći upit na GPTu će ti pomoći da bolje razumeš ovaj deo "_I am having trouble with understanding what to write in the "So that <benefit>" part of a user story_". Napiši GPTu šta ti je "As a" i "I want" deo i istakni šta misliš da je "So that" deo i zašto to misliš. Kroz tu interakciju ćeš utvrditi svoje razumevanje ove celine.
+   - Pored guglanja, sledeći upit na GPTu će ti pomoći da bolje razumeš ovaj deo "_I am having trouble with understanding what to write in the "So that <benefit>" part of a user story. Here is an example of a story that I have for an application that is focused on supporting tourists._". Zatim navedi šta ti je "As a" i "I want" deo i istakni šta misliš da je "So that" deo i zašto to misliš. GPT će ponuditi analizu napisanog i možeš ga dodatno pitati da ti objasni kako da posmatraš "So that" deo. Kroz tu interakciju ćeš utvrditi svoje razumevanje ove celine.
 - U detaljima kartice su zabeležene dodatni podaci (*acceptance criteria*) za zadatak. U prvoj nedelji će se tekst svesti na pobrajanje polja koje entitet koji implementiramo treba da ima.
 <br/><br/><br/><br/>
 ## 2. Izrada koda za serversku (backend) aplikaciju.
