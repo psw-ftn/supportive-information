@@ -6,15 +6,13 @@ Za razvoj softvera na ovom projektu koristićemo model grananja "Feature branchi
 - `development` - kreirana iz `main` grane i spaja se sa njom na kraju sprinta
 - feature grane - kreirane iz `development` grane i spajaju se sa njom kako se koja funkcionalnost završi
 
-<br>
 Razvoj softvera u toku sprinta uključuje implementaciju feature grana i njihovu reviziju pre nego što se spajaju na development. Pred kraj sprinta je potrebno spojiti `development` na `main`, no bitno je dobro istestirati sistem pre toga. Pošto na `main` grani uvek treba da bude stabilna verzija softvera, potrebno je:
-<ol>
-    <li>Preuzeti kompletno sabran kod sa development grane na lokalni računar.</li>
-    <li>Pokrenuti sve napisane testove.</li>
-    <li>Pokrenuti softver i ručno testirati funkcionalnosti kako bi se uverili da sve funkcionalnosti rade kako je očekivano. Prilikom testiranja funkcionalnosti držati otvorenu konzolu od browsera kako bi se uočile greške.</li>
-    <li>Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Data kartica zavodi _bug_ (dodati labelu _bug_ na karticu) koji tim treba odmah da reši ako blokira funkcionalnost ili će moći da reši u kasnijim sprintovima ako predstavlja sitan problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje.</li>
-    <li>Kada tim ustanovi potpunu ispravnost softvera, development grana se može spojiti sa main granom putem pull request mehanizma.</li>
-</ol>
+
+1. Preuzeti kompletno sabran kod sa development grane na lokalni računar.
+2. Pokrenuti sve napisane testove.
+3. Pokrenuti softver i ručno testirati funkcionalnosti kako bi se uverili da sve funkcionalnosti rade kako je očekivano. Prilikom testiranja funkcionalnosti držati otvorenu konzolu od browsera kako bi se uočile greške.
+4. Za svaku uočenu grešku je potrebno kreirati karticu na Trello tabli koja adresira ovaj problem. Data kartica zavodi _bug_ (dodati labelu _bug_ na karticu) koji tim treba odmah da reši ako blokira funkcionalnost ili će moći da reši u kasnijim sprintovima ako predstavlja sitan problem. Jasno imenovati problem i detaljno opisati kako se problem manifestuje.
+5. Kada tim ustanovi potpunu ispravnost softvera, development grana se može spojiti sa main granom putem pull request mehanizma.
 
 # Retrospektiva sprinta
 Retrospektiva je vreme da tim razmisli o prošlom sprintu, identifikuje šta je prošlo dobro ili loše, i isplanira šta bi se moglo poboljšati u narednom sprintu. Kroz retrospektivu tim postaje kohezivniji, efikasniji i svaki njegov član unapređuje svoju ekspertizu.<br>
