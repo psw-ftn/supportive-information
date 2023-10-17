@@ -92,7 +92,7 @@ Koristeći datu sliku na draw.io alatu, možemo da popunimo praznine sa zapažan
 - Šta su želje (Gain) - šta osoba izvlači iz turističkog istraživanja ili tura? Šta su karakteristike pozitivnih iskustva koje je imao?
 
 ### Primer mape empatije za personu "Turista zaljubljen u kulturu"
-Da ilustrujemo kako popuniti prethodno, u nastavku navodimo teze za personu "Turista zaljubljen u kulturu" (u tekstulanom obliku).
+Da ilustrujemo kako popuniti prethodno, u nastavku navodimo teze za personu "David - Turista zaljubljen u kulturu" (u tekstulanom obliku).
 
 Think & Feel:
 
