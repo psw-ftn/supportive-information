@@ -83,7 +83,7 @@ import * as L from 'leaflet';
 export class MapComponent implements AfterViewInit {
   private map: any;
 
-  constructor(private mapService: MapService) {}
+  constructor() {}
 
   private initMap(): void {
     this.map = L.map('map', {
