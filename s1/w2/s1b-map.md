@@ -34,7 +34,7 @@ Kako je mapa deljena komponenta (koristiće je npr. i TourExecutionModule i Tour
 
 Nakon kreiranja komponente gde ćemo smestiti mapu potrebno je instalirati biblioteku za renderovanje mape. Instaliraćemo dve biblioteke sledećim komandama:  
 1. <b>npm i leaflet</b>
-2. <b>npm i @types/leaflet</b>.
+2. <b>npm i @types/leaflet</b>
 
 Potom je potrebno u angluar.json u okviru styles dela postaviti putanju do leaflet stilova ("./node_modules/leaflet/dist/leaflet.css").
 
