@@ -84,7 +84,7 @@ Za svaki sproveden intervju možemo da sastavimo jednu mapu empatije koju vezuje
 
 Koristeći datu sliku na draw.io alatu, možemo da popunimo praznine sa zapažanjima koje smo izvukli iz intervjua, po sledećoj strukturi:
 
-- Šta misli i oseća (Think & Feel) - šta su unutrašnje misli, osećanja i stavovi osobe u vezi sa turističkog istraživanju ili turama?
+- Šta misli i oseća (Think & Feel) - šta su unutrašnje misli, osećanja i stavovi osobe u vezi sa turističim istraživanjem ili turama?
 - Šta vidi (See) - šta osoba primećuje tokom turističkog istraživanja ili tura? Roditelji će prvo gledati gde im se dete može povrediti, dok će mladi ispitivati šta su dobra mesta za izlaske.
 - Šta čuje (Hear) - šta osoba čuje od bližnjih, klubova kojim pripada, sajtovima koje posećuje, turističkih agencija, itd. povodom turističkog istraživanja ili tura?
 - Šta radi (Say & Do) - kako se osoba ponaša tokom turističkog istraživanja ili tura?
