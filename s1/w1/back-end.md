@@ -227,7 +227,7 @@ Kada dodajemo novi entitet, potrebno je da dodamo liniju koda u odgovarajuću Co
 Da bi se nova tabela registrovala, potrebno je da obrišemo stare migracije iz svakog modula (u `Infrastructure` projektu ćemo imati `Migrations` direktorijum koji ceo brišemo) i da obrišemo sve šeme baze podataka (u pgAdminu desni klik na šemu -> Drop Cascade). Zatim ćemo ponoviti korake 0.b. i 0.c. iz ovog dokumenta. Alternativa je da ručno napravimo tabelu putem pgAdmin aplikacije i da ne pokrećemo migracije, što je brže rešenje kada dodajemo jednostavnu tabelu (ili pravimo sitnu izmenu postojeće).
 
 ### b. Definisanje repozitorijuma
-U situacijama kada nam nije dovoljan CRUD repozitorijum (što neće biti slučaj u prvoj nedelji), možemo da napravimo našu implementaciju repozitorijuma. U tom slučaju treba da:
+U situacijama kada nam nije dovoljan CRUD repozitorijum (što će biti relevantno za par kartica u prvoj nedelji), možemo da napravimo našu implementaciju repozitorijuma. U tom slučaju treba da:
 
 1. Definišeš interfejs repozitorijuma u okviru `Core` projekta povezanog modula, direktorijum `Domain/RepositoryInterfaces`.
 2. Definišeš implementaciju interfejsa repozitorijuma u okviru `Infrastructure` projekta, direktorijum `Database/Repositories`.
