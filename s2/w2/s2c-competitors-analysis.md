@@ -1,7 +1,7 @@
 # Analiza konkurencije
 
 U okviru ovog zadatka potrebno je analizirati već postojeće aplikacije i sajtove sličnom projektu koji razvijate i koji
-u nekoj meripredstavljaju konkurenciju na tržištu. Cilj ovog zadatka je sticanje uvida u probleme koji su prisutni u
+u nekoj meri predstavljaju konkurenciju na tržištu. Cilj ovog zadatka je sticanje uvida u probleme koji su prisutni u
 ovom domenu, analiziranje postojećih rešenja tih problema, prepoznavanje korisnih funkcionalnosti koje bi bilo dobro
 imati i analiziranje poslovnog modela.
 
