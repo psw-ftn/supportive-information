@@ -148,5 +148,11 @@ Rezultat:
 ![image](https://github.com/psw-ftn/supportive-information/assets/57589408/44ef0ef8-efaf-4d27-a114-db1ae544678b)
 
 # Uvezivanje mapa sa komponentama za kreiranje i izmenu ključnih tačaka i objekata
-Ne treba zaboraviti da je, pored integracije mapa, neophodno iskoristiti ovu komponentu prilikom upravljanja sa ključnim tačkama i objektima. Uz pomoć ove funkcionalnosti možemo da odaberemo koordinate gde se tačka nalazi bez da korisnik mora da ukucava geografsku širinu i dužinu.
+Ne zaboravi da je, pored integracije mapa, neophodno iskoristiti ovu komponentu prilikom:
 
+1. Kreiranja i izmene ključnih tačka, gde korisnik bira tačku na mapi umesto da ručno unosi geografsku širinu i dužinu.
+2. Kreiranje i izmene objekata, gde korisnik bira tačku na mapi umesto da ručno unosi geografsku širinu i dužinu.
+3. Prikaz svih ključnih tačaka jedne ture.
+
+Za tačku 1. i 2. je u serverskoj aplikaciji potrebno sitno proširenje domenskog modela (i tabele u bazi, da li ručno ili kroz migracije), a većina rada će biti na klijentskoj aplikaciji.
+Za tačku 3. će u serverskoj aplikaciji verovatno trebati proširiti postojeće servise (a možda i domenski model), tako da dobave ključne tačke za određenu turu.
