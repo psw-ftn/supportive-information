@@ -275,7 +275,7 @@ Za ovaj zadatak potrebno je:
 
 Biblioteka se instaliraju sledećim komandama:  
 1. <b>npm i leaflet-routing-machine</b>
-2. <b>npm i @types/leaflet-routing-machine</b>.
+2. <b>npm i @types/leaflet-routing-machine</b>
 
 Potom je potrebno u angluar.json u okviru styles dela postaviti putanju do leaflet-routing stilova ("./node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"). Kao u koraku 0.b
 
