@@ -285,7 +285,7 @@ Možeš ispratiti sledeći sajt - https://www.mapbox.com/.
 
 ### c. Funkcija za rutiranje  
 
-Preko L.Routing.control možemo napraviti željenu rutu, waypoints predstavlja niz geografskih širina i dužina dok router specifira koji ćemo routing engine koristiti. U ovom slučaju koristimo mapbox kome smo prosledili api key i da želimo rutu za pešačenje, takođe možemo proslediti profil za automobil ili bicikl (pogledaj mapbox dokumentaciju).  
+Preko L.Routing.control možemo napraviti željenu rutu, waypoints predstavlja niz geografskih širina i dužina dok router specifira koji ćemo routing engine koristiti. U ovom slučaju koristimo mapbox kome smo prosledili api key i da želimo rutu za pešačenje, takođe možemo proslediti profil za automobil ili bicikl (pogledaj mapbox dokumentaciju). Nemoj zaboraviti da pozoveš setRoute() iz initMap funkcije (nakon inicijalizacije mape) kako bi video efekat rutiranja. Dodatno obavezno je potrebno importovati 'leaflet-routing-machine' u app.component.ts (import 'leaflet-routing-machine';) . 
 
 Dodatno preko eventa 'routesfound' možemo izvući informacije o distanci i potrebnom vremenu za rutu.
 
