@@ -1,5 +1,5 @@
 # Analiza sajtova za uzor i definisanje zahteva
-U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti kao uzor za dizajniranje vašeg projekta. Analiza treba da obuhvati vizuelni i funkcionalni aspekt web aplikacija. Cilj ovog zadatka je da steknete uvid u efikasan dizajn i HCI principe koje možete primeniti prilikom izrade vašeg projekta.
+U okviru ovog zadatka potrebno je analizirati web aplikacije koje će služiti kao uzor za dizajniranje vašeg projekta. Analiza treba da obuhvati vizuelni i funkcionalni aspekt web aplikacija. Cilj ovog zadatka je da steknete uvid u efikasan dizajn i HCI principe koje možete primeniti prilikom izrade vašeg projekta i da definišete UI konvencije koje ćete usvojiti na nivou tima.
 
 Preuzmite <a href="https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/Design_HCI_analysis.xlsx" target="_blank">tabelu</a> i popunite je tokom analize. U nastavku teksta će biti istaknuto šta je tačno potrebno istražiti, a u zagradama će biti naznačeno u kojoj koloni tabele treba popuniti odgovarajuće informacije.
 
