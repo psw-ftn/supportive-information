@@ -75,7 +75,7 @@ Intervju je najbolje sprovesti u ambijentu koji nije previše bučan i gde se sv
 
 Tokom intervjua jedan član tima može da vodi razgovor, dok će drugi biti posvećen zapisivanju interesantnih detalja. Ovo ne sprečava drugog člana tima da postavlja svoja pitanja.
 
-Rezultat intervjua treba da bude snimak, zapisi ključnih tačaka (koje će se proći u Retrospektivi) i fotografija sa osobom koja je intervjuisana koju ćete priložiti asistentu na uvid.
+Rezultat intervjua treba da bude snimak, zapisi ključnih tačaka (koje će se proći u Retrospektivi) i **fotografija sa osobom koja je intervjuisana** koju ćete priložiti asistentu na uvid.
 
 ## 4. Kreiranje mape empatije različitih persona
 Za svaki sproveden intervju možemo da sastavimo jednu mapu empatije koju vezujemo za personu. Primer šablona za ovu mapu je naveden ispod:
