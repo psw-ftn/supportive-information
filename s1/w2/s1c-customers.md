@@ -99,7 +99,7 @@ Think & Feel:
 - Nestrpljiv da uroni u lokalnu kulturu i istoriju.
 - Ceni autentična iskustva više od turističkih atrakcija.
 - Želi da sazna o istorijskom značaju mesta.
-- Brine se o poštovanju lokalnih običaja i etikete.
+- Brine se o poštovanju lokalnih običaja i bontona.
 
 See:
 
