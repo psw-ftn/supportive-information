@@ -1,6 +1,6 @@
 Serverski deo aplikacije je izgrađen koristeći:
 
-- `ASP.NET` radni okvir za izgradnju Web aplikacije,
+- `ASP.NET` radni okvir za izgradnju Web aplikacije (ako nisi instalirao .NET 7, možeš putem [linka](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)),
 - `Entity Framework` biblioteku za objektno-relaciono mapiranje (pretvaranje objekata u redove SQL tabela i obratno),
 - `AutoMapper` biblioteke za pretvaranje DTO instanci u domenske objekte i obratno,
 - `xUnit` radni okvir za pisanje automatskih testova.
