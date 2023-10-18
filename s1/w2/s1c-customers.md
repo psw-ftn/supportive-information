@@ -86,10 +86,10 @@ Koristeći datu sliku na draw.io alatu, možemo da popunimo praznine sa zapažan
 
 - Šta misli i oseća (Think & Feel) - šta su unutrašnje misli, osećanja i stavovi osobe u vezi sa turističim istraživanjem ili turama?
 - Šta vidi (See) - šta osoba primećuje tokom turističkog istraživanja ili tura? Roditelji će prvo gledati gde im se dete može povrediti, dok će mladi ispitivati šta su dobra mesta za izlaske.
-- Šta čuje (Hear) - šta osoba čuje od bližnjih, klubova kojim pripada, sajtovima koje posećuje, turističkih agencija, itd. povodom turističkog istraživanja ili tura?
+- Šta čuje (Hear) - šta osoba čuje od bližnjih, zajednica kojim pripada, sajtova koje posećuje, turističkih agencija, itd. povodom turističkog istraživanja ili tura?
 - Šta radi (Say & Do) - kako se osoba ponaša tokom turističkog istraživanja ili tura?
-- Šta su izazovi (Pain) - šta mu smeta kod turističkog istraživanja ili tura? Šta kod alata i aplikacija koje koristi da podrži to? Šta su karakteristike negativnih iskustva koje je imao?
-- Šta su želje (Gain) - šta osoba izvlači iz turističkog istraživanja ili tura? Šta su karakteristike pozitivnih iskustva koje je imao?
+- Šta su izazovi (Pain) - šta mu smeta kod turističkog istraživanja ili tura? Šta mu smeta kod alata i aplikacija koje koristi? Šta su karakteristike negativnih iskustva koje je imao?
+- Šta su želje (Gain) - šta osoba izvlači iz turističkog istraživanja ili tura? Šta mu se sviđa kod alata koje koristi? Šta su karakteristike pozitivnih iskustva koje je imao?
 
 ### Primer mape empatije za personu "Turista zaljubljen u kulturu"
 Da ilustrujemo kako popuniti prethodno, u nastavku navodimo teze za personu "David - Turista zaljubljen u kulturu" (u tekstulanom obliku).
