@@ -281,7 +281,7 @@ Potom je potrebno u angluar.json u okviru styles dela postaviti putanju do leafl
 
 ### b. Nalog i API KEY
 
-Možeš ispratiti sledeći sajt - https://www.mapbox.com/.
+Možeš ispratiti sledeći sajt - https://www.mapbox.com/ (napravi nalog sa UNS mejlom kako ne bi morao/la da ostaviš podatke o platnoj kartici).
 
 ### c. Funkcija za rutiranje  
 
