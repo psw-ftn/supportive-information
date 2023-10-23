@@ -71,19 +71,25 @@ Većina kartica u S2 podrazumevaju da se naprave agregati objekata i da se u nji
 
 1. Analiziramo tekst naše kartice i ostalih kartica koje se tiču istog većeg koncepta u okviru jednog modula. Cilj je da pobrojimo klase domenskog sloja koje su potrebne da podrže tražene funkcionalnosti.
 2. Klasifikacija svake klase kao koren agregata, entitet ili vrednosni objekat, gde u opštem slučaju važi:
-   1. Koren agregata je entitet koji pored svojih podataka ima asocijaciju ka jednom ili više entitetu i vrednosnom objektu. Ova kolekcija objekata se koristi zajedno da ispuni slučajeve korišćenja i ne treba da postoji slučaj korišćenja koji interaguje sa podacima van korena agregata.<br>
-   _Primer_: Ključna tačka je deo Ture, koja može biti koren agregata. Problem nastaje kod slučaja korišćenja "prikaži javne ključne tačke". Ovo zahteva da se ključna tačka tretira kao odvojen entitet ili da postoji odvojeni koncept "javne ključne tačke" koji se duplira u Turama koje koriste tu tačku.
-   2. Entitet je prost agregat koji se sastoji samo od jednog objekta koji ima svoj životni ciklus i postoji nezavisno od drugih objekata. Drugi objekti ga mogu referencirati putem IDa.
+   1. Koren agregata je entitet koji pored svojih podataka ima asocijaciju ka jednom ili više entitetu i vrednosnom objektu. Ova skupina objekata se koristi zajedno da ispuni slučajeve korišćenja, gde servisi interaguju isključivo sa korenom agregata. Brisanjem korena agregata bismo trebali smisleno da obrišemo i sve povezane objekte. Agregat može da ima jedan objekat, u kom slučaju je to jedan entitet bez dodatnih povezanih objekata.<br>
+   _Primer_: Ključna tačka je deo Ture, gde je Tura koren agregata. Problem nastaje kod slučaja korišćenja "prikaži javne ključne tačke". Ovo zahteva da se ključna tačka tretira kao odvojen entitet ili da postoji odvojeni koncept "javne ključne tačke" koji se duplira u Turama koje koriste tu tačku (javna ključna tačka verovatno neće imati tajnu).
+   2. Entitet može da bude deo agregata, a da nije njegov koren, kada je jasno podređen drugom entitetu i kada ima svoj životni ciklus.
    3. Vrednosni objekat sadrži kohezivne podatke i logiku koja radi nad njima, ali ne postoji smisleno van agregata.<br>
    _Primer_: Poruka vezana za problem sa turom ne postoji smisleno bez tog problema kom pripada.
 3. Izdvajanje dela agregata koji je potreban za implementaciju naše kartice.
+
+_Primer_: Da bismo podržali funkcionalnost vezanu za blog, sprovodimo prethodni algoritam:
+
+1. Blog pored svog sadržaja ima komentare i ocene i možemo da identifikujemo tri klase - `Blog`, `Comment` i `Rating`.
+2. Brisanjem bloga ima smisla da obrišemo i sve komentare i ocene vezane za taj blog, što nam je jak indikator da je `Blog` koren agregata. Pošto Blog ima životni ciklus (draft, objavljen, zatvoren, aktivan, poznat) jasno je da je barem entitet. Komentar i ocena nemaju očigledan životni ciklus (npr. nemaju stanje koje bi bio jasan indikator da nekakav životni ciklus postoji). Iako nisu nužno immutable (npr. ima smisla da se edituje komentar) i dalje ih možemo tretirati kao vrednosne objekte. Spram navedenog možemo identifikovati agregat `Blog` koji sadrži dve liste vrednosnih objekata.
+3. Funkcionalnosti vezane za davanje glasa i manipulaciju komentara idu kroz `Blog` klasu. Možemo zamisliti `AddRating` metodu koja proverava da li lista `Ratings` sadrži ocenu od datog korisnika. Ako sadrži, zamenjuje je. Ako ne sadrži, dodaje je. Spram ukupne ocene, ista metoda proverava da li treba izmeniti status `Bloga`. Sličnu funkcionalnost vidimo za sve ostale manipulacije Bloga i njegovih objekata, gde bi servis u tom slučaju samo: 1) Učitao `Blog` sa prosleđenim IDem, 2) Pozvao odgovarajuću metodu tog objekta i 3) Vratio rezultat.
 
 ### 2. Implementacija domenskog sloja
 Sa povećanjem broja klasa u našim projektima, vreme je da razmišljamo o segmentaciji svakog sloja u smislene direktorijume. Za domenski sloj (`Core/Domain`) ima smisla da definišemo 1 direktorijum za svaki agregat ili 1 paket za svaki agregat koji podrazumeva više od jedne klase (dok bi jedno-klasni agregati ostali u `Core/Domain`). Naziv direktorijuma je isti kao naziv korena agregata, samo što je u množini.
 
 Dalje, definišemo klase koje su nam potrebne za rešavanje kartice. Entiteti treba da naslede `Entity` klasu, dok će vrednosni objekti naslediti klasu `ValueObject`. Kada budemo pravili prvi vrednosni objekat, potrebno je da definišemo `ValueObject` klasu koju ćemo smestiti u `BuildingBlocks/Explorer.BuildingBlocks.Core/Domain`. Primer ove klase i načina njenog nasleđivanja vidimo u **[sledećem članku](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/)**. Uvođenje ove osnovne klase je nešto što treba uraditi samo jednom na početku razvoja, od strane najrevnosnijeg člana tima.
 
-Poslednji korak podrazumeva smeštanje poslovne logike koju agregat treba da podrži u sam agregat. Ovo podrazumeva da se definišu odgovarajuće metode u agregatu. Ove metode će servisi kasnije pozivati tako da jedina pamet koju sadrže bude pamet koordinacije više klasa.
+Poslednji korak podrazumeva smeštanje poslovne logike koju agregat treba da podrži u sam agregat. Ovo podrazumeva da se definišu odgovarajuće metode u objektima koje čine agregat. Metode koje nudi koren agregata će servisi kasnije pozivati tako da jedina pamet koju sadrže bude pamet koordinacije više klasa. Ako koren agregata treba da referencira drugi koren agregata, to radi putem IDa.
 
 ### 3. Implementacija perzistencije
 TODO
