@@ -83,6 +83,13 @@ Sa povećanjem broja klasa u našim projektima, vreme je da razmišljamo o segme
 
 Dalje, definišemo klase koje su nam potrebne za rešavanje kartice. Entiteti treba da naslede `Entity` klasu, dok će vrednosni objekti naslediti klasu `ValueObject`. Kada budemo pravili prvi vrednosni objekat, potrebno je da definišemo `ValueObject` klasu koju ćemo smestiti u `BuildingBlocks/Explorer.BuildingBlocks.Core/Domain`. Primer ove klase i načina njenog nasleđivanja vidimo u **[sledećem članku](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/)**. Uvođenje ove osnovne klase je nešto što treba uraditi samo jednom na početku razvoja, od strane najrevnosnijeg člana tima.
 
+Poslednji korak podrazumeva smeštanje poslovne logike koju agregat treba da podrži u sam agregat. Ovo podrazumeva da se definišu odgovarajuće metode u agregatu. Ove metode će servisi kasnije pozivati tako da jedina pamet koju sadrže bude pamet koordinacije više klasa.
+
+### 3. Implementacija perzistencije
+TODO
+
+### 4. Implementacija ostalih slojeva
+TODO
 
 <br><br><br><br>
 # 4. Testiranje agregata
