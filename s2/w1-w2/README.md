@@ -30,20 +30,14 @@ Plan potreban da se reši zadatak sa malo nepoznanica, od strane jedne osobe i u
 Sa skupom sitnih korisnička priča, potrebno je da dogovorite ko će šta da radi i u kom redosledu. Dogovor se može rešavati na nivou podtima (stvorenog u koraku 1.1). Pri planiranju, uzmite u obzir sledeće:
 
 1. Postoje tri tipa zavisnosti između kartica koji različito utiču na planiranje:
-   1. Dve kartice su _potpuno nezavisne_ kada se rešavaju bez ikakvog uticaja jedna na drugu.
-   
-   _Primer_: "ocenjivanje bloga" nema dodira sa "objavljivanjem ture".
-
+   1. Dve kartice su _potpuno nezavisne_ kada se rešavaju bez ikakvog uticaja jedna na drugu.<br>
+   _Primer_: "ocenjivanje bloga" nema dodira sa "objavljivanjem ture".<br>
    _Uticaj na planiranje_: Dati tip zavisnosti ne utiče na planiranje razvoja.
-   2. Dve kartice su _suštinski nezavisne_ kada postoji slaba zavisnost između njih koja se lako može rešiti na početku ili kraju razvoja.
-   
-   _Primer_: "simulator pozicije" definiše poziciju turiste koja je potrebna "izvedbi ture". Nakon što je uvedena klasa TouristPosition, moguće je manipulisati podatkom u bazi za potrebe razvoja "izvedbe ture" i pre nego što je kompletan "simulator" gotov).
-
+   2. Dve kartice su _suštinski nezavisne_ kada postoji slaba zavisnost između njih koja se lako može rešiti na početku ili kraju razvoja.<br>
+   _Primer_: "simulator pozicije" definiše poziciju turiste koja je potrebna "izvedbi ture". Nakon što je uvedena klasa TouristPosition, moguće je manipulisati podatkom u bazi za potrebe razvoja "izvedbe ture" i pre nego što je kompletan "simulator" gotov).<br>
    _Uticaj na planiranje_: Za dati tip zavisnosti je potrebno iskordinisati pola sata na početku ili kraju razvoja da se integrišu funkcije.
-   3. Dve kartice su _zavisne_ kada je potrebno više sati rada da se integrišu ako se rade u paraleli.
-   
-   _Primer_: Ne možemo omogućiti Autoru da "kreira ključne tačke putem mape" ako nismo "integrisali mapu". Možemo doduše da omogućimo autoru da "kreira ključne tačke", gde smo "putem mape" deo izdvojili da se reši nakon što je mapa integrisana.
-
+   3. Dve kartice su _zavisne_ kada je potrebno više sati rada da se integrišu ako se rade u paraleli.<br>
+   _Primer_: Ne možemo omogućiti Autoru da "kreira ključne tačke putem mape" ako nismo "integrisali mapu". Možemo doduše da omogućimo autoru da "kreira ključne tačke", gde smo "putem mape" deo izdvojili da se reši nakon što je mapa integrisana.<br>
    _Uticaj na planiranje_: Prvo pokušavamo da dekomponujemo zavisne priče da se izdvoji što manja smislena celina koja je deljena i da se ona prva implementira. U svakom slučaju sekvenciramo posao da se prvo reši zadatak od kog ostali zavise i **ovakve zadatke treba rešiti u prvoj nedelji**.
 3. Smisleno je dodeliti ljudima koji su već radili sa nekim modulom zadatak da nastave da rade sa tim modulom. Na većim projektima se timovi formiraju spram modula modularnog monolita (ili servisa kod mikroservisnih arhitektura).
 4. Skroz nove vrste zadataka (npr. integracija sa Google Analytics) unose rizik od nepoznatog i ima smisla da se rade pre nego kasnije (ne nužno cela kartica, ali svakako inicijalna integracija).
