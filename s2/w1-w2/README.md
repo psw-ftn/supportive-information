@@ -31,16 +31,23 @@ Sa skupom sitnih korisnička priča, potrebno je da dogovorite ko će šta da ra
 
 1. Postoje tri tipa zavisnosti između kartica koji različito utiču na planiranje:
    1. Dve kartice su _potpuno nezavisne_ kada se rešavaju bez ikakvog uticaja jedna na drugu.
+   
    _Primer_: "ocenjivanje bloga" nema dodira sa "objavljivanjem ture".
+
    _Uticaj na planiranje_: Dati tip zavisnosti ne utiče na planiranje razvoja.
    2. Dve kartice su _suštinski nezavisne_ kada postoji slaba zavisnost između njih koja se lako može rešiti na početku ili kraju razvoja.
+   
    _Primer_: "simulator pozicije" definiše poziciju turiste koja je potrebna "izvedbi ture". Nakon što je uvedena klasa TouristPosition, moguće je manipulisati podatkom u bazi za potrebe razvoja "izvedbe ture" i pre nego što je kompletan "simulator" gotov).
+
    _Uticaj na planiranje_: Za dati tip zavisnosti je potrebno iskordinisati pola sata na početku ili kraju razvoja da se integrišu funkcije.
    3. Dve kartice su _zavisne_ kada je potrebno više sati rada da se integrišu ako se rade u paraleli.
+   
+   _Primer_: Ne možemo omogućiti Autoru da "kreira ključne tačke putem mape" ako nismo "integrisali mapu". Možemo doduše da omogućimo autoru da "kreira ključne tačke", gde smo "putem mape" deo izdvojili da se reši nakon što je mapa integrisana.
+
    _Uticaj na planiranje_: Prvo pokušavamo da dekomponujemo zavisne priče da se izdvoji što manja smislena celina koja je deljena i da se ona prva implementira. U svakom slučaju sekvenciramo posao da se prvo reši zadatak od kog ostali zavise i **ovakve zadatke treba rešiti u prvoj nedelji**.
-2. Smisleno je dodeliti ljudima koji su već radili sa nekim modulom zadatak da nastave da rade sa tim modulom. Na većim projektima se timovi formiraju spram modula modularnog monolita (ili servisa kod mikroservisnih arhitektura).
-3. Skroz nove vrste zadataka (npr. integracija sa Google Analytics) unose rizik od nepoznatog i ima smisla da se rade pre nego kasnije (ne nužno cela kartica, ali svakako inicijalna integracija).
-4. Čak i poznat posao ima iherentan rizik da će nešto iskočiti. Možemo se prehladiti se može pojaviti neočekivana situacija u privatnom životu koju moramo da rešavamo. Bolje nam je da odvadimo veću količinu posla u periodu kada je mir. Zbog toga vredi da prva nedelja razvoja podrazumeva da se više posla uradi nego što ostane za drugu. Ako se ostvari rizik, imamo dovoljno vremena u drugoj nedelji da radimo na zadacima. 
+3. Smisleno je dodeliti ljudima koji su već radili sa nekim modulom zadatak da nastave da rade sa tim modulom. Na većim projektima se timovi formiraju spram modula modularnog monolita (ili servisa kod mikroservisnih arhitektura).
+4. Skroz nove vrste zadataka (npr. integracija sa Google Analytics) unose rizik od nepoznatog i ima smisla da se rade pre nego kasnije (ne nužno cela kartica, ali svakako inicijalna integracija).
+5. Čak i poznat posao ima iherentan rizik da će nešto iskočiti. Možemo se prehladiti se može pojaviti neočekivana situacija u privatnom životu koju moramo da rešavamo. Bolje nam je da odvadimo veću količinu posla u periodu kada je mir. Zbog toga vredi da prva nedelja razvoja podrazumeva da se više posla uradi nego što ostane za drugu. Ako se ostvari rizik, imamo dovoljno vremena u drugoj nedelji da radimo na zadacima. 
 
 Uzimajući sve prethodno u obzir, možemo da raspodelimo posao na nivou tima i ugovorimo u kalendaru ključne rokove da izbegnemo konflikte zbog međuzavisnog rada i da stignemo da potražimo pomoć ako se neki rizik ostvari.
 
