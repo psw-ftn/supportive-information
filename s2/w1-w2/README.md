@@ -87,12 +87,22 @@ _Primer_: Da bismo podržali funkcionalnost vezanu za blog, sprovodimo prethodni
 ### 2. Implementacija domenskog sloja
 Sa povećanjem broja klasa u našim projektima, vreme je da razmišljamo o segmentaciji svakog sloja u smislene direktorijume. Za domenski sloj (`Core/Domain`) ima smisla da definišemo 1 direktorijum za svaki agregat ili 1 paket za svaki agregat koji podrazumeva više od jedne klase (dok bi jedno-klasni agregati ostali u `Core/Domain`). Naziv direktorijuma je isti kao naziv korena agregata, samo što je u množini.
 
-Dalje, definišemo klase koje su nam potrebne za rešavanje kartice. Entiteti treba da naslede `Entity` klasu, dok će vrednosni objekti naslediti klasu `ValueObject`. Kada budemo pravili prvi vrednosni objekat, potrebno je da definišemo `ValueObject` klasu koju ćemo smestiti u `BuildingBlocks/Explorer.BuildingBlocks.Core/Domain`. Primer ove klase i načina njenog nasleđivanja vidimo u **[sledećem članku](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/)**. Uvođenje ove osnovne klase je nešto što treba uraditi samo jednom na početku razvoja, od strane najrevnosnijeg člana tima.
+Dalje, definišemo klase koje su nam potrebne za rešavanje kartice. Entiteti treba da naslede `Entity` klasu, dok će vrednosni objekti naslediti klasu `ValueObject` i neće imati ID polje. Kada budemo pravili prvi vrednosni objekat, potrebno je da definišemo `ValueObject` klasu koju ćemo smestiti u `BuildingBlocks/Explorer.BuildingBlocks.Core/Domain` (pored `Entity` klase). Primer ove klase i načina njenog nasleđivanja vidimo u **[sledećem članku](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/)**. Uvođenje ove osnovne klase je nešto što treba uraditi samo jednom na početku razvoja, od strane najrevnosnijeg člana tima.
 
 Poslednji korak podrazumeva smeštanje poslovne logike koju agregat treba da podrži u sam agregat. Ovo podrazumeva da se definišu odgovarajuće metode u objektima koje čine agregat. Metode koje nudi koren agregata će servisi kasnije pozivati tako da jedina pamet koju sadrže bude pamet koordinacije više klasa. Ako koren agregata treba da referencira drugi koren agregata, to radi putem IDa.
 
 ### 3. Implementacija perzistencije
-TODO
+Kada implementiramo agregate _by the book_, želeli bismo da perzistenciju agregata implementiramo tako da se agregat smešta u i čita iz skladišta u celosti. Ovo podrazumeva dve stvari:
+
+1. Potrebno je definisati repozitorijum oko korena agregata, gde funkcija za učitavanje koristi `Include` metodu da uključi sve povezane entitete.
+2. Pošto vrednosni objekti nemaju ID, njih ćemo skladištiti kao JSON kolone. Da bismo ovo postigli, potrebno je da:
+   1. U odgovarajućem `DbContext` nasledniku i u okviru `OnModelCreating` metode definišemo liniju koda `modelBuilder.Entity<MY_ROOT>().Property(item => item.VALUE_OBJECTS).HasColumnType("jsonb");`<br>
+   _Primer_: Na **[sledećem linku](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Infrastructure/Database/KnowledgeComponentsContext.cs#L78-L79)** se vidi primer konfiguracije.
+   2. U klasi koja nasleđuje `ValueObject` ubacujemo konstruktor koji prihvata sve parametre i ima `[JsonConstructor]` anotaciju.<br>
+   _Primer_: Na **[sledećem linku](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Core/Domain/Knowledge/AssessmentItems/Hint.cs#L11)** se vidi primer konstruktora.
+   3. Po potrebi se modifikuje mapiranje domenskih objekata na DTO i obratno, tako da se eksplicitno poziva konstruktor vrednosnog objekta.<br>
+   _Primer_: Na **[sledećem linku](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Core/Mappers/AssessmentItemsProfile.cs#L17-L18)** se vidi primer konfiguracije.
+
 
 ### 4. Implementacija ostalih slojeva
 TODO
@@ -100,3 +110,4 @@ TODO
 <br><br><br><br>
 # 4. Testiranje agregata
 TODO
+TODO: Napomena za testnu skriptu.
