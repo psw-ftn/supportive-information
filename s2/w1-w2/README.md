@@ -94,8 +94,9 @@ Poslednji korak podrazumeva smeštanje poslovne logike koju agregat treba da pod
 ### 3. Implementacija perzistencije
 Kada implementiramo agregate _by the book_, želeli bismo da perzistenciju agregata implementiramo tako da se agregat smešta u i čita iz skladišta u celosti. Ovo podrazumeva dve stvari:
 
-1. Potrebno je definisati repozitorijum oko korena agregata, gde funkcija za učitavanje koristi `Include` metodu da uključi sve povezane entitete.
-2. Pošto vrednosni objekti nemaju ID, njih ćemo skladištiti kao JSON kolone. Da bismo ovo postigli, potrebno je da:
+1. U `Domain` direktorijumu ćemo uz koren agregata definisati interfejs repozitorijuma koji je fokusiran na koren agregata. Implementaciju tog repozitorijuma smeštamo u `Infrastructure` projekat.
+2. Funkcije za učitavanje agregata koriste `Include` metodu da uključe sve povezane entitete. Prilikom brisanja korena treba kaskadno obrisati i povezane entitete. Dokumentacija za datu metodu je istaknuta [ovde](https://learn.microsoft.com/en-us/ef/ef6/querying/related-data).
+3. Pošto vrednosni objekti nemaju ID, njih ćemo skladištiti kao JSON kolone. Da bismo ovo postigli, potrebno je da:
    1. U odgovarajućem `DbContext` nasledniku i u okviru `OnModelCreating` metode definišemo liniju koda `modelBuilder.Entity<MY_ROOT>().Property(item => item.VALUE_OBJECTS).HasColumnType("jsonb");`<br>
    _Primer_: Na **[sledećem linku](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Infrastructure/Database/KnowledgeComponentsContext.cs#L78-L79)** se vidi primer konfiguracije.
    2. U klasi koja nasleđuje `ValueObject` ubacujemo konstruktor koji prihvata sve parametre i ima `[JsonConstructor]` anotaciju.<br>
@@ -103,10 +104,31 @@ Kada implementiramo agregate _by the book_, želeli bismo da perzistenciju agreg
    3. Po potrebi se modifikuje mapiranje domenskih objekata na DTO i obratno, tako da se eksplicitno poziva konstruktor vrednosnog objekta.<br>
    _Primer_: Na **[sledećem linku](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Core/Mappers/AssessmentItemsProfile.cs#L17-L18)** se vidi primer konfiguracije.
 
+Pošto agregati predstavljaju skup povezanih objekata koji se zajedno učitavaju, skladište i uništavaju zajedno, često se koriste druge vrste skladišta koje nisu SQL baze podataka. Tipičan primer baze pogodne za skladištenje agregata su NoSQL baze. Da bismo izbegli uvođenje nove tehnologije, koristimo funkcionalnosti koje PostgreSQL pruža da skladišti JSON dokumente.
+
+_Primer_: Za `Blog` ćemo:
+
+1. Definisati interfejs repozitorijuma u domenskom sloju i implementaciju repozitorijuma u `Infrastructure` projektu.
+2. Pošto `Blog` nema povezane entitete u primeru koji smo iznad obrađivali, implementacija repozitorijuma je prosta (i možemo se čak osloniti na `CrudRepository` ako nemamo dodatne metode).
+3. `Blog` ima 2 vrednosna objekta i za njih ćemo definisati mapiranje u `BlogContext` klasi na `jsonb`. Takođe dodajemo u svaku klasu konstruktor sa ispravnom anotacijom. Dodatno sređujemo mapiranje u `BlogProfile` klasi (`Core/Mappers`).
 
 ### 4. Implementacija ostalih slojeva
-TODO
+Da bismo podržali kompletne funkcionalnosti, neophodno je da pored domenskih slojeva i repozitorijuma imamo odgovarajuće servise i kontrolere.
 
+Pošto nam raste broj kontrolerskih i servisnih klasa, postavlja se pitanje kako ima smisla da ih grupišemo u direktorijume. Odgovor koji nam se uklapa u arhitekturu jeste da servise grupišemo po grupama slučajeva korišćenja, dok ćemo kontrolere prvo grupisati po ulozi (kao što je sada), a onda dodatno u okviru svake uloge po grupama slučajeva korišćenja. Pitanje je šta su "grupe slučajeva korišćenja"? U našem projektu za sada imamo sledeće grupe slučajeva korišćenja:
+
+- `Shopping` - sve funkcionalnosti koje podržavaju turistu u kupovini.
+- `Authoring` - sve funkcionalnosti koje podržavaju autora u konstrukciji ture.
+- `Execution` - sve funkcionalnosti koje podržavaju turistu prilikom vođenja ture.
+- `Blog` - sve funkcionalnosti vezane za podsistem za blog (pošto je ovo već samostalan modul, nema smisla dodatno segmentirati servise tog modula).
+- `Administration` - sve funkcionalnosti koje podržavaju administratora da održava sistem.
+- `Identity` - sve funkcionalnosti za održavanje svog digitalnog identiteta od strane korisnika.
+
+Prve tri gupe slučajeva korišćenja su podržana od strane `Tours` modula. Četvrta je iz istoimenog modula, dok su peta i šesta primarno vezani za `Stakeholders` modul.
+
+Što se tiče samih servisa i kontrolera, ovde nema previše izmena u odnosu na prošli put. Pošto sad radimo sa agregatima, teško ćemo koristiti prosti `CrudService` da podržimo naprednije funkcionalnosti. Pošto je većina pameti u samom agregatu, servis treba da 1) Učita 1 ili više agregata koji su potrebni da se ispuni slučaj korišćenja, 2) Traži od učitanih agregata da urade svoj posao i koordiniše njihovu interakciju kada treba, 3) Formira rezultat i sačuva izmene agregata ako ih je bilo.
+
+Sami kontroleri trebaju da definišu odgovarajuće endpointe, no ovo se ne razlikuje u odnosu na ono što smo imali ranije.
 <br><br><br><br>
 # 4. Testiranje agregata
 TODO
