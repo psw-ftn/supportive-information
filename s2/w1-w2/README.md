@@ -1,4 +1,4 @@
-Prve dve nedelje drugog sprinta su posvećenu razvoju složenih funkcionalnosti. Ovo podrazumeva:
+Prve dve nedelje drugog sprinta su posvećene razvoju složenih funkcionalnosti. Ovo podrazumeva:
 
 1. Dekompoziciju složenih korisničkih priča na sitnije priče.
 2. Planiranje posla na skali od dve nedelje.
@@ -10,7 +10,7 @@ U organizacijama koje prate Scrum radni okvir, _product owner_ rola je zadužena
 
 Postoji više tehnika za dekompoziciju korisničkih priča, u zavisnosti od prirode same priče. Takođe postoji jedna tehnika koju moramo izbegavati i koja neće proizvesti korisne korisničke priče. Sledeća **[playlista](https://www.youtube.com/watch?v=cGKuogxAmT0&list=PLWTyGVhcibjZvbyNjq2I10K63QreUZIMc)** sabira nekoliko tehnika sa kojim treba da se upoznaš (slobodno slušaj na većoj brzini).
 
-Razlaganje korisnički priča na sitnije zadatke smanjuje _rizik_ da se veća funkcionalnost neće implementirati i takođe olakšava identifikaciju spregnutosti između priča, čime lakše možemo da pravimo nezavisne (engl. _independent_) korisničke priče.
+Razlaganje korisničkih priča na sitnije zadatke smanjuje _rizik_ da se veća funkcionalnost neće implementirati i takođe olakšava identifikaciju spregnutosti između priča, čime lakše možemo da pravimo nezavisne (engl. _independent_) korisničke priče.
 
 Većina korisničkih priča koje smo planirali u drugom sprintu podrazumevaju rad od bar dve čovek-nedelje (pod čovek-nedelja mislimo rad od 5-6 sati u sklopu nedelje od strane jednog studenta). Neke zahtevaju pet takvih nedelja.
 
@@ -35,13 +35,13 @@ Sa skupom sitnih korisnička priča, potrebno je da dogovorite ko će šta da ra
    _Uticaj na planiranje_: Dati tip zavisnosti ne utiče na planiranje razvoja.
    2. Dve kartice su _suštinski nezavisne_ kada postoji slaba zavisnost između njih koja se lako može rešiti na početku ili kraju razvoja.<br>
    _Primer_: "simulator pozicije" definiše poziciju turiste koja je potrebna "izvedbi ture". Nakon što je uvedena klasa TouristPosition, moguće je manipulisati podatkom u bazi za potrebe razvoja "izvedbe ture" i pre nego što je kompletan "simulator" gotov).<br>
-   _Uticaj na planiranje_: Za dati tip zavisnosti je potrebno iskordinisati pola sata na početku ili kraju razvoja da se integrišu funkcije.
+   _Uticaj na planiranje_: Za dati tip zavisnosti je potrebno iskoordinisati pola sata na početku ili kraju razvoja da se integrišu funkcije.
    3. Dve kartice su _zavisne_ kada je potrebno više sati rada da se integrišu ako se rade u paraleli.<br>
    _Primer_: Ne možemo omogućiti Autoru da "kreira ključne tačke putem mape" ako nismo "integrisali mapu". Možemo doduše da omogućimo autoru da "kreira ključne tačke", gde smo "putem mape" deo izdvojili da se reši nakon što je mapa integrisana.<br>
    _Uticaj na planiranje_: Prvo pokušavamo da dekomponujemo zavisne priče da se izdvoji što manja smislena celina koja je deljena i da se ona prva implementira. U svakom slučaju sekvenciramo posao da se prvo reši zadatak od kog ostali zavise i **ovakve zadatke treba rešiti u prvoj nedelji**.
 3. Smisleno je dodeliti ljudima koji su već radili sa nekim modulom zadatak da nastave da rade sa tim modulom. Na većim projektima se timovi formiraju spram modula modularnog monolita (ili servisa kod mikroservisnih arhitektura).
 4. Skroz nove vrste zadataka (npr. integracija sa Google Analytics) unose rizik od nepoznatog i ima smisla da se rade pre nego kasnije (ne nužno cela kartica, ali svakako inicijalna integracija).
-5. Čak i poznat posao ima iherentan rizik da će nešto iskočiti. Možemo se prehladiti ili se može pojaviti neočekivana situacija u privatnom životu koju moramo da rešavamo. Bolje nam je da odvadimo veću količinu posla u periodu kada je mir. Zbog toga vredi da prva nedelja razvoja podrazumeva da se više posla uradi nego što ostane za drugu. Ako se ostvari rizik, imamo dovoljno vremena u drugoj nedelji da radimo na zadacima. 
+5. Čak i poznat posao ima inherentan rizik da će nešto iskočiti. Možemo se prehladiti ili se može pojaviti neočekivana situacija u privatnom životu koju moramo da rešavamo. Bolje nam je da odvadimo veću količinu posla u periodu kada je mir. Zbog toga vredi da prva nedelja razvoja podrazumeva da se više posla uradi nego što ostane za drugu. Ako se ostvari rizik, imamo dovoljno vremena u drugoj nedelji da radimo na zadacima. 
 
 Uzimajući sve prethodno u obzir, možemo da raspodelimo posao na nivou tima i ugovorimo u kalendaru ključne rokove da izbegnemo konflikte zbog međuzavisnog rada i da stignemo da potražimo pomoć ako se neki rizik ostvari.
 <br><br><br><br>
@@ -65,7 +65,7 @@ Da bismo sastavili održivo softversko rešenje i ispunili zahteve za prve dve n
 4. Ažuriramo ostale slojeve da bismo ispunili zahtev.
 
 ### 1. Kreiranje modela taktičkih DDD šablona za kontekst kartice
-Za početak je potrebno da se upoznamo sa tri taktička šablona iz DDDa koje nazivamo vrednosni objekat, entitet i agregat. **[Sledeća playlista](https://www.youtube.com/watch?v=5hxXRIDmH-0&list=PLWTyGVhcibjZ_iwv5wQU_MVTA53k08HB8)** opisuje svojstva ovih šablona. **Napomena**: Druga polovina videa (koji se odnose na agregat) je složenija i naslanja na prvu polovinu. Preporuka je da se pažljivo isprate materijali i po potrebi napravi pauza na pola da se drugi deo može bolje usvojiti.
+Za početak je potrebno da se upoznamo sa tri taktička šablona iz DDDa koje nazivamo vrednosni objekat, entitet i agregat. **[Sledeća playlista](https://www.youtube.com/watch?v=5hxXRIDmH-0&list=PLWTyGVhcibjZ_iwv5wQU_MVTA53k08HB8)** opisuje svojstva ovih šablona. **Napomena**: Druga polovina videa (koji se odnose na agregat) je složenija i naslanja se na prvu polovinu. Preporuka je da se pažljivo isprate materijali i po potrebi napravi pauza na pola da se drugi deo može bolje usvojiti.
 
 Većina kartica u S2 podrazumevaju da se naprave agregati objekata i da se u njih prebaci veći deo poslovne logike. Da bismo ovo postigli, potrebno je da:
 
