@@ -65,7 +65,11 @@ Da bismo sastavili održivo softversko rešenje i ispunili zahteve za prve dve n
 4. Ažuriramo ostale slojeve da bismo ispunili zahtev.
 
 ### 1. Kreiranje modela taktičkih DDD šablona za kontekst kartice
-Za početak je potrebno da se upoznamo sa tri taktička šablona iz DDDa koje nazivamo vrednosni objekat, entitet i agregat. **[Sledeća playlista](https://www.youtube.com/watch?v=5hxXRIDmH-0&list=PLWTyGVhcibjZ_iwv5wQU_MVTA53k08HB8)** opisuje svojstva ovih šablona. **Napomena**: Druga polovina videa (koji se odnose na agregat) je složenija i naslanja se na prvu polovinu. Preporuka je da se pažljivo isprate materijali i po potrebi napravi pauza na pola da se drugi deo može bolje usvojiti.
+Za početak je potrebno da se upoznamo sa tri taktička šablona iz DDDa koje nazivamo vrednosni objekat, entitet i agregat. Sa navedenim šablonima ćemo se upoznati kroz niz video materijala koji obrađuju kolekciju klasa prikazanih u nastavku.
+
+![image](https://github.com/psw-ftn/supportive-information/assets/7092212/b71923e8-d30b-408d-9206-3a350b065225)
+
+**[Sledeća playlista](https://www.youtube.com/watch?v=5hxXRIDmH-0&list=PLWTyGVhcibjZ_iwv5wQU_MVTA53k08HB8)** opisuje svojstva ovih šablona. **Napomena**: Druga polovina videa (koji se odnose na agregat) je složenija i naslanja se na prvu polovinu. Preporuka je da se pažljivo isprate materijali i po potrebi napravi pauza na pola da se drugi deo može bolje usvojiti.
 
 Većina kartica u S2 podrazumevaju da se naprave agregati objekata i da se u njih prebaci veći deo poslovne logike. Da bismo ovo postigli, potrebno je da:
 
@@ -83,6 +87,13 @@ _Primer_: Da bismo podržali funkcionalnost vezanu za blog, sprovodimo prethodni
 1. Blog pored svog sadržaja ima komentare i ocene i možemo da identifikujemo tri klase - `Blog`, `Comment` i `Rating`.
 2. Brisanjem bloga ima smisla da obrišemo i sve komentare i ocene vezane za taj blog, što nam je jak indikator da je `Blog` koren agregata. Pošto Blog ima životni ciklus (draft, objavljen, zatvoren, aktivan, poznat) jasno je da je barem entitet. Komentar i ocena nemaju očigledan životni ciklus (npr. nemaju stanje koje bi bio jasan indikator da nekakav životni ciklus postoji). Iako nisu nužno immutable (npr. ima smisla da se edituje komentar) i dalje ih možemo tretirati kao vrednosne objekte. Spram navedenog možemo identifikovati agregat `Blog` koji sadrži dve liste vrednosnih objekata.
 3. Funkcionalnosti vezane za davanje glasa i manipulaciju komentara idu kroz `Blog` klasu. Možemo zamisliti `AddRating` metodu koja proverava da li lista `Ratings` sadrži ocenu od datog korisnika. Ako sadrži, zamenjuje je. Ako ne sadrži, dodaje je. Spram ukupne ocene, ista metoda proverava da li treba izmeniti status `Bloga`. Sličnu funkcionalnost vidimo za sve ostale manipulacije Bloga i njegovih objekata, gde bi servis u tom slučaju samo: 1) Učitao `Blog` sa prosleđenim IDem, 2) Pozvao odgovarajuću metodu tog objekta i 3) Vratio rezultat.
+4. Interesantno je razmotriti kako ćemo uz blog i komentare prikazati ime (ili korisničko ime) od autora bloga/komentara. Ovo je podatak koji se nalazi u `Stakeholders` modulu i koji ne možemo da referenciramo direktno. Kod modularnog monolita ili mikroservisa imamo tri strategije za rešavanje ovog problema:
+   1. Formiranje odvojenog HTTP zahteva kada dobavimo blog sa komentarima da se za sve personId (koji ćemo svakako čuvati u blogu/komentaru) dobavi ime.
+   2. Čuvanje redundatnih podataka u vidu imena autora u `Blog` i `Comment` klasama. Dakle, prilikom čuvanja bloga bismo uz tekst bloga poslali i ime osobe koja je napravila blog.
+   3. Pozivanje internog APIa `Stakeholders` servisa prilikom dobavljanja bloga u `Blog` servisu. Ovo bi podrazumevalo da:
+      1. Definišemo interfejs u `Stakeholders.API/Internal` koji će za date ID-eve vratiti imena ljudi. Potrebno je definisati servis u `Stakeholders.Core` koji implementira taj interfejs i srediti dependency injection. Primer takvog servisa u Tutor projektu je [ovde](https://github.com/Clean-CaDET/tutor/blob/master/src/Modules/Stakeholders/Tutor.Stakeholders.API/Internal/IInternalInstructorService.cs).
+      2. U `Blog.Core` ubacimo referencu na projekat `Stakeholders.API`.
+      3. U odgovarajućem servisu `Blog.Core` navodimo u konstruktoru interfejs iz `Stakeholders.API/Internal`. U okviru funkcije za dobavljanje bloga pozivamo funkciju internog servisa i spajamo konačan rezultat u odgovarajući DTO (`Blog.API` će morati da definiše svoj DTO za imena ili da u okviru `BlogDto` i `CommentDto` uvede `string` polja za, na primer, ime i prezime). Primer ovakve funkcionalnosti u Tutor projektu je [ovde](https://github.com/Clean-CaDET/tutor/blob/master/src/Modules/Courses/Tutor.Courses.Core/UseCases/Management/GroupMembershipService.cs#L32).
 
 ### 2. Implementacija domenskog sloja
 Sa povećanjem broja klasa u našim projektima, vreme je da razmišljamo o segmentaciji svakog sloja u smislene direktorijume. Za domenski sloj (`Core/Domain`) ima smisla da definišemo 1 direktorijum za svaki agregat ili 1 paket za svaki agregat koji podrazumeva više od jedne klase (dok bi jedno-klasni agregati ostali u `Core/Domain`). Naziv direktorijuma je isti kao naziv korena agregata, samo što je u množini.
