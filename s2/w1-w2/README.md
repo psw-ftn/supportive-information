@@ -143,5 +143,109 @@ Prve tri gupe slučajeva korišćenja su podržana od strane `Tours` modula. Če
 Sami kontroleri trebaju da definišu odgovarajuće endpointe, no ovo se ne razlikuje u odnosu na ono što smo imali ranije.
 <br><br><br><br>
 # 4. Testiranje agregata
-TODO
-TODO: Napomena za testnu skriptu.
+Automatski testovi koje smo do sada pisali su testirali relativno jednostavnu logiku, gde je kontroler pozivao servis koji je vršio prostu koordinaciju da ažurira ili dobavi neki entitet. Uvođenjem agregata objekata i formiranjem nešto složenije logike u domenskom sloju imamo potrebu da napišemo više testova kako bismo proverili da se tražene funkcionalnosti ponašaju ispravno.
+
+Sada ćemo imati potrebu da testiramo istu funkcionalnost više puta, gde menjamo ulazne podatke i testne podatke za svako pokretanje. Na primer, ako imamo endpoint čiji zadatak je da objavi turu, želeli bismo da sa automatskim testovima pokrijemo:
+
+- Poziv endpointa tako da se tura uspešno objavi.
+- Poziv endpointa gde tura nije u validnom stanju za objavu, gde bismo hteli po jedan test za svako validaciono pravilo (npr. za status, osnovne informacije, broj ključnih tačaka i vreme).
+- Poziv endpointa od strane autora koji nije vlasnik ture.
+
+Iz navedenog vidimo da će nam trebati 5-6 testova koji će imati sličan kod. Primer dva takva testa vidimo u nastavku:
+```csharp
+[Fact]
+public void Publish_succeeds()
+{
+    // Arrange - Input data
+    var authorId = "-1";
+    var tourId = -5;
+    var expectedResponseCode = 200;
+    var expectedStatus = TourStatus.Published;
+    // Arrange - Controller and dbContext
+    using var scope = Factory.Services.CreateScope();
+    var controller = CreateController(scope, authorId);
+    var dbContext = scope.ServiceProvider.GetRequiredService<ToursContext>();
+
+    // Act
+    var result = (ObjectResult)controller.Publish(tourId).Result;
+
+    // Assert - Response
+    result.ShouldNotBeNull();
+    result.StatusCode.ShouldBe(expectedResponseCode);
+    // Assert - Database
+    var storedEntity = dbContext.Tours.FirstOrDefault(t => t.Id == tourId);
+    storedEntity.ShouldNotBeNull();
+    storedEntity.Status.ShouldBe(expectedStatus);
+}
+
+[Fact]
+public void Publish_fails_invalid_checkpoints()
+{
+    // Arrange - Input data
+    var authorId = "-1";
+    var tourId = -4;
+    var expectedResponseCode = 422;
+    var expectedStatus = TourStatus.Draft;
+    // Arrange - Controller and dbContext
+    using var scope = Factory.Services.CreateScope();
+    var controller = CreateController(scope, authorId);
+    var dbContext = scope.ServiceProvider.GetRequiredService<ToursContext>();
+    
+    // Act
+    var result = (ObjectResult)controller.Publish(tourId).Result;
+
+    // Assert - Response
+    result.ShouldNotBeNull();
+    result.StatusCode.ShouldBe(expectedResponseCode);
+
+    // Assert - Database
+    var storedEntity = dbContext.Tours.FirstOrDefault(t => t.Id == tourId);
+    storedEntity.ShouldNotBeNull();
+    storedEntity.Status.ShouldBe(expectedStatus);
+}
+
+private static EquipmentController CreateController(IServiceScope scope, string personId)
+{
+    return new EquipmentController(scope.ServiceProvider.GetRequiredService<IEquipmentService>())
+    {
+        ControllerContext = BuildContext(personId)
+    };
+}
+```
+Prethodni testovi prave pretpostavku da u testnim skriptama postoje Ture sa ID-em -4 i -5 čije stanje odgovara situaciji koja se testira (-5 je tura sa svim podacima, a -4 nema 2 ključne tačke, što je zahtev za validaciono pravilo).
+
+Većina testnog koda za dva primera i sve ostale testove je identična. Jedina razlika je na vrhu testa, gde se definišu parametri testa. Kod automatskih testova, slično kao kod funkcija, možemo da uvedemo parametre za ove potrebe uz pomoć `[Theory]` anotacije. Prethodan primer se transformiše na sledeći način:
+
+```csharp
+[Theory]
+[InlineData("-1", -5, 200, TourStatus.Published)]
+[InlineData("-1", -4, 422, TourStatus.Draft)]
+public void Publishes(string authorId, long tourId, int expectedResponseCode, TourStatus expectedStatus)
+{
+    // Arrange
+    using var scope = Factory.Services.CreateScope();
+    var controller = CreateController(scope, authorId);
+    var dbContext = scope.ServiceProvider.GetRequiredService<ToursContext>();
+    
+    // Act
+    var result = (ObjectResult)controller.Publish(tourId).Result;
+
+    // Assert - Response
+    result.ShouldNotBeNull();
+    result.StatusCode.ShouldBe(expectedResponseCode);
+
+    // Assert - Database
+    var storedEntity = dbContext.Tours.FirstOrDefault(t => t.Id == tourId);
+    storedEntity.ShouldNotBeNull();
+    storedEntity.Status.ShouldBe(expectedStatus);
+}
+```
+Kada su parametri koje prosleđujemo primitive, možemo koristiti `InlineData` anotaciju, kao što primer ilustruje. Ovaj kod bismo mogli proširiti sa 4-5 dodatne `InlineData` linije koda da pokrijemo sve prethodno navedene testne slučajeve. Naravno, morali bismo da dopunimo testne skripte da se svaka tura ubaci.
+
+U situacijama kada želimo da složenije objekte definišemo putem parametra, potrebno je da koristimo `[MemberData]` anotaciju. **[Sledeći primer](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Tests/Integration/Learning/Assessment/SubmissionMcqTests.cs#L15-L76)** ilustruje kako to izgleda. Sintaksa deluje strašno, ali je u pitanju jednostavan šablon. Ključna je `McqSubmissions` funkcija koja vraća `IEnumerable<object[]>`. Po jedan test će se pokrenuti za svaki `object[]` koji je definisan, gde se redom uzimaju elementi ovog niza i postavljaju kao vrednosti parametra testa.
+
+### Česte greške
+
+**Napomena**: Pošto ćemo serijalizovati neke objekte u json kolone, potrebno je da obratimo pažnju na specifično ponašanje koje pronalazimo u testnim SQL skriptama. Ako želimo da u testnu bazu ubacimo JSON objekat i koristimo za to vitičaste zagrade ("{" i "}"), neophodno je da na svakom mestu gde ih koristimo u testnoj skripti uduplamo zagrade (da bude "{{" i "}}").
+
+Na kraju ponavljamo **napomenu** od prošle nedelje: Ako `TestData` skripte sadrže grešku, testovi će se pokrenuti sa testnom bazom koja nije u predviđenom stanju. Posledično će neki testovi pući. Pored log zapisa na konzolu, možeš da postaviš breakpoint u `BuildingBlocks.Tests` projektu na [sledećoj liniji koda](https://github.com/psw-ftn/tourism-be/blob/27211b3bc9e92ed280d684d1f59562eee628ac98/src/BuildingBlocks/Explorer.BuildingBlocks.Tests/BaseTestFactory.cs#L48). Zatim pokreni testove u debug režimu rada i proveri da li se ovaj problem dešava.
