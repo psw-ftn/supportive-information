@@ -5,7 +5,7 @@ Prve dve nedelje drugog sprinta su posvećene razvoju složenih funkcionalnosti.
 3. Dizajniranje i implementacija agregata od više objekata.
 4. Jedinično testiranje agregata i integraciono testiranje cele funkcionalnosti.
 
-# 1. Dekompozicija složenih korisničkih priča i planiranje posla
+# 1. Dekompozicija složenih korisničkih priča
 U organizacijama koje prate Scrum radni okvir, _product owner_ rola je zadužena za sprovođenje aktivnosti _backlog grooming_. Ovo je kompozitna aktivnost koja uključuje više koraka, a jedan od tih koraka podrazumeva dekompoziciju velikih ideja za softver u manje korisničke priče. Do razvojnog tima često stižu korisničke priče koje su i dalje krupne i koje vredi usitniti tako da se dobije posao koji se rešava u rasponu od par dana.
 
 Postoji više tehnika za dekompoziciju korisničkih priča, u zavisnosti od prirode same priče. Takođe postoji jedna tehnika koju moramo izbegavati i koja neće proizvesti korisne korisničke priče. Sledeća **[playlista](https://www.youtube.com/watch?v=cGKuogxAmT0&list=PLWTyGVhcibjZvbyNjq2I10K63QreUZIMc)** sabira nekoliko tehnika sa kojim treba da se upoznaš (slobodno slušaj na većoj brzini).
