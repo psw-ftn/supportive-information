@@ -248,9 +248,11 @@ U situacijama kada želimo da složenije objekte definišemo putem parametra, po
 Bitna metrika kod automatskog testiranja predstavlja % pokrivenosti koda od strane testova (engl. *code coverage*). Kada imamo funkciju koja sadrži 10 linija koda, od kojih je 4 u IF bloku, a 4 u ELSE bloku, test koji aktivira samo prvi uslovni blok će pokriti oko 50% koda funkcije. Kod koji je domenski značajan i algoritamski složen je bitno što temeljnije istestirati, što obično podrazumeva visok *code coverage*.
 
 Kada koristimo *ReSharper* plugin za *Visual Studio*, možemo da aktiviramo funkcionalnost za računanje ove metrike putem sledeće komande:
+
 ![image](https://github.com/psw-ftn/supportive-information/assets/7092212/e780945f-8d17-44fc-bfbb-4440679ab6ff)
 
 Panel koji ćemo dobiti ima sledeći izgled:
+
 ![image](https://github.com/psw-ftn/supportive-information/assets/7092212/cf7d15f6-b5b1-43b5-b99a-a21bc6355e73)
 
 Interesantno nam je da `Domain` namespace svakog modula ima što veći stepen pokrivenosti (>85% je dobra mera), a slično važi i za `UseCases`. Kada smo ovo pokrili, dobra je šansa da će u ostatku aplikacije većina koda biti pokrivena.
