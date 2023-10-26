@@ -244,8 +244,43 @@ Kada su parametri koje prosleđujemo primitive, možemo koristiti `InlineData` a
 
 U situacijama kada želimo da složenije objekte definišemo putem parametra, potrebno je da koristimo `[MemberData]` anotaciju. **[Sledeći primer](https://github.com/Clean-CaDET/tutor/blob/f0f3e136ff23fe4daa6ba9641c6b2a0f9cff0e17/src/Modules/KnowledgeComponents/Tutor.KnowledgeComponents.Tests/Integration/Learning/Assessment/SubmissionMcqTests.cs#L15-L76)** ilustruje kako to izgleda. Sintaksa deluje strašno, ali je u pitanju jednostavan šablon. Ključna je `McqSubmissions` funkcija koja vraća `IEnumerable<object[]>`. Po jedan test će se pokrenuti za svaki `object[]` koji je definisan, gde se redom uzimaju elementi ovog niza i postavljaju kao vrednosti parametra testa.
 
-### Česte greške
+### Code coverage
+TODO
 
-**Napomena**: Pošto ćemo serijalizovati neke objekte u json kolone, potrebno je da obratimo pažnju na specifično ponašanje koje pronalazimo u testnim SQL skriptama. Ako želimo da u testnu bazu ubacimo JSON objekat i koristimo za to vitičaste zagrade ("{" i "}"), neophodno je da na svakom mestu gde ih koristimo u testnoj skripti uduplamo zagrade (da bude "{{" i "}}").
+### Alternative za testiranje agregata
+Svi testovi koje smo do sada pisali su **integracioni testovi**. Integracioni testovi testiraju složenije funkcionalnosti koje uključuju neku poslovnu logiku, ali i koordinaciju većeg broja objekata i potencijalno većeg broja aplikacija. U našem slučaju, integracioni testovi pored funkcija naše .NET aplikacije uključuju i interakciju sa (testnom) bazom.
 
-Na kraju ponavljamo **napomenu** od prošle nedelje: Ako `TestData` skripte sadrže grešku, testovi će se pokrenuti sa testnom bazom koja nije u predviđenom stanju. Posledično će neki testovi pući. Pored log zapisa na konzolu, možeš da postaviš breakpoint u `BuildingBlocks.Tests` projektu na [sledećoj liniji koda](https://github.com/psw-ftn/tourism-be/blob/27211b3bc9e92ed280d684d1f59562eee628ac98/src/BuildingBlocks/Explorer.BuildingBlocks.Tests/BaseTestFactory.cs#L48). Zatim pokreni testove u debug režimu rada i proveri da li se ovaj problem dešava.
+Za razliku od integracionih testova, jedinični testovi gađaju manji skup objekata koji je isključivo vezan za našu aplikaciju i najčešće pripada domenskom sloju. Sa jediničnim testovima se fokusiramo da istestiramo sve varijante ponašanja domenskog sloja bez da se opterećujemo sa bazom podataka i drugim brigama koje dolaze kada testiramo kompletnu funkcionalnost aplikacije, od kontrolera na dalje. Ovakvi testovi se brže pokreću (ne treba nam baza) i lakše održavaju (nemamo SQL skripte). Mana je što su ovakvi testovi slabo otporni na refaktorisanje koda koji se testira. Ovo znači da će izmene agregata koji se testira često zahtevati i izmenu jediničnog testa koji testira dati agregat.
+
+Testni kod jediničnog testa je dosta jednostavniji. Za prethodni primer, testovi bi imali sledeći oblik:
+
+```csharp
+[Theory]
+[InlineData(-5, true, TourStatus.Published)]
+[InlineData(-4, false, TourStatus.Draft)]
+public void Publishes(long tourId, bool expectedSuccess, TourStatus expectedStatus)
+{
+    // Arrange
+    var tour = GetTestTour(tourId);
+    
+    // Act
+    var result = tour.Publish();
+
+    // Assert
+    result.IsSuccess.ShouldBe(expectedSuccess);
+    result.Value.Status.ShouldBe(expectedStatus);
+}
+
+private static Tour GetTestTour(long tourId)
+{
+    // Definiši listu tura za potrebe testiranja
+    // Vrati turu čiji ID je jednak tourId
+}
+```
+
+Sa prethodnim testovima se fokusiramo na validnost poslovnih pravila definisanih u okviru `Tour` klase. Sa ovim pristupom ne možemo da testiramo da li autor ima pravo da objavi turu (da li je vlasnik ture) pošto je ovo logika koju bismo definisali u servisu (i pokrili bismo je integracionim testom).
+
+### Bitne napomene
+
+- Pošto ćemo vrednosne objekte serijalizovati u json kolone, potrebno je da obratimo pažnju na specifično ponašanje koje pronalazimo u testnim SQL skriptama. Ako želimo da u testnu bazu ubacimo JSON objekat i koristimo za to vitičaste zagrade ("{" i "}"), neophodno je da na svakom mestu gde ih koristimo u testnoj skripti uduplamo zagrade (da bude "{{" i "}}").
+- Ponavljamo **napomenu** od prošle nedelje: Ako `TestData` skripte sadrže grešku, testovi će se pokrenuti sa testnom bazom koja nije u predviđenom stanju. Posledično će neki testovi pući. Pored log zapisa na konzolu, možeš da postaviš breakpoint u `BuildingBlocks.Tests` projektu na [sledećoj liniji koda](https://github.com/psw-ftn/tourism-be/blob/27211b3bc9e92ed280d684d1f59562eee628ac98/src/BuildingBlocks/Explorer.BuildingBlocks.Tests/BaseTestFactory.cs#L48). Zatim pokreni testove u debug režimu rada i proveri da li se ovaj problem dešava.
