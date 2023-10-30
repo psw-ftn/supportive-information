@@ -1,89 +1,19 @@
 # Lean Canvas
 
-Lean Canvas je alat za planiranje poslovnog modela koji pomaže preduzetnicima i timovima za razvoj softvera da jasno
-definišu ključne aspekte svog poslovnog modela i fokusiraju se na suštinske elemente. Lean Canvas uključuje sledeće
-ključne sekcije:
+Lean Canvas je alat za opis poslovnog modela koji preduzetnici i timovi za razvoj softvera koriste da jasno definišu ključne aspekte svog poslovnog modela na 1 A4. Primer ovog šablona je ilustrovan ispod.
 
-- **Problem**: Ovde se definiše glavni problem ili potreba ciljnog tržišta koji softverska aplikacija rešava.
-- **Rešenje**: Opišite kako vaša aplikacija rešava navedeni problem ili zadovoljava potrebu kupaca. To uključuje osnovne
-  funkcionalnosti i karakteristike.
-- **Ključna vrednost**: Koje su ključne vrednosti koje vaša aplikacija pruža korisnicima i kako se izdvaja od
-  konkurencije?
-- **Ciljni korisnici (Customer Segments)**: Definišite ciljnu publiku ili korisnike koji će najviše koristiti vašu
-  aplikaciju.
-- **Kanali (Channels)**: Kako ćete privući korisnike i distribuirati svoju aplikaciju? To uključuje strategiju
-  marketinga i distribucije.
-- **Troškovi (Cost Structure)**: Koje su osnovne troškove povezane sa razvojem i održavanjem aplikacije? To uključuje
-  tehničke troškove, marketing i druge.
-- **Prihodni tokovi (Revenue Streams)**: Kako ćete zarađivati novac od svoje aplikacije? Opišite različite izvore
-  prihoda, kao što su pretplate, prodaja proizvoda ili oglašavanje.
-- **Ključne metrike (Key Metrics)**: Definišite ključne metrike i pokazatelje uspeha koji će vam pomoći u praćenju
-  performansi vaše aplikacije i iterativnom poboljšanju.
+![image](https://github.com/psw-ftn/supportive-information/assets/7092212/9ba03198-45a5-4c9b-9c4c-6e82ee70788b)
 
-Lean Canvas omogućava timovima da brzo razmisle o ključnim aspektima svog softverskog projekta, identifikuju rizike i
-mogućnosti, i usmere svoje napore na najvažnije zadatke. Ovaj model je posebno koristan za startape i razvoj softvera
-jer promoviše agilan pristup i brzu iteraciju kako bi se postigao uspeh na tržištu.
+**Napomena**: _Lean Canvas_ je sličan _Business Model Canvas_u. Bitni delovi ovih kanvasa se preklapaju, no _Lean Canvas_ je namenjen za startape i male biznise, dok se _Business Model Canvas_ fokusira na ozbiljnija preduzeća.
 
-## Primer
+Naš zadatak je da popunimo ovaj canvas pri analizi konkurentnih rešenja. Međutim, ne možemo lako da stignemo do svih podataka, te ćemo se fokusirati samo na nekoliko najbitnijih celina canvasa. Ovo uključuje:
 
-### Opis biznisa
+1. **Ciljni korisnici (Customer Segments)**: Definicija ciljnih korisnika koji koriste analiziranu aplikaciju i od kojih biznis zarađuje novac. Ako aplikacija zarađuje novac od više različitih publika (npr. vodiči i turisti) iskoristiti drugačiju boju ili brojeve da se označe delovi kanvasa koji su relevantni za svaku publiku (vidi primer ispod) ili odvojene kanvase za svaki customer segment.
+2. **Problem**: Definicija glavnih problema ili potreba ciljnog korisnika koje aplikacija rešava. Ako aplikacija podržava više ciljanih korisnika treba definisati probleme za svaku bitnu publiku. Problemi koje konkurentna aplikacija rešava bi trebali da budu istaknuti u promotivnim materijalima aplikacije (npr. YouTube reklame, landing page, About Us...). Definisati 1 do 3 veća problema koje softver rešava.
+3. **Ključna vrednost**: Ključna vrednost aplikacije je obično jasno istaknuta kao kratka i moćna fraza, slogan ili rečenica. Iz nje je moguće razumeti čime se biznis najviše ponosi i koju vrednost pruža krajnjim korisnicima. Ovo je obično istaknuto u promotivnim materijalima aplikacije i može se dobiti uz Google upit.
+4. **Rešenje**: Spisak ključnih funkcionalnosti koje omogućuju rešavanje problema i potreba definisanih u _Problem_ sekciji. Za ovaj deo nije potrebno pokriti sve detalje funkcionalnosti , već je potrebno istaći glavne karakteristike iz kojih je jasno kako funkcionalnost rešava problem krajnjeg korisnika. Pošto će za svaku populaciju biti 1 do 3 veća problema, predlog je da se koriste brojevi da bude jasno koje funkcionalnosti se odnose na koje rešenje.
+5. **Prihodni tokovi (Revenue Streams)**: Kako biznis zarađuje novac od svoje aplikacije? Potrebno je opisati izvore prihoda (bez ulaska u detalje novca koji se dobija). Primeri su reklame, prodaje proizvoda, prodaje pretplata, naplata % od svake prodaje.
 
-*TravelWorld Corporation* je vodeća globalna turistička agencija koja pruža raznovrsne usluge turizma i putovanja širom
-sveta. Njihova misija je omogućiti putnicima da istraže najlepše destinacije na svetu, pružajući im nezaboravna iskustva
-i visokokvalitetne usluge. Korporacija se ponosi svojom sposobnošću da zadovolji različite potrebe i ukuse putnika, bez
-obzira da li su individualni turisti, porodice, korporativni klijenti ili avanturisti. Radi sprovođenje svog biznisa,
-*TravelWorld Corporation* ima partnerske odnose sa osiguravajućim kućama, avio kompanijama, brojnim hotelskim lancima i
-nezavisnim smeštajima širom sveta. Svoje usluge želi da omogući korišćenjem Web aplikacije.
+Primer kompletno popunjenog kanvasa za Facebook je ilustrovan ispod.
 
-### Lean Canvas
-
-Problem:
-
-- Turisti žele praktičniji način za pronalazak i rezervaciju putovanja sa različitim destinacijama i iskustvima.
-- Nedostatak sveobuhvatnih informacija i prilagođenih ponuda za različite vrste putnika.
-
-Rešenje:
-
-- Razvoj intuitivne Web aplikacije koja omogućava korisnicima da pregledaju, rezervišu i prate svoja putovanja.
-- Ponuda personalizovanih tura i iskustava za različite ciljne grupe putnika.
-- Ponuda različitih paketa putnog osiguranja.
-- (ostale funkcionalnosti softvera).
-
-Ključna vrednost:
-
-- Brza i jednostavna rezervacija putovanja.
-- Personalizovani turistički paketi i iskustva.
-- Pouzdana podrška putnicima tokom putovanja.
-
-Ciljni korisnici:
-
-- Individualni putnici.
-- Porodice i grupe.
-- Korporativni putnici za poslovna putovanja.
-- Avanturisti i avanturistički putnici.
-- Luksuzni putnici.
-
-Kanali:
-
-- Web aplikacija za rezervaciju putovanja.
-- Online marketing i društveni mediji.
-- Partnerstva sa hotelima, avio-kompanijama, osiguravajućim kućama i drugim turističkim agencijama.
-
-Troškovi:
-
-- Razvoj i održavanje Web aplikacije.
-- Marketing i oglašavanje.
-- Troškovi osoblja za podršku putnicima.
-
-Prihodni tokovi:
-
-- Provizija od rezervacija avionskih karata i smeštaja.
-- Naplata za personalizovane turističke pakete.
-- Oglašavanje i promocija preko Web aplikacije.
-
-Ključne metrike:
-
-- Broj posećivanja Web aplikacije.
-- Stopa konverzije korisnika u rezervacije.
-- Broj korisničkih recenzija i ocena.
-- Povratne informacije korisnika i stopa zadovoljstva.
+![image](https://github.com/psw-ftn/supportive-information/assets/7092212/4fbaeb33-9569-4189-b9b3-86c2a4aa6f78).
