@@ -14,6 +14,6 @@ Naš zadatak je da popunimo ovaj canvas pri analizi konkurentnih rešenja. Među
 4. **Rešenje**: Spisak ključnih funkcionalnosti koje omogućuju rešavanje problema i potreba definisanih u _Problem_ sekciji. Za ovaj deo nije potrebno pokriti sve detalje funkcionalnosti , već je potrebno istaći glavne karakteristike iz kojih je jasno kako funkcionalnost rešava problem krajnjeg korisnika. Pošto će za svaku populaciju biti 1 do 3 veća problema, predlog je da se koriste brojevi da bude jasno koje funkcionalnosti se odnose na koje rešenje.
 5. **Prihodni tokovi (Revenue Streams)**: Kako biznis zarađuje novac od svoje aplikacije? Potrebno je opisati izvore prihoda (bez ulaska u detalje novca koji se dobija). Primeri su reklame, prodaje proizvoda, prodaje pretplata, naplata % od svake prodaje.
 
-Primer kompletno popunjenog kanvasa za Facebook je ilustrovan ispod.
+Primer kompletno popunjenog kanvasa za Facebook je ilustrovan ispod. Za nas je interesantno prethodno opisanih pet sekcija.
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/7092212/4fbaeb33-9569-4189-b9b3-86c2a4aa6f78).
