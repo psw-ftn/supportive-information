@@ -4,7 +4,7 @@ Lean Canvas je alat za opis poslovnog modela koji preduzetnici i timovi za razvo
 
 ![image](https://github.com/psw-ftn/supportive-information/assets/7092212/9ba03198-45a5-4c9b-9c4c-6e82ee70788b)
 
-**Napomena**: _Lean Canvas_ je sličan _Business Model Canvas_u. Bitni delovi ovih kanvasa se preklapaju, no _Lean Canvas_ je namenjen za startape i male biznise, dok se _Business Model Canvas_ fokusira na ozbiljnija preduzeća.
+**Napomena**: _Lean Canvas_ je sličan *Business Model Canvas*u. Bitni delovi ovih kanvasa se preklapaju, no _Lean Canvas_ je namenjen za startape i male biznise, dok se _Business Model Canvas_ fokusira na ozbiljnija preduzeća.
 
 Naš zadatak je da popunimo ovaj canvas pri analizi konkurentnih rešenja. Međutim, ne možemo lako da stignemo do svih podataka, te ćemo se fokusirati samo na nekoliko najbitnijih celina canvasa. Ovo uključuje:
 
