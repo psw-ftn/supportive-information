@@ -14,7 +14,7 @@ Aplikacije treba da budu dovoljno kompleksne i bogate funkcionalnostima kako bis
 - Naziv aplikacije (Upisati informaciju u koloni <i>Title</i>),
 - Link do aplikacije (<i>Link</i>),
 - Opis čemu aplikacija služi (<i>Description</i>),
-- Za svaku aplikaciju je neophodno sprovesti analizu i dokumentovati je uz pomoć [Lean Canvasa](lean-canvas.md). Konačan ishod zadatka je 4 *Lean Canvas*a (jedan po aplikaciji).
+- Za svaku aplikaciju je neophodno sprovesti analizu i dokumentovati je uz pomoć [Lean Canvasa](lean-canvas.md).
 - Spisak funkcionalnosti iz date aplikacije koje biste uveli u vaše rešenje (može da bude u obliku korisničkih priča ili teza sa linkovima na funkcije).
 <br><br><br><br>
 # 2. Backlog grooming
@@ -24,7 +24,7 @@ Cilj zadatka je da saberemo sve što smo naučili o domenu problema i softversko
 
 - Funkcionalnosti koje smo do sada implementirali vođeni zahtevima koje su nastavnici definisali.
 - Razgovore koje smo imali sa našim klijentima u S1.
-- *Lean Canvas*e koji definišu biznis konkurentnih rešenja.
+- *Lean Canvas*e i odabrane funkcionalnosti od konkurentnih rešenja.
 
 Koristeći ove izvore informacija, potrebno je da kompletan tim razgovara o pravcu u kom bi usmerili razvoj svog proizvoda. Rezultat ove aktivnost treba da bude:
 
