@@ -18,7 +18,7 @@ Da bismo dekomponovali prethodne priče, tim studenata može da prati sledeći a
 
 1. Klasterovanje priča oko modula koji će se primarno menjati (Stakeholders, Tours, Blog) i podela velikog tima na manje timove za svaki modul. Ako tim nije siguran kom modulu pripada neka kartica, može da konsultuje **[prethodne materijale za izbor modula](https://github.com/psw-ftn/supportive-information/blob/master/s1/w1/back-end.md#a-izbor-modula)**.
 2. U okviru svakog podtima, diskusija kako bi se pojedine korisničke priče mogle razložiti primenom tehnika u video materijalima.
-3. Formiranje kartica koje uzimaju najviše 2 čovek-nedelje da se reše.
+3. Formiranje kartica koje uzimaju najviše 2 čovek-nedelje da se reše. Možete ubaciti _powerup_ na vašu trelo tablu za ove [poene](https://trello.com/power-ups/638372c5e00ec1016bb45460/story-points-for-trello) (zahteva refresh stranice kad se ubaci).
 <br><br><br><br>
 # 2. Planiranje dvonedeljnog posla
 Prost proces planiranja podrazumeva sabiranje zadataka koje treba rešiti, dodeljivanje resursa (ljudi) koji će ih rešiti i organizacija svega na vremenskom toku. Naprednije planiranje podrazumeva i analizu rizika, gde se plan unapređuje tako da se rizici umanje.
