@@ -1,8 +1,8 @@
 Poslednja nedelja drugog sprinta podrazumeva tri zadatka:
 
-1. (SVI, raspoređeni u 4 podtima) Analizu konkurencije, odnosno aplikacija koje gađaju slično tržište.
-2. (SVI) Backlog grooming spram svega naučenog o projektu.
-3. (SVI) Revizija i retrospektiva sprinta.
+1. (Svi, raspoređeni u 4 podtima) Analizu konkurencije, odnosno aplikacija koje gađaju slično tržište.
+2. (Svi) Backlog grooming spram svega naučenog o projektu.
+3. (Svi) Revizija i retrospektiva sprinta, po uzoru na [prethodni sprint](https://github.com/psw-ftn/supportive-information/blob/master/s1/w2/s1e-review-retrospective.md).
 <br><br><br><br>
 # 1. Analiza konkurentnih rešenja
 U okviru ovog zadatka je potrebno analizirati postojeće aplikacije i sajtove slične projektu koji razvijate i koji u nekoj meri predstavljaju konkurenciju na tržištu. Cilj ovog zadatka je sticanje uvida u probleme koji su prisutni u ovom domenu, analiziranje postojećih rešenja tih problema, prepoznavanje korisnih funkcionalnosti koje bi bilo dobro imati i analiziranje poslovnog modela konkurencije.
