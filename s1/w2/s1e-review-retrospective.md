@@ -26,7 +26,7 @@ Potrebno je popuniti izveštaj za retrospektivu, koji možete preuzeti <a href="
 </ol>
 
 ### c. Retrospektiva
-Retrospektiva treba da bude organizovana tako da svi članovi tima podele svoja iskustva. Podstaknite aktivno učestvovanje svih članova tako što će svi podeliti svoja zapažanja. Bez obzira da li je organizujete online ili uživo, potrebno je napraviti fotografiju događaja koju ćete priložiti asistentu na uvid.
+Retrospektiva treba da bude organizovana tako da svi članovi tima podele svoja iskustva. Podstaknite aktivno učestvovanje svih članova tako što će svi podeliti svoja zapažanja. Bez obzira da li je organizujete online ili uživo, potrebno je napraviti **fotografiju događaja** koju ćete priložiti asistentu na uvid.
 
 Retrospektiva treba da bude konstruktivna, pri čemu treba izbegavati da se krive pojedinci. Drugi deo izveštaja koji se odnosi na ceo tim je potrebno popuniti sledećim informacijama:
 
