@@ -1,5 +1,13 @@
-TODO: Istakni šta će biti novi moduli i onda proces. (u našem slučaju `Payments` i `Encounters`)
-TODO: Veće grupe slučajeva korišćenja definiši.
+Uvodimo dva nova modula kako bismo odgovorili na zahteve koji nam preostaju tokom preostala dva sprinta:
+
+- U okviru `Payments` modula definišemo domenske objekte i funkcionalnosti vezane za problem prodaje i plaćanja. Ovde ćemo smestiti funkcionalnosti vezane za ShoppingCart, istoriju prodaja, kupone i ostale koncepte koji se tiču čina kupovine i prodaje bez obzira na to šta se prodaje.
+- U okviru `Encounters` modula uvodimo eksperimentalne funkcionalnosti koje se tiču turizma i omogućavaju dodatne vrste događaja koji će angažovati turiste i privući ih da koriste našu aplikaciju.
+
+Da bismo uveli nove module i zaokružili zadatak, potrebno je za svaki modul da:
+
+- Kreiramo početne projekte modula i postavimo početne direktorijume i klase za svaki projekat.
+- Uvežemo novi modul sa `Explorer.API`.
+- Implementiramo jednostavnu funkcionalnost za svaki novi modul.
 
 ## 1. Kreiranje projekata za novi modul
 Na početku je potrebno napraviti novi direktorijum u okviru `Modules` koji nosi naziv novog modula. U okviru tog direktorijuma definišemo sledeće projekte:
