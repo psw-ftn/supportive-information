@@ -2,28 +2,22 @@ TODO: Istakni šta će biti novi moduli i onda proces. (u našem slučaju `Payme
 
 ## 1. Kreiranje projekata za novi modul
 Na početku je potrebno napraviti novi direktorijum u okviru `Modules` koji nosi naziv novog modula. U okviru tog direktorijuma definišemo sledeće projekte:
-1. `Explorer.MODULE_NAME.API` class library. Ovaj projekat zavisi od `Explorer.BuildingBlocks.Core` (desni klik na projekat, `Add > Project Reference`).
-2. `Explorer.MODULE_NAME.Core` class library. Ovaj projekat zavisi od `Explorer.MODULE_NAME.API`.
-3. `Explorer.MODULE_NAME.Infrastructure` class library. Ovaj projekat zavisi od `Explorer.MODULE_NAME.Core` i `Explorer.BuildingBlocks.Infrastructure`.
-4. `Explorer.MODULE_NAME.Tests` xUnit test project. Ovaj projekat zavisi od `Explorer.API` i `Explorer.BuildingBlocks.Tests`.
+1. `Explorer.MODULE_NAME.API` class library. Ovaj projekat referencira `Explorer.BuildingBlocks.Core` (desni klik na projekat, `Add > Project Reference`).
+2. `Explorer.MODULE_NAME.Core` class library. Ovaj projekat referencira `Explorer.MODULE_NAME.API`.
+3. `Explorer.MODULE_NAME.Infrastructure` class library. Ovaj projekat referencira `Explorer.MODULE_NAME.Core` i `Explorer.BuildingBlocks.Infrastructure`.
+4. `Explorer.MODULE_NAME.Tests` xUnit test project. Ovaj projekat referencira `Explorer.API` i `Explorer.BuildingBlocks.Tests`.
 
 ## 2. Popunjavanje `Explorer.MODULE_NAME.API`
-Projekat definiše interfejse servisa koje modul podržava i DTO klase koje interfejsi prihvataju i vraćaju. U okviru ovog projekta definišemo direktorijume:
-1. `Dtos`, u koje idu definicije DTO klasa.
-2. `Public`, koji sadrži interfejse javnih servise modula (ove interfejse pozivaju kontroleri).
-3. `Internal`, koji sadrži interfejse servisa modula koje pozivaju drugi moduli (ove interfejse pozivaju servisi drugih modula).
-
-Kako se moduli usložnjavaju možemo da formiramo poddirektorijume u `Public` da grupišemo interfejse servisa po povezanim slučajevima korišćenja. Klase u `Dtos` možemo grupisati spram njihove povezanosti (npr. po uzoru na grupisanje u `Core/Domain`).
+Projekat definiše interfejse servisa koje modul podržava i DTO klase koje interfejsi prihvataju i vraćaju. U okviru projekta definišemo direktorijume:
+1. `Dtos` sadrži definicije DTO klasa. Po potrebi se segmentira na poddirektorijume koji grupiše povezane DTO klase (npr. po uzoru na grupisanje u `Core/Domain`).
+2. `Public` sadrži interfejse javnih servise modula (ove interfejse pozivaju kontroleri). Po potrebi se segmentira na poddirektorijume koji grupišu interfejse servisa spram povezanih slučajeva korišćenja.
+3. `Internal` sadrži interfejse servisa modula koje pozivaju drugi moduli (ove interfejse pozivaju servisi drugih modula).
 
 ## 3. Popunjavanje `Explorer.MODULE_NAME.Core`
-This project defines service implementations and the module's domain model. Inside the project we define the following directories:
-1. `Domain` contains classes that make up the domain model. It includes a subdirectory named `RepositoryInterfaces`.
-2. `Mappers` contains `AutoMapper` profile definitions used to map domain model objects to DTOs and vice-versa.
-3. `UseCases` contains subdirectories that group service interface implementations. Each subdirectory is named after a group of use cases supported by the module. Here we also define the `IMODULE_NAMEUnitOfWork.cs` interface with the following minimal code: `public interface IMODULE_NAMEUnitOfWork : IUnitOfWork {}`
-
-[Optional] We introduce subdirectories to the `Domain` directory when the module's domain is complex and can be segregated into logical units (e.g., aggregates).
-
-[Optional] We define interfaces for infrastructure services next to use case services when the service requires a non-repository infrastructure service. If more than one use case group requires an infrastructure service, we define the `InfrastructureInterfaces` subdirectory in the `UseCases` directory.
+Projekat definiše implementacije servisa, domenski model i profile za mapiranje domenskog modela na DTO klase. U okviru projekta definišemo direktorijume:
+1. `Domain` sadrži klase domenskog modela i interfejse repozitorijuma. Po potrebi se segmentira na poddirektorijume koji odgovaraju agregatima.
+2. `Mappers` sadrži `AutoMapper` definicije profila.
+3. `UseCases` sadrži implementacije servisa modula. Po potrebi se segmentira na poddirektorijume, gde svaki odgovara većem skupu povezanih slučajeva korišćenja.
 
 ## 4. Populating `Explorer.MODULE_NAME.Infrastructure`
 This project defines repository and other infrastructure services implementations. Inside the project we define the following directories and classes:
