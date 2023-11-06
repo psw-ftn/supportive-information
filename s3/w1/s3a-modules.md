@@ -1,22 +1,21 @@
-TODO
+TODO: Istakni šta će biti novi moduli i onda proces. (u našem slučaju `Payments` i `Encounters`)
 
-## 1. Creating the module subdirectory
-First we create a subdirectory with a descriptive name that defines the module. Inside the subdirectory we define the following C# projects:
-1. `Tutor.MODULE_NAME.API` class library. The project has a dependency on `Tutor.BuildingBlocks.Core`.
-2. `Tutor.MODULE_NAME.Core` class library. The project has a dependency on `Tutor.MODULE_NAME.API`.
-3. `Tutor.MODULE_NAME.Infrastructure` class library. The project has a dependency on `Tutor.MODULE_NAME.Core` and `Tutor.BuildingBlocks.Infrastructure`.
-4. `Tutor.MODULE_NAME.Tests` xUnit test project. The project has a dependency on `Tutor.API` and `Tutor.BuildingBlocks.Tests`.
+## 1. Kreiranje projekata za novi modul
+Na početku je potrebno napraviti novi direktorijum u okviru `Modules` koji nosi naziv novog modula. U okviru tog direktorijuma definišemo sledeće projekte:
+1. `Explorer.MODULE_NAME.API` class library. Ovaj projekat zavisi od `Explorer.BuildingBlocks.Core` (desni klik na projekat, `Add > Project Reference`).
+2. `Explorer.MODULE_NAME.Core` class library. Ovaj projekat zavisi od `Explorer.MODULE_NAME.API`.
+3. `Explorer.MODULE_NAME.Infrastructure` class library. Ovaj projekat zavisi od `Explorer.MODULE_NAME.Core` i `Explorer.BuildingBlocks.Infrastructure`.
+4. `Explorer.MODULE_NAME.Tests` xUnit test project. Ovaj projekat zavisi od `Explorer.API` i `Explorer.BuildingBlocks.Tests`.
 
-[Optional] We can merge projects 1, 2, and 3 into a single class library for modules with simple domain models and supported functionality.
+## 2. Popunjavanje `Explorer.MODULE_NAME.API`
+Projekat definiše interfejse servisa koje modul podržava i DTO klase koje interfejsi prihvataju i vraćaju. U okviru ovog projekta definišemo direktorijume:
+1. `Dtos`, u koje idu definicije DTO klasa.
+2. `Public`, koji sadrži interfejse javnih servise modula (ove interfejse pozivaju kontroleri).
+3. `Internal`, koji sadrži interfejse servisa modula koje pozivaju drugi moduli (ove interfejse pozivaju servisi drugih modula).
 
-## 2. Populating `Tutor.MODULE_NAME.API`
-This project defines interfaces for services supported by the module and the DTO classes that are accepted or returned by these interfaces. Inside the project we define the following directories:
-1. `Dtos` contains the DTO class definitions.
-2. `Interfaces` contains subdirectories that group interface definitions. Each subdirectory is named after a group of use cases supported by the module.
+Kako se moduli usložnjavaju možemo da formiramo poddirektorijume u `Public` da grupišemo interfejse servisa po povezanim slučajevima korišćenja. Klase u `Dtos` možemo grupisati spram njihove povezanosti (npr. po uzoru na grupisanje u `Core/Domain`).
 
-[Optional] We can further segregate the `Dtos` directory When a module has a complex domain model and many DTO classes. The subdirectory names will likely match the subdirectories in `Tutor.MODULE_NAME.Core/Domain` directory.
-
-## 3. Populating `Tutor.MODULE_NAME.Core`
+## 3. Popunjavanje `Explorer.MODULE_NAME.Core`
 This project defines service implementations and the module's domain model. Inside the project we define the following directories:
 1. `Domain` contains classes that make up the domain model. It includes a subdirectory named `RepositoryInterfaces`.
 2. `Mappers` contains `AutoMapper` profile definitions used to map domain model objects to DTOs and vice-versa.
@@ -26,7 +25,7 @@ This project defines service implementations and the module's domain model. Insi
 
 [Optional] We define interfaces for infrastructure services next to use case services when the service requires a non-repository infrastructure service. If more than one use case group requires an infrastructure service, we define the `InfrastructureInterfaces` subdirectory in the `UseCases` directory.
 
-## 4. Populating `Tutor.MODULE_NAME.Infrastructure`
+## 4. Populating `Explorer.MODULE_NAME.Infrastructure`
 This project defines repository and other infrastructure services implementations. Inside the project we define the following directories and classes:
 1. `Database` contains the following:
    1. `MODULE_NAMEContext.cs` class definition, which inherits `DbContext`, defines `DbSet`s for each domain entity, and overrides `OnModelCreating`. At a minimum, the `OnModelCreating` should include the following line of code: `modelBuilder.HasDefaultSchema(MODULE_NAME);`. The schema name should be `camelCase`.
@@ -52,12 +51,12 @@ This project defines repository and other infrastructure services implementation
 
 [Optional] We define a new directory when a module requires additional infrastructure services (e.g., email client, HTTP connection).
 
-## 5. Expanding `Tutor.API`
+## 5. Expanding `Explorer.API`
 With the module set up, there are two additional steps that tie the module into the complete solution:
-1. The `Tutor.API` project needs to reference `Tutor.MODULE_NAME.API` so that the controllers can contact the module's services. The project also needs to reference `Tutor.MODULE_NAME.Infrastructure` to access the Setup class.
+1. The `Explorer.API` project needs to reference `Explorer.MODULE_NAME.API` so that the controllers can contact the module's services. The project also needs to reference `Explorer.MODULE_NAME.Infrastructure` to access the Setup class.
 2. Expand the sole method in the `Startup/ModulesConfiguration.cs` class to include the line `services.ConfigureMODULE_NAMEModule();`.
 
-## 6. Populating `Tutor.MODULE_NAME.Tests`
+## 6. Populating `Explorer.MODULE_NAME.Tests`
 This project defines automated tests. Inside the project we define the following directories and classes:
 1. `Integration` contains subdirectories for each use case group supported by the module. The subdirectories contain integration test classes.
 2. `TestData` contains sql scripts required to setup the test database.
@@ -79,8 +78,8 @@ This project defines automated tests. Inside the project we define the following
 
 4. `BaseMODULE_NAMEIntegrationTest.cs` defines a simple class that inherits `BaseWebIntegrationTest<MODULE_NAMETestFactory>` and defines an empty constructor. This class is inherited by all integration tests in this module.
 
-The final step entails registering the new module with the `Tutor.Architecture.Tests` tests. This includes finding the `ModuleTests.cs` file and adding the module name at the very end of the file, following the pattern used for other modules.
+The final step entails registering the new module with the `Explorer.Architecture.Tests` tests. This includes finding the `ModuleTests.cs` file and adding the module name at the very end of the file, following the pattern used for other modules.
 
-With this step complete the module is integrated to the Tutor modular monolith.
+With this step complete the module is integrated to the Explorer modular monolith.
 
 Remember, when in doubt, consult the code of existing modules.
