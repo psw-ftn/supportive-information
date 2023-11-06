@@ -77,3 +77,10 @@ This project defines automated tests. Inside the project we define the following
    }
    ```
 
+4. `BaseMODULE_NAMEIntegrationTest.cs` defines a simple class that inherits `BaseWebIntegrationTest<MODULE_NAMETestFactory>` and defines an empty constructor. This class is inherited by all integration tests in this module.
+
+The final step entails registering the new module with the `Tutor.Architecture.Tests` tests. This includes finding the `ModuleTests.cs` file and adding the module name at the very end of the file, following the pattern used for other modules.
+
+With this step complete the module is integrated to the Tutor modular monolith.
+
+Remember, when in doubt, consult the code of existing modules.
