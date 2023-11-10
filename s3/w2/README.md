@@ -7,7 +7,7 @@ Do sada smo implementirali testove pred kraj razvoja funkcionalnosti. TDD predst
 - [Kako se TDD integriše u Scrum radni okvir?](https://youtu.be/giztcCGWkTQ)
 - (Opciono) [Kako da pišemo kvalitetne testove?](https://www.youtube.com/watch?v=8JlYqN1dhHw&list=PLWTyGVhcibjYJYZZwX2VPt_-ycRBA0U7R)
 
-# Razvoj složenih funkcionalnosti
+# Razvoj složenih funkcionalnosti po TDDu
 Polazeći od procesa koji smo definisali u [prethodnom sprintu](https://github.com/psw-ftn/supportive-information/tree/master/s2/w1-w2), pratimo sledeći algoritam u ovom:
 
 1. Dekompozicija korisničkih priča i podela posla na članove tima.
