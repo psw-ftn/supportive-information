@@ -1,6 +1,6 @@
 Uvodimo dva nova modula kako bismo odgovorili na zahteve koje uvodimo tokom preostala dva sprinta:
 
-- U okviru `Payments` modula definišemo domenske objekte i funkcionalnosti vezane za problem prodaje i plaćanja. Ovde ćemo smestiti funkcionalnosti vezane za ShoppingCart, istoriju prodaja, kupone i ostale koncepte koji se tiču čina kupovine i prodaje bez obzira na to šta se prodaje.
+- U okviru `Payments` modula definišemo domenske objekte i funkcionalnosti vezane za problem prodaje i plaćanja. Ovde ćemo smestiti funkcionalnosti vezane za `ShoppingCart`, istoriju prodaja, kupone i ostale koncepte koji se tiču čina kupovine i prodaje bez obzira na to šta se prodaje.
 - U okviru `Encounters` modula uvodimo eksperimentalne funkcionalnosti koje se tiču turizma i omogućavaju dodatne vrste događaja koji će angažovati turiste i privući ih da koriste našu aplikaciju.
 
 Da bismo uveli nove module i zaokružili zadatak, potrebno je za svaki modul da:
