@@ -30,6 +30,6 @@ Koristeći ove izvore informacija, potrebno je da kompletan tim razgovara o prav
 
 1. Definicija cilja vaše organizacije, gde je moguće da tim definiše više ciljeva (npr. 1-2 za svaku rolu - šta želi vaša organizacije da postigne za date korisnike). Ciljeve možete definisati kao kartice na Trellu u posebnu listu kartica koje nazivate ciljevi.
 2. Definicija velikih Epica iz kojih ćete izvlačiti zahteve za S3 i S4. Možete uvesti novu listu kartica koju ćete nazvati "Product Backlog" između ciljeva i sprint listi kartica. Svaki epic treba da ima [checklistu](https://support.atlassian.com/trello/docs/adding-checklists-to-cards/), gde je svaka stavka checkliste jedna potencijalno veća kartica.
-3. Iz Epica, izdvajanje kartica sa ukupnom vrednošću od 8 do 12 story poena (koristite S2 kartice iz prve dve nedelje za uzor poena) koje će rešavati deo tima u S3.
+3. Iz Epica, izdvajanje kartica sa ukupnom vrednošću od 10 do 12 story poena (koristite S2 kartice iz prve dve nedelje za uzor poena) koje će rešavati deo tima u S3.
 
 Sve ideje koje ste sakupili do sada (tokom intervjua i analize konkurencije), a koje nisu završili u definisanim Epicima možete obrisati/arhivirati.
