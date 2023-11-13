@@ -32,3 +32,5 @@ Do sada smo kretali od domenskog sloja kada treba implementirati novu funkcional
 9. Na kraju **obavezno pravimo feat: commit**.
 
 **[Sledeći video](https://www.youtube.com/watch?v=4qXWSWx4Ap0)** ilustruje kompletan primer prethodnog procesa za korisničku priču iz domena upravljanja rasporedom prostorije.
+
+**Napomena**: Prethodne smernice su jednostavne u odnosu na prethodne sprintove i mogu da daju iluziju da je sam zadatak jednostavan. To nije slučaj. Prvo, dekompozicija početnih priča je izazovna i vredi pažljivo uraditi taj deo da se izbegnu međuzavisnosti. Drugo, dizajniranje novih agregata nije trivijalno i kroz rad sa njima ćeš utvrditi veštine iz prethodnog sprinta. Treće, rad po TDDu je isprva kontraintuitivan i za očekivati je da će te usporiti.
