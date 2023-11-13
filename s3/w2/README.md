@@ -1,5 +1,7 @@
 U drugoj nedelji trećeg sprinta svaki član tima radi na razvoju nove funkcionalnosti. Kroz ovu nedelju nam je cilj da podignemo proces razvoja softvera na sledeći stepen zrelosti tako što ćemo primeniti razvoj vođen testovima (engl. _test-driven development_, TDD).
 
+**Napomena**: Naredne smernice su jednostavne u odnosu na prethodne sprintove i daju iluziju da je sam zadatak jednostavan. To nije slučaj. Prvo, dekompozicija početnih priča je izazovna i vredi pažljivo uraditi taj deo da se izbegnu međuzavisnosti. Drugo, dizajniranje novih agregata nije trivijalno i kroz rad sa njima ćeš utvrditi veštine iz prethodnog sprinta. Treće, rad po TDDu je isprva kontraintuitivan i za očekivati je da će te usporiti.
+
 # Razvoj vođen testovima
 Do sada smo implementirali testove pred kraj razvoja funkcionalnosti. TDD predstavlja alternativan pristup, gde prvo implementiramo test (koji nužno pada), nakon čega implementiramo funkciju tako da test prolazi. Možemo pogledati sledeće materijale da bolje razumemo:
 
@@ -32,5 +34,3 @@ Do sada smo kretali od domenskog sloja kada treba implementirati novu funkcional
 9. Na kraju **obavezno pravimo feat: commit**.
 
 **[Sledeći video](https://www.youtube.com/watch?v=4qXWSWx4Ap0)** ilustruje kompletan primer prethodnog procesa za korisničku priču iz domena upravljanja rasporedom prostorije.
-
-**Napomena**: Prethodne smernice su jednostavne u odnosu na prethodne sprintove i daju iluziju da je sam zadatak jednostavan. To nije slučaj. Prvo, dekompozicija početnih priča je izazovna i vredi pažljivo uraditi taj deo da se izbegnu međuzavisnosti. Drugo, dizajniranje novih agregata nije trivijalno i kroz rad sa njima ćeš utvrditi veštine iz prethodnog sprinta. Treće, rad po TDDu je isprva kontraintuitivan i za očekivati je da će te usporiti.
