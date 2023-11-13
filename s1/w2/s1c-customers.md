@@ -24,7 +24,7 @@ Za prvi susret sa korisnikom je neophodno da pronađemo 4 osobe koje će 8 član
 
 Svaki član tima treba da razmisli koga bi mogao od porodice i prijatelja da angažuje za ovu aktivnost. Tom prilikom treba uzeti u obzir sledeće faktore:
 
-- Dostupnost osobe tokom semestra - Idealno biramo osobu koja će moći sa članovima tima da se sastane četiri puta u toku semestra, svaki put po sat do dva.
+- Dostupnost osobe tokom semestra - Idealno biramo osobu koja će moći sa članovima tima da se sastane tri puta u toku semestra, svaki put po sat do dva.
 - Kandidati za Turiste - Osobe koje ne putuju, koje uvek idu na istu lokaciju (npr. imaju kuću na moru) ili putuju sa idejom da budu ceo dan u bazenu ili banji nisu dobri kandidati za naše Turiste. Naši Turisti su ljudi koji vole na neki način da istražuju prostor (npr. hajk po prirodi, obilazak znamenitosti grada, upoznavanje lokalnih priča i legendi). Ne treba da isključimo ljude koji putuju sa porodicom. Iako njihove ture nisu nužno uzbudljive, ima prostora da se ovaj deo tržišta cilja (npr. zabavne ili obrazovne ture za decu).
 - Kandidati za Autora - Autore ćemo teže pronaći. Idealni kandidati su ljudi koji rade u turističkim agencijama ili lokalni vodiči i njih možemo kontaktirati čak i ako ih ne poznajemo tako što ćemo posetiti agencije ili pretražiti GetYourGuide sajt za lokalne ture. Alternativa su nam ljudi koji su "sami sebi vodič", odnosno turisti koji pažljivo planiraju svoja putovanja tako da svašta obiđu. Dobar kandidat za ovakvog autora je bilo ko ko temeljno proučava Google Maps, TripAdvisor i slične sajtove kada putuje, kao i neko ko dokumentuje svoja putovanja (npr. putem članaka).
 
