@@ -31,7 +31,7 @@ Do sada smo kretali od domenskog sloja kada treba implementirati novu funkcional
 4. **Definišemo testnu klasu i test koji poziva novu metodu kontrolera**. U _assert_ sekciji test treba za početak da proveri da li se dobar _response_ dobija kao rezultat poziva operacije. Ako postoji potreba da se proveri sadržaj baze, ovo se definiše kasnije. Definisan test pada pri pokretanju. U ovom momentu **obavezno pravimo test: commit**.
 5. Prelazimo na regularnu implementaciju, gde po potrebi definišemo ili proširujemo interfejse servisa, njihove implementacije, domenski model i repozitorijum.
 6. Ako proširujemo domenski model sa logikom koju vredi pokriti jediničnim testiranjem, definišemo metodu sa linijom koda: `throw new NotImplementedException();` i definišemo testnu klasu koja će sadržati jedinične testove koji pokrivaju sve varijacije na rezultat nove metode. Zatim implementiramo metodu do momenta kada testovi prolaze. Tada **opciono pravimo feat: commit koji uključuje domensku klasu i test**.
-7. Korake 5 i 7 ponavljamo sve dok test iz koraka 4 ne prolazi i ostali testovi ne padaju. U tom momentu možemo proširiti test iz koraka 4 da proverimo da li se u bazi podaci ispravno menjaju.
+7. Korake 5 do 7 ponavljamo sve dok test iz koraka 4 ne prolazi i ostali testovi ne padaju. U tom momentu možemo proširiti test iz koraka 4 da proverimo da li se u bazi podaci ispravno menjaju.
 8. Kada svi testovi prolaze, možemo po potrebi da refaktorišemo novi kod, gde je bitno da se uverimo da testovi prolaze posle svakog refaktorisanja.
 9. Na kraju **obavezno pravimo feat: commit**.
 
