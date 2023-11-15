@@ -1,6 +1,6 @@
-C4 model definiše hijerarhiju od četiri nivoa dijagrama za opisivanje arhitekture softverskog rešenja. Agilni timovi koriste C4 model zbog jednostavnosti modela i lakoće održavanja dokumentacije.
+C4 model definiše hijerarhiju od četiri nivoa dijagrama za opisivanje arhitekture softverskog rešenja. Agilni timovi koriste C4 model zbog jednostavnosti modela i lakoće održavanja dokumentacije. U sklopu ovog zadatka je potrebno da se dizajniraju i dokumentuju prva tri nivoa C4 modela (kontekst, kontejneri, komponente).
 
-U sklopu ovog zadatka je potrebno da se dokumentuju prva tri nivoa C4 modela (kontekst, kontejneri, komponente) po sledećem procesu:
+**Napomena**: Pored upoznavanje sa novom notacijom za formiranje dijagrama, glavni izazov ovog zadatka je dobro razumevanje konekcija između različitih komponenti na trećem nivou. Većina pameti zadatka podrazumeva sagledavanje trenutnih referenci i poziva, ali i onih koje će biti prisutni na kraju razvoja za S3. Preporuka je da članovi tima sa dobrim poznavanjem arhitekture projekta i afinitetom ka arhitekturi i dizajnu rade ovaj zadatak po sledećem procesu:
 
 1. Izučavanje C4 modela koristeći dokumentaciju sa **[linka](https://c4model.com/)**.
 2. Analiza do sada implementiranih modula, planiranog razvoja za S3 i ideja koje tim želi da implementira do kraja kursa.
