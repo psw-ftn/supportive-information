@@ -28,7 +28,10 @@ Svaki tim može da definiše strukturu sesije spram svojih ideja, gde u nastavku
    - Idealno će članovi tima samo posmatrati korisnika i beležiti tastere, menije i funkcionalnosti koje nisu dovoljno intuitivne, zadatke koje korisnik previše sporo rešava i ideje za unapređenje svega navedenog. Aktivnije se treba uključiti samo kod neintuitivnih funkcionalnosti poput `Position Simulatora`.
    - Pri definisanju zadataka koje će korisnik rešavati vodite računa o potrebnom vremenu da se reši zadatak, posebno kod autora. Definisanje ture sa 5 ključnih tački zahteva dosta više vremena i mašte nego tura sa 2 tačke. Ne mora svaka funkcionalnost da se prođe sa korisnikom, bitno je proći one koje očekujemo da će se najčešće koristiti.
    - U svakom momentu sesije (uvod, rad sa aplikacijom, završni razgovor) pazite da ne opteretite korisnika sa previše informacija i detalja.
-- Posle rada sa aplikacijom, ostaviti dovoljno vremena da se saberu misli i prikupe ideje od korisnika kako bi se sistem mogao unaprediti. Posebno su interesantni korisnici koji su bili uključeni u prvu sesiju, da vidimo šta bi njima značilo u ovakvom sistemu.
+- Posle rada sa aplikacijom, ostaviti dovoljno vremena da se saberu misli i prikupe ideje od korisnika kako bi se sistem mogao unaprediti. Obratiti pažnju na:
+   - Deo aplikacije koji im se posebno svideo i zašto (ovo će nam otkriti šta vredi dalje da guramo),
+   - Deo aplikacije koji im se nije svideo i zašto (ovo će nam otkriti šta treba preraditi, unaprediti ili napustiti),
+   - Dodatne ideje koje imaju šta bi aplikacija mogla da podrži, a što trenutno ne podržava.
 
 # 2. Backlog grooming
 Nakon intervjua je potrebno da se ceo tim sastane kako biste sproveli _backlog grooming_ aktivnost putem kog će se definisati posao za S4. Da bismo formirali kvalitetne korisničke priče, potrebno je da dopuniš razumevanje **[estimacije korisničkih priča](https://www.youtube.com/watch?v=xna-heGqXCc&list=PLWTyGVhcibjYc44t_AD6Sg0R4RhwMzRAB)** i analiziraš **[INVEST akronim](https://www.youtube.com/watch?v=nBE-6fMQxvs)** koji spaja sve što smo do sad obrađivali na temu kvalitetnih priča. Kao priprema za sastanak je dodatna preporuka da razmislite u kom pravcu biste želeli da se vaš softver razvija.
