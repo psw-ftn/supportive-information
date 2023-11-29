@@ -25,6 +25,12 @@ Za drugu dilemu su nam validne opcije `Core/UseCases` ili `Infrastructure` paket
 Potrebno je razmisliti gde ćemo tačno u okviru `Core/UseCases` da smestimo novi interfejs ili klasu, gde tom prilikom razmatramo ko sve koristi datu novinu i spram toga donosimo odluku.
 
 ## 2. Testiranje pametnog aplikativnog servisa
+Jedinični testovi su nam korisni da dubinski istestiramo elemente domenskog sloja - agregate i domenske servise. Integracioni testovi  pokrivaju aplikativne servise i pružaju nam veću sigurnost da kompletne funkcionalnosti rade zato što pokrivaju kompletnu interakciju objekata.
+
+Problem nastaje kada integracioni testovi testiraju funkcionalnosti koje pozivaju pametne aplikativne servise koji se nalaze u infrastrukturnom sloju. Naime, takvi servisi interaguju sa sistemima koji su van naše aplikacije, što može dovesti do neželjenog opterećenja spoljašnjih sistema. Na primer, ako pokrenemo 20 puta tokom razvoja testove koji šalju email ili viber poruku korisnicima, brzo ćemo prebaciti naš sistem u _Spam_ direktorijum. Ako svaki test prlja produkcionu bazu sa testnim podacima, lako ćemo napraviti sebi problem. Zbog ovoga smo i uveli koncept testne baze, kako bismo izbegli rad sa produkcionom bazom koju i regularna upotreba aplikacije koristi.
+
+Kada testiramo pametne aplikativne servise, kompleksno rešenje nam je da napravimo testne verzije spoljašnjih sistema. Ovo rešenje ima smisla za spoljašnji sistem koji se baš često koristi, kao što je baza podataka. Dato rešenje je previše komplikovano za spoljašnji sistem koji samo par funkcionalnosti koristi. U tom slučaju nam je 
+
 TODO
 
 # Domenski servisi
