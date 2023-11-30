@@ -1,7 +1,8 @@
 Četvrti sprint traje 3 nedelje i podrazumeva:
 
-1. Nedelju razvoja složenijih funkcionalnosti koje tim samostalno definiše, prateći razvoj-vođen testovima.
-2. Nedelju razvoja složenijih funkcionalnosti, uz primenu _domenskih servisa_, _pametnih aplikativnih servisa_ ili _event sourcing_ mehanizma (po izboru). Materijali za podršku ovog zadatka se nalaze **[ovde](https://github.com/psw-ftn/supportive-information/tree/master/s4/w2)**.
-3. Nedelju rada sa krajnjim korisnicima, čišćenje backloga i planiranje razvoja za imaginarni peti sprint kroz _backlog grooming_ aktivnost. Materijali za podršku ovog zadatka se nalaze **[ovde]()**.
+1. Dve nedelje razvoja složenijih funkcionalnosti, prateći razvoj-vođen testovima. U dve nedelje je potrebno da tim zatvori 2 story poena po članu tako da:
+   1. 1 poen odlazi na funkcije koje je tim samostalno definisao i prioritizovao, spram prethodne _backlog grooming_ aktivnosti.
+   2. 1 poen odlazi na funkcije koje primenjuju nove DDD taktičke šablone (_domenske servise_, _pametne aplikativne servise_ ili _event sourcing_ mehanizam, po izboru). Materijali za podršku ovog zadatka se nalaze **[ovde](https://github.com/psw-ftn/supportive-information/tree/master/s4/w1-w2)**.
+2. Nedelju rada sa krajnjim korisnicima, čišćenje backloga i planiranje razvoja za imaginarni peti sprint kroz _backlog grooming_ aktivnost. Materijali za podršku ovog zadatka se nalaze **[ovde]()**.
 
-**Napomena**: Radi lakše organizacije u prve dve nedelje, preporuka je da tim identifikuje međuzavisnosti u što bržem roku kako bi rasporedili posao.
+**Napomena**: Radi lakše organizacije u prve dve nedelje, preporuka je da tim identifikuje međuzavisnosti i rasporedili posao u što kraćem roku. Dodatno je preporuka da se upozna sa osnovama i odluči da li će navedene kartice zameniti sa svojim idejama koje uključuju date šablone (pogledajte napomenu u [linku za taktičke šablone](https://github.com/psw-ftn/supportive-information/tree/master/s4/w1-w2)).
