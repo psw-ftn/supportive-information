@@ -48,4 +48,11 @@ Koncept domenskih servisa je istaknut u videu na početku. U opštem slučaju ć
 Domenski servisi pripadaju u domenskom sloju i generalno su jednostavniji za rukovanje, iako im logika može biti složena. Domenski servis možemo testirati putem jediničnih testova, gde direktno instanciramo i koristimo servis i proveravamo da li za sve kombinacije daje dobre rezultate.
 
 # Event sourcing
-TODO
+Koncept event sourcinga je istaknut u videu iznad. Da bismo uveli event sourcing u projekat, pre nego što implementiramo bilo koji konkretan event sourced agregat, potrebno je da uvedemo dve roditeljske klase:
+
+- `EventSourcedAggregate` je klasa koja će naslediti `Entity` i koja će biti nasleđena od strane korena agregata koji trebaju da podrže event sourcing. Ovde ćemo centralizovati opštu logiku za upravljanje domenskim događajima.
+- `DomainEvent` je klasa koju će naslediti svaki konkretan domenski događaj. Ona sadrži opšte podatke koji su interesantni svakom događaju, poput identifikatora korena agregata, tipa agregata na koji se događaj odnosi i vremenskog trenutka kada je događaj nastao.
+
+Navedene klase ćemo smestiti u `BuildingBlocks.Core.Domain`, pošto su relevantne za sve naše module. Poslednje pitanje koje treba ispitati je kako ćemo skladištiti listu domenskih događaja. U složenijem softverskom rešenju bismo potencijalno uveli dodatno skladište podataka namenjeno čuvanju domenskih događaja. Za naš slučaj je dovoljno da iskoristimo postojeću bazu podataka.
+
+Sa postavljenom infrastrukturom možemo da implementiramo konkretne agregate koji trebaju da podrže event sourcing. Kako izgleda kod koji implementira sve ove celine analiziramo u **[ovom videu](https://www.youtube.com/watch?v=PjI42va62aU)**, dok **[ovaj video](https://www.youtube.com/watch?v=CsxvOFhpmRg)** sagledava opšti dizajn interakcije servisa i event sourced agregata i razmatra kako se domenski događaji formiraju i skladište u ozbiljnijim sistemima.
