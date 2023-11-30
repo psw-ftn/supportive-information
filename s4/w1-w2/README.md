@@ -1,4 +1,4 @@
-U sklopu druge nedelje želimo da proširimo naše razumevanje DDD-a sa tri taktička šablona, gde će članovi tima birati sa kojim šablonom žele da uđu u koštac. Šabloni u pitanju su _aplikativni servisi_, _domenski servisi_ i _event sourcing_. Pre raspodele posla, članovi tima treba da se upoznaju sa osnovnom idejom svakog koncepta kroz sledeće materijale:
+U sklopu četvrtog sprinta želimo da proširimo naše razumevanje DDD-a sa tri taktička šablona, gde će članovi tima birati sa kojim šablonom žele da uđu u koštac. Šabloni u pitanju su _aplikativni servisi_, _domenski servisi_ i _event sourcing_. Pre raspodele posla, članovi tima treba da se upoznaju sa osnovnom idejom svakog koncepta kroz sledeće materijale:
 
 - Aplikativni i domenski servisi - [video](https://youtu.be/Y8I4THKo9HA).
 - Event sourcing - [video](https://youtu.be/cTMG3QB7Lys).
