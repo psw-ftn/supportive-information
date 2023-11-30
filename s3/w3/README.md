@@ -34,10 +34,10 @@ Svaki tim može da definiše strukturu sesije spram svojih ideja, gde u nastavku
    - Dodatne ideje koje imaju šta bi aplikacija mogla da podrži, a što trenutno ne podržava.
 
 # 2. Backlog grooming
-Nakon intervjua je potrebno da se ceo tim sastane kako biste sproveli _backlog grooming_ aktivnost putem kog će se definisati posao za S4. Da bismo formirali kvalitetne korisničke priče, potrebno je da dopuniš razumevanje **[estimacije korisničkih priča](https://www.youtube.com/watch?v=xna-heGqXCc&list=PLWTyGVhcibjYc44t_AD6Sg0R4RhwMzRAB)** i analiziraš **[INVEST akronim](https://www.youtube.com/watch?v=nBE-6fMQxvs)** koji spaja sve što smo do sad obrađivali na temu kvalitetnih priča. Kao priprema za sastanak je dodatna preporuka da razmislite u kom pravcu biste želeli da se vaš softver razvija.
+Nakon intervjua je potrebno da se ceo tim sastane kako biste sproveli _backlog grooming_ aktivnost putem kog će se definisati posao za naredni sprint. Da biste formirali kvalitetne korisničke priče, potrebno je da dopuniš razumevanje **[estimacije korisničkih priča](https://www.youtube.com/watch?v=xna-heGqXCc&list=PLWTyGVhcibjYc44t_AD6Sg0R4RhwMzRAB)** i analiziraš **[INVEST akronim](https://www.youtube.com/watch?v=nBE-6fMQxvs)** koji spaja sve što smo do sad obrađivali na temu kvalitetnih priča. Kao priprema za sastanak je dodatna preporuka da razmislite u kom pravcu biste želeli da se vaš softver razvija.
 
-Cilj zadatka je da saberete sve što smo naučili o domenu problema i softverskom rešenju koje pravite, kako biste usmerili dalji razvoj softvera i definisali zadatke za S4. Konkretno, potrebno je da:
+Cilj zadatka je da saberete sve što smo naučili o domenu problema i softverskom rešenju koje pravite, kako biste usmerili dalji razvoj softvera i definisali zadatke za naredni sprint. Konkretno, potrebno je da:
 
 - Revidirate ciljeve vaše organizacije, gde je moguće da tim definiše više ciljeva (npr. 1-2 za svaku rolu - šta želi vaša organizacije da postigne za date korisnike). Ciljeve možete definisati kao kartice na Trellu u posebnu listu kartica koje nazivate "Ciljevi".
-- Revidirate i dopunite velike Epice iz kojih ćete izvlačiti zahteve za S4. Svaki epic treba da ima checklistu, gde je svaka stavka checkliste jedna potencijalno veća kartica.
-- Izdvojite INVEST kartice iz Epica sa ukupnom vrednošću od 16 do 20 story poena (koristite S2 i S3 kartice za uzor pri određivanju poena) koje će ceo tim rešavati u S4.
+- Revidirate i dopunite velike Epice iz kojih ćete izvlačiti zahteve za naredni sprint. Svaki epic treba da ima checklistu, gde je svaka stavka checkliste jedna potencijalno veća kartica.
+- Izdvojite INVEST kartice iz Epica sa ukupnom vrednošću od 16 do 20 story poena (koristite kartice iz prethodnog sprinta za uzor pri određivanju poena) koje će ceo tim rešavati u narednom sprintu.
