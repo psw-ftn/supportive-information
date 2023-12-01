@@ -3,7 +3,7 @@ U sklopu četvrtog sprinta želimo da proširimo naše razumevanje DDD-a sa tri 
 - Aplikativni i domenski servisi - [video](https://youtu.be/Y8I4THKo9HA).
 - Event sourcing - [video](https://youtu.be/cTMG3QB7Lys).
 
-**Napomena**: Tim može da zameni kartice koje mi predlažemo sa karticama koje će uvesti, spram procene tima, vrednije funkcionalnosti u proizvod. Međutim, neophodno je da nove kartice podrazumevaju ugradnju jednog od tri šablona navedenih iznad.
+**Napomena**: Tim može da zameni kartice koje mi predlažemo sa karticama koje će uvesti, spram procene tima, vrednije funkcionalnosti u proizvod. Međutim, neophodno je da nove kartice podrazumevaju ugradnju jednog od tri šablona navedenih iznad i da se naglasi koji šablon je implementiran asistentu.
 
 # Aplikativni servisi
 Koncept aplikativnih servisa je istaknut u videu iznad. Aplikativne servise delimo u dve kategorije:
