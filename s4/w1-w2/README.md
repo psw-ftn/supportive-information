@@ -45,7 +45,9 @@ Naš zadatak prilikom testiranje funkcije koja interaguje sa eksternim sistemima
 # Domenski servisi
 Koncept domenskih servisa je istaknut u videu na početku. U opštem slučaju će domenski servisi biti pametne funkcionalne klase koje sabiraju poslovnu pamet koja ne pripada ni jednom agregatu. Primer ovakve klase je klasa koja implementira algoritam za kalkulaciju statistika ili uvezivanje rezultata više agregata kako bi se sračunao nekakav podatak.
 
-Domenski servisi pripadaju u domenskom sloju i generalno su jednostavniji za rukovanje, iako im logika može biti složena. Domenski servis možemo testirati putem jediničnih testova, gde direktno instanciramo i koristimo servis i proveravamo da li za sve kombinacije daje dobre rezultate.
+Domenski servisi pripadaju u domenskom sloju i generalno su jednostavniji za rukovanje, iako im logika može biti složena. Sve potrebne podatke domenski servis dobija od aplikativnog servisa koji vrši ulogu koordinatora.
+
+Domenski servis možemo testirati putem jediničnih testova, gde direktno instanciramo i koristimo servis i proveravamo da li za sve kombinacije daje dobre rezultate.
 
 # Event sourcing
 Koncept event sourcinga je istaknut u videu iznad. Da bismo uveli event sourcing u projekat, pre nego što implementiramo bilo koji konkretan event sourced agregat, potrebno je da uvedemo dve roditeljske klase:
