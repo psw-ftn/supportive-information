@@ -1,4 +1,4 @@
-Poslednja nedelja drugog sprinta podrazumeva tri zadatka:
+Poslednja nedelja trećeg sprinta podrazumeva tri zadatka:
 
 1. (Svi, raspoređeni u grupe od dva do tri člana tima) Razgovor sa krajnjim korisnicima i isprobavanje softvera.
 2. (Svi) Backlog grooming spram svega naučenog o projektu.
