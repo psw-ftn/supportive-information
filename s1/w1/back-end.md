@@ -22,10 +22,10 @@ Nulti korak ćeš raditi samo jednom u potpunosti, dok ćeš korake 1 do 6 radit
 ## 0. Organizacija i pokretanje projekta
 Da bi mogao da radiš sa serverskom aplikacijom, neophodno je da instaliraš PostgreSQL bazu podataka i .NET 7 na svojoj mašini.
 
-Obrati pažnju da li je ASP.NET instaliran u Visual Studio Code-u:
-- otvori Visual Studio Installer program
-- odaberi Modify opciju kod verzije Visual Studio-a koju koristiš
-- odaberi ASP.NET and web development u Workloads tabu i instaliraj ukoliko prethodno nije bilo instalirano
+Proveri da li je ASP.NET instaliran u Visual Studio okruženju:
+- otvori Visual Studio Installer program,
+- odaberi Modify opciju kod verzije Visual Studio-a koju koristiš,
+- odaberi ASP.NET and web development u Workloads tabu i instaliraj ukoliko prethodno nije bilo instalirano.
 
 Prvi put kad sedneš da radiš na projektu ćeš morati da **kloniraš repozitorijum** svog tima na svoju mašinu. Ovde će ti pomoći `git clone REPO_URL` komanda uz URL repozitorijuma tima.
 
